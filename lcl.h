@@ -107,7 +107,9 @@ enum {
 };
 
 // Log level type.
-typedef uint8_t _lcl_level_t;
+typedef uint32_t _lcl_level_t;
+typedef uint8_t  _lcl_level_narrow_t;
+
 
 
 //
@@ -186,7 +188,7 @@ uint32_t lcl_configure_by_name(const char *name, _lcl_level_t level);
 
 
 // Active log levels, indexed by log component.
-_lcl_level_t _lcl_component_level[_lcl_component_t_count];
+_lcl_level_narrow_t _lcl_component_level[_lcl_component_t_count];
 
 // Log component headers, indexed by log component.
 const char * const _lcl_component_header[_lcl_component_t_count];
