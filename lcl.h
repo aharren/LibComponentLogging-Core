@@ -121,7 +121,7 @@ typedef uint8_t  _lcl_level_narrow_t;
 enum {
 #   define  _lcl_component(_identifier, _header, _name)                        \
     lcl_c##_identifier,                                                        \
-  __lcl_symbol_lcl_c##_identifier = lcl_c##_identifier,
+  __lcl_log_symbol_lcl_c##_identifier = lcl_c##_identifier,
 #   include "lcl_config_components.h"
 #   undef   _lcl_component
 
@@ -152,12 +152,12 @@ typedef uint32_t _lcl_component_t;
 // The actual logging is done by _lcl_logger which must be defined by a concrete
 // logging backend. _lcl_logger has the same signature as lcl_log.
 //
-#define lcl_log(lcl_log_component, lcl_log_level, lcl_log_format, ...)         \
-    if (_lcl_component_level[(__lcl_symbol_##lcl_log_component)] >=            \
-          (__lcl_symbol_##lcl_log_level)) {                                    \
-            _lcl_logger(lcl_log_component,                                     \
-                        lcl_log_level,                                         \
-                        lcl_log_format,                                        \
+#define lcl_log(_component, _level, _format, ...)                              \
+    if ((_lcl_component_level[(__lcl_log_symbol(_component))]) >=              \
+          (__lcl_log_symbol(_level))) {                                        \
+            _lcl_logger(_component,                                            \
+                        _level,                                                \
+                        _format,                                               \
                         ##__VA_ARGS__);                                        \
     }
 
@@ -207,15 +207,19 @@ const char * const _lcl_level_name[_lcl_level_t_count];
 // Version.
 const char * const _lcl_version;
 
-// Log level symbols used by lcl_log, prefixed with '__lcl_symbol_lcl_v'.
+// Log level symbols used by lcl_log, prefixed with '__lcl_log_symbol_lcl_v'.
 enum {
-  __lcl_symbol_lcl_vCritical = lcl_vCritical,
-  __lcl_symbol_lcl_vError    = lcl_vError,
-  __lcl_symbol_lcl_vWarning  = lcl_vWarning,
-  __lcl_symbol_lcl_vInfo     = lcl_vInfo,
-  __lcl_symbol_lcl_vDebug    = lcl_vDebug,
-  __lcl_symbol_lcl_vTrace    = lcl_vTrace
+  __lcl_log_symbol_lcl_vCritical = lcl_vCritical,
+  __lcl_log_symbol_lcl_vError    = lcl_vError,
+  __lcl_log_symbol_lcl_vWarning  = lcl_vWarning,
+  __lcl_log_symbol_lcl_vInfo     = lcl_vInfo,
+  __lcl_log_symbol_lcl_vDebug    = lcl_vDebug,
+  __lcl_log_symbol_lcl_vTrace    = lcl_vTrace
 };
+
+// Macro for appending the '__lcl_log_symbol_' prefix to a given symbol.
+#define __lcl_log_symbol(_symbol)                                              \
+    __lcl_log_symbol_##_symbol
 
 // Concrete logging backend and definition of _lcl_logger.
 #import "lcl_config_logger.h"
