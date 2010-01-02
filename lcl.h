@@ -66,7 +66,8 @@
 //   are relevant when using the logging library in an application, are prefixed
 //   with 'lcl_'. Internal symbols, which are needed when working with meta
 //   data, when defining log components, or when writing a logging backend, are
-//   prefixed with '_lcl_'.
+//   prefixed with '_lcl_'. Internal symbols, which are only used by the logging
+//   library itself, are prefixed with '__lcl_'.
 //
 // - Meta data
 //   The library provides public data structures which contain information about
@@ -201,7 +202,7 @@ const char * const _lcl_level_name[_lcl_level_t_count];
 // Version.
 const char * const _lcl_version;
 
-// Log level symbols, prefixed with '__lcl_symbol_lcl_v'.
+// Log level symbols used by lcl_log, prefixed with '__lcl_symbol_lcl_v'.
 enum {
   __lcl_symbol_lcl_vCritical = lcl_vCritical,
   __lcl_symbol_lcl_vError    = lcl_vError,
