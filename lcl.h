@@ -92,7 +92,7 @@
 
 // Log levels, prefixed with 'lcl_v'.
 enum {
-   _lcl_vOff = 0,
+    lcl_vOff = 0,
 
     lcl_vCritical,              // critical situation
     lcl_vError,                 // error situation
