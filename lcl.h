@@ -82,6 +82,9 @@
 //
 
 
+#import <Foundation/Foundation.h>
+
+
 //
 // Log levels.
 //
