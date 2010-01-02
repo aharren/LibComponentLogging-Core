@@ -28,7 +28,7 @@
 
 
 // Active log levels, indexed by log component.
-_lcl_level_t _lcl_level[_lcl_component_t_count];
+_lcl_level_t _lcl_component_level[_lcl_component_t_count];
 
 // Log component headers, indexed by log component.
 const char * const _lcl_component_header[] = {
