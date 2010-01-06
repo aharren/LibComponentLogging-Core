@@ -1,0 +1,12 @@
+
+# Xcode user settings
+*.perspective
+*.perspectivev3
+*.pbxuser
+*.mode1v3
+
+# Xcode build files
+build/*
+
+# OS X files 
+.DS_Store
