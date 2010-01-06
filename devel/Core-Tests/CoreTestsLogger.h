@@ -34,6 +34,9 @@
     
 }
 
+// Resets the logger.
++ (void)reset;
+
 // Returns an auto-released copy of the last log entry if it exists,
 // returns @"NO LOG ENTRY" otherwise.
 + (NSString *)lastLogEntry;

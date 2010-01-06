@@ -31,6 +31,12 @@ static NSString *CoreTestsLogger_lastLogEntry = nil;
 
 @implementation CoreTestsLogger
 
+// Resets the logger.
++ (void)reset {
+    [CoreTestsLogger_lastLogEntry release];
+    CoreTestsLogger_lastLogEntry = nil;
+}
+
 // Returns an auto-released copy of the last log entry if it exists,
 // returns @"NO LOG ENTRY" otherwise.
 + (NSString *)lastLogEntry {
