@@ -14,6 +14,8 @@
 		E0303E5910F4DDF60032A42B /* CoreTestsLogLevelsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E0303E5710F4DDF60032A42B /* CoreTestsLogLevelsTests.m */; };
 		E0303E6710F4DEF60032A42B /* CoreTestsLogComponentsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E0303E6610F4DEF60032A42B /* CoreTestsLogComponentsTests.m */; };
 		E0303E6810F4DEF60032A42B /* CoreTestsLogComponentsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E0303E6610F4DEF60032A42B /* CoreTestsLogComponentsTests.m */; };
+		E0303E8310F4E15C0032A42B /* CoreTestsCustomLogMacrosTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E0303E8210F4E15C0032A42B /* CoreTestsCustomLogMacrosTests.m */; };
+		E0303E8410F4E15C0032A42B /* CoreTestsCustomLogMacrosTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E0303E8210F4E15C0032A42B /* CoreTestsCustomLogMacrosTests.m */; };
 		E09F2CBC10F4B82400246AAA /* CoreTestsLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = E09F2CBB10F4B82400246AAA /* CoreTestsLogger.m */; };
 		E0EB42DF10F4ABB4009540E4 /* lcl.m in Sources */ = {isa = PBXBuildFile; fileRef = E0EB42DE10F4ABB4009540E4 /* lcl.m */; };
 		E0EB440510F4B3C6009540E4 /* lcl.m in Sources */ = {isa = PBXBuildFile; fileRef = E0EB42DE10F4ABB4009540E4 /* lcl.m */; };
@@ -33,6 +35,7 @@
 		E0303DEC10F4D26B0032A42B /* CoreTestsLoggingTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreTestsLoggingTests.m; path = "Core-Tests/CoreTestsLoggingTests.m"; sourceTree = "<group>"; };
 		E0303E5710F4DDF60032A42B /* CoreTestsLogLevelsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreTestsLogLevelsTests.m; path = "Core-Tests/CoreTestsLogLevelsTests.m"; sourceTree = "<group>"; };
 		E0303E6610F4DEF60032A42B /* CoreTestsLogComponentsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreTestsLogComponentsTests.m; path = "Core-Tests/CoreTestsLogComponentsTests.m"; sourceTree = "<group>"; };
+		E0303E8210F4E15C0032A42B /* CoreTestsCustomLogMacrosTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreTestsCustomLogMacrosTests.m; path = "Core-Tests/CoreTestsCustomLogMacrosTests.m"; sourceTree = "<group>"; };
 		E09F2CAE10F4B75E00246AAA /* CoreTests.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreTests.pch; path = "Core-Tests/CoreTests.pch"; sourceTree = "<group>"; };
 		E09F2CBA10F4B82400246AAA /* CoreTestsLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreTestsLogger.h; path = "Core-Tests/CoreTestsLogger.h"; sourceTree = "<group>"; };
 		E09F2CBB10F4B82400246AAA /* CoreTestsLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreTestsLogger.m; path = "Core-Tests/CoreTestsLogger.m"; sourceTree = "<group>"; };
@@ -98,6 +101,7 @@
 				E0303DEC10F4D26B0032A42B /* CoreTestsLoggingTests.m */,
 				E0303E5710F4DDF60032A42B /* CoreTestsLogLevelsTests.m */,
 				E0303E6610F4DEF60032A42B /* CoreTestsLogComponentsTests.m */,
+				E0303E8210F4E15C0032A42B /* CoreTestsCustomLogMacrosTests.m */,
 				E0EB43A810F4B1EB009540E4 /* Core-Tests-Info.plist */,
 			);
 			name = "Core-Tests";
@@ -218,6 +222,7 @@
 				E0303DED10F4D26B0032A42B /* CoreTestsLoggingTests.m in Sources */,
 				E0303E5810F4DDF60032A42B /* CoreTestsLogLevelsTests.m in Sources */,
 				E0303E6810F4DEF60032A42B /* CoreTestsLogComponentsTests.m in Sources */,
+				E0303E8410F4E15C0032A42B /* CoreTestsCustomLogMacrosTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,6 +235,7 @@
 				E0303E3F10F4DC960032A42B /* CoreTestsLoggingTests.m in Sources */,
 				E0303E5910F4DDF60032A42B /* CoreTestsLogLevelsTests.m in Sources */,
 				E0303E6710F4DEF60032A42B /* CoreTestsLogComponentsTests.m in Sources */,
+				E0303E8310F4E15C0032A42B /* CoreTestsCustomLogMacrosTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
