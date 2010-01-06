@@ -24,5 +24,9 @@
 // THE SOFTWARE.
 
 
-_lcl_component(Main, "Main", "Main")
+_lcl_component(Main,            "Main",             "Main")
+_lcl_component(MainComponent1,  "Main:Component1",  "Main/Component1")
+_lcl_component(MainComponent2,  "Main:Component2",  "Main/Component2")
+
+_lcl_component(Main2,           "Main2",            "Main2")
 
