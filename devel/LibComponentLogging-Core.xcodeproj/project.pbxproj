@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E0303DED10F4D26B0032A42B /* CoreTestsLoggingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E0303DEC10F4D26B0032A42B /* CoreTestsLoggingTests.m */; };
 		E09F2CBC10F4B82400246AAA /* CoreTestsLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = E09F2CBB10F4B82400246AAA /* CoreTestsLogger.m */; };
 		E0EB42DF10F4ABB4009540E4 /* lcl.m in Sources */ = {isa = PBXBuildFile; fileRef = E0EB42DE10F4ABB4009540E4 /* lcl.m */; };
 		E0EB440510F4B3C6009540E4 /* lcl.m in Sources */ = {isa = PBXBuildFile; fileRef = E0EB42DE10F4ABB4009540E4 /* lcl.m */; };
@@ -23,6 +24,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E0303DEC10F4D26B0032A42B /* CoreTestsLoggingTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreTestsLoggingTests.m; path = "Core-Tests/CoreTestsLoggingTests.m"; sourceTree = "<group>"; };
 		E09F2CAE10F4B75E00246AAA /* CoreTests.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreTests.pch; path = "Core-Tests/CoreTests.pch"; sourceTree = "<group>"; };
 		E09F2CBA10F4B82400246AAA /* CoreTestsLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreTestsLogger.h; path = "Core-Tests/CoreTestsLogger.h"; sourceTree = "<group>"; };
 		E09F2CBB10F4B82400246AAA /* CoreTestsLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreTestsLogger.m; path = "Core-Tests/CoreTestsLogger.m"; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				E09F2CAE10F4B75E00246AAA /* CoreTests.pch */,
 				E09F2CBA10F4B82400246AAA /* CoreTestsLogger.h */,
 				E09F2CBB10F4B82400246AAA /* CoreTestsLogger.m */,
+				E0303DEC10F4D26B0032A42B /* CoreTestsLoggingTests.m */,
 				E0EB43A810F4B1EB009540E4 /* Core-Tests-Info.plist */,
 			);
 			name = "Core-Tests";
@@ -202,6 +205,7 @@
 			files = (
 				E0EB42DF10F4ABB4009540E4 /* lcl.m in Sources */,
 				E09F2CBC10F4B82400246AAA /* CoreTestsLogger.m in Sources */,
+				E0303DED10F4D26B0032A42B /* CoreTestsLoggingTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
