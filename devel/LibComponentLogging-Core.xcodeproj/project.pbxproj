@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E09F2CBC10F4B82400246AAA /* CoreTestsLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = E09F2CBB10F4B82400246AAA /* CoreTestsLogger.m */; };
 		E0EB42DF10F4ABB4009540E4 /* lcl.m in Sources */ = {isa = PBXBuildFile; fileRef = E0EB42DE10F4ABB4009540E4 /* lcl.m */; };
 		E0EB440510F4B3C6009540E4 /* lcl.m in Sources */ = {isa = PBXBuildFile; fileRef = E0EB42DE10F4ABB4009540E4 /* lcl.m */; };
 /* End PBXBuildFile section */
@@ -16,12 +17,15 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = E00B95E40F2C88F800309460 /* Core-Tests-MacOSX-10.5 */;
+			remoteGlobalIDString = E00B95E40F2C88F800309460;
 			remoteInfo = "Core-Tests-MacOSX-10.5";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E09F2CAE10F4B75E00246AAA /* CoreTests.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreTests.pch; path = "Core-Tests/CoreTests.pch"; sourceTree = "<group>"; };
+		E09F2CBA10F4B82400246AAA /* CoreTestsLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreTestsLogger.h; path = "Core-Tests/CoreTestsLogger.h"; sourceTree = "<group>"; };
+		E09F2CBB10F4B82400246AAA /* CoreTestsLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreTestsLogger.m; path = "Core-Tests/CoreTestsLogger.m"; sourceTree = "<group>"; };
 		E0EB42DB10F4ABB4009540E4 /* lcl_config_components.template.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lcl_config_components.template.h; path = ../lcl_config_components.template.h; sourceTree = SOURCE_ROOT; };
 		E0EB42DC10F4ABB4009540E4 /* lcl_config_logger.template.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lcl_config_logger.template.h; path = ../lcl_config_logger.template.h; sourceTree = SOURCE_ROOT; };
 		E0EB42DD10F4ABB4009540E4 /* lcl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lcl.h; path = ../lcl.h; sourceTree = SOURCE_ROOT; };
@@ -78,6 +82,9 @@
 			children = (
 				E0EB42FF10F4ACEF009540E4 /* lcl_config_components.h */,
 				E0EB430010F4ACEF009540E4 /* lcl_config_logger.h */,
+				E09F2CAE10F4B75E00246AAA /* CoreTests.pch */,
+				E09F2CBA10F4B82400246AAA /* CoreTestsLogger.h */,
+				E09F2CBB10F4B82400246AAA /* CoreTestsLogger.m */,
 				E0EB43A810F4B1EB009540E4 /* Core-Tests-Info.plist */,
 			);
 			name = "Core-Tests";
@@ -194,6 +201,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0EB42DF10F4ABB4009540E4 /* lcl.m in Sources */,
+				E09F2CBC10F4B82400246AAA /* CoreTestsLogger.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,7 +267,7 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "";
+				GCC_PREFIX_HEADER = "Core-Tests/CoreTests.pch";
 				GCC_TREAT_IMPLICIT_FUNCTION_DECLARATIONS_AS_ERRORS = YES;
 				GCC_TREAT_NONCONFORMANT_CODE_ERRORS_AS_WARNINGS = YES;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
@@ -281,6 +289,8 @@
 				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
 					"-framework",
 					SenTestingKit,
 				);
@@ -307,7 +317,7 @@
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "";
+				GCC_PREFIX_HEADER = "Core-Tests/CoreTests.pch";
 				GCC_TREAT_IMPLICIT_FUNCTION_DECLARATIONS_AS_ERRORS = YES;
 				GCC_TREAT_NONCONFORMANT_CODE_ERRORS_AS_WARNINGS = YES;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
@@ -328,6 +338,8 @@
 				INFOPLIST_FILE = "Core-Tests/Core-Tests-Info.plist";
 				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
 				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
 					"-framework",
 					SenTestingKit,
 				);
@@ -351,10 +363,12 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "";
+				GCC_PREFIX_HEADER = "Core-Tests/CoreTests.pch";
 				INFOPLIST_FILE = "Core-Tests/Core-Tests-Info.plist";
 				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
 				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
 					"-framework",
 					SenTestingKit,
 				);
@@ -375,10 +389,12 @@
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "";
+				GCC_PREFIX_HEADER = "Core-Tests/CoreTests.pch";
 				INFOPLIST_FILE = "Core-Tests/Core-Tests-Info.plist";
 				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
 				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
 					"-framework",
 					SenTestingKit,
 				);
