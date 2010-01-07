@@ -51,6 +51,12 @@
     STAssertEquals((int)_lcl_component_level[lcl_cMainComponent2], lcl_vOff, nil);
     STAssertEquals((int)_lcl_component_level[lcl_cMain2], lcl_vOff, nil);
     
+    configured = lcl_configure_by_component(lcl_cMain, (_lcl_component_t)-1);
+    STAssertEquals(configured, 0, nil);
+    
+    configured = lcl_configure_by_component(lcl_cMain, 99);
+    STAssertEquals(configured, 0, nil);
+    
     configured = lcl_configure_by_component(lcl_cMain, lcl_vInfo);
     STAssertEquals(configured, 1, nil);
     STAssertEquals((int)_lcl_component_level[lcl_cMain], lcl_vInfo, nil);
@@ -73,6 +79,129 @@
     STAssertEquals((int)_lcl_component_level[lcl_cMain2], lcl_vCritical, nil);
 }
 
+- (void)testConfigureByIdentifier {
+    int configured = 0;
+    
+    STAssertEquals((int)_lcl_component_level[lcl_cMain], lcl_vOff, nil);
+    STAssertEquals((int)_lcl_component_level[lcl_cMainComponent1], lcl_vOff, nil);
+    STAssertEquals((int)_lcl_component_level[lcl_cMainComponent2], lcl_vOff, nil);
+    STAssertEquals((int)_lcl_component_level[lcl_cMain2], lcl_vOff, nil);
+    
+    configured = lcl_configure_by_identifier("Main", (_lcl_component_t)-1);
+    STAssertEquals(configured, 0, nil);
+    
+    configured = lcl_configure_by_identifier("Main", 99);
+    STAssertEquals(configured, 0, nil);
+    
+    configured = lcl_configure_by_identifier(NULL, lcl_vTrace);
+    STAssertEquals(configured, 0, nil);
+    
+    configured = lcl_configure_by_identifier("", lcl_vTrace);
+    STAssertEquals(configured, 0, nil);
+    
+    configured = lcl_configure_by_identifier("Main", lcl_vInfo);
+    STAssertEquals(configured, 1, nil);
+    STAssertEquals((int)_lcl_component_level[lcl_cMain], lcl_vInfo, nil);
+    STAssertEquals((int)_lcl_component_level[lcl_cMainComponent1], lcl_vOff, nil);
+    STAssertEquals((int)_lcl_component_level[lcl_cMainComponent2], lcl_vOff, nil);
+    STAssertEquals((int)_lcl_component_level[lcl_cMain2], lcl_vOff, nil);
+    
+    configured = lcl_configure_by_identifier("MainComponent2", lcl_vDebug);
+    STAssertEquals(configured, 1, nil);
+    STAssertEquals((int)_lcl_component_level[lcl_cMain], lcl_vInfo, nil);
+    STAssertEquals((int)_lcl_component_level[lcl_cMainComponent1], lcl_vOff, nil);
+    STAssertEquals((int)_lcl_component_level[lcl_cMainComponent2], lcl_vDebug, nil);
+    STAssertEquals((int)_lcl_component_level[lcl_cMain2], lcl_vOff, nil);
+    
+    configured = lcl_configure_by_identifier("Main2", lcl_vCritical);
+    STAssertEquals(configured, 1, nil);
+    STAssertEquals((int)_lcl_component_level[lcl_cMain], lcl_vInfo, nil);
+    STAssertEquals((int)_lcl_component_level[lcl_cMainComponent1], lcl_vOff, nil);
+    STAssertEquals((int)_lcl_component_level[lcl_cMainComponent2], lcl_vDebug, nil);
+    STAssertEquals((int)_lcl_component_level[lcl_cMain2], lcl_vCritical, nil);
+}
+
+- (void)testConfigureByIdentifierWithWildcardSuffix {
+    int configured = 0;
+    
+    STAssertEquals((int)_lcl_component_level[lcl_cMain], lcl_vOff, nil);
+    STAssertEquals((int)_lcl_component_level[lcl_cMainComponent1], lcl_vOff, nil);
+    STAssertEquals((int)_lcl_component_level[lcl_cMainComponent2], lcl_vOff, nil);
+    STAssertEquals((int)_lcl_component_level[lcl_cMain2], lcl_vOff, nil);
+    
+    configured = lcl_configure_by_identifier("MainC*", lcl_vDebug);
+    STAssertEquals(configured, 2, nil);
+    STAssertEquals((int)_lcl_component_level[lcl_cMain], lcl_vOff, nil);
+    STAssertEquals((int)_lcl_component_level[lcl_cMainComponent1], lcl_vDebug, nil);
+    STAssertEquals((int)_lcl_component_level[lcl_cMainComponent2], lcl_vDebug, nil);
+    STAssertEquals((int)_lcl_component_level[lcl_cMain2], lcl_vOff, nil);
+    
+    configured = lcl_configure_by_identifier("Main*", lcl_vTrace);
+    STAssertEquals(configured, 4, nil);
+    STAssertEquals((int)_lcl_component_level[lcl_cMain], lcl_vTrace, nil);
+    STAssertEquals((int)_lcl_component_level[lcl_cMainComponent1], lcl_vTrace, nil);
+    STAssertEquals((int)_lcl_component_level[lcl_cMainComponent2], lcl_vTrace, nil);
+    STAssertEquals((int)_lcl_component_level[lcl_cMain2], lcl_vTrace, nil);
+}
+
+- (void)testConfigureByHeader {
+    int configured = 0;
+    
+    STAssertEquals((int)_lcl_component_level[lcl_cMain], lcl_vOff, nil);
+    STAssertEquals((int)_lcl_component_level[lcl_cMainComponent1], lcl_vOff, nil);
+    STAssertEquals((int)_lcl_component_level[lcl_cMainComponent2], lcl_vOff, nil);
+    STAssertEquals((int)_lcl_component_level[lcl_cMain2], lcl_vOff, nil);
+    
+    configured = lcl_configure_by_header("Main", (_lcl_component_t)-1);
+    STAssertEquals(configured, 0, nil);
+    
+    configured = lcl_configure_by_header("Main", 99);
+    STAssertEquals(configured, 0, nil);
+    
+    configured = lcl_configure_by_header(NULL, lcl_vTrace);
+    STAssertEquals(configured, 0, nil);
+    
+    configured = lcl_configure_by_header("", lcl_vTrace);
+    STAssertEquals(configured, 0, nil);
+    
+    configured = lcl_configure_by_header("Main", lcl_vInfo);
+    STAssertEquals(configured, 1, nil);
+    STAssertEquals((int)_lcl_component_level[lcl_cMain], lcl_vInfo, nil);
+    STAssertEquals((int)_lcl_component_level[lcl_cMainComponent1], lcl_vOff, nil);
+    STAssertEquals((int)_lcl_component_level[lcl_cMainComponent2], lcl_vOff, nil);
+    STAssertEquals((int)_lcl_component_level[lcl_cMain2], lcl_vOff, nil);
+    
+    configured = lcl_configure_by_header("Main:Component2", lcl_vDebug);
+    STAssertEquals(configured, 1, nil);
+    STAssertEquals((int)_lcl_component_level[lcl_cMain], lcl_vInfo, nil);
+    STAssertEquals((int)_lcl_component_level[lcl_cMainComponent1], lcl_vOff, nil);
+    STAssertEquals((int)_lcl_component_level[lcl_cMainComponent2], lcl_vDebug, nil);
+    STAssertEquals((int)_lcl_component_level[lcl_cMain2], lcl_vOff, nil);
+    
+    configured = lcl_configure_by_header("Main2", lcl_vCritical);
+    STAssertEquals(configured, 1, nil);
+    STAssertEquals((int)_lcl_component_level[lcl_cMain], lcl_vInfo, nil);
+    STAssertEquals((int)_lcl_component_level[lcl_cMainComponent1], lcl_vOff, nil);
+    STAssertEquals((int)_lcl_component_level[lcl_cMainComponent2], lcl_vDebug, nil);
+    STAssertEquals((int)_lcl_component_level[lcl_cMain2], lcl_vCritical, nil);
+}
+
+- (void)testConfigureByHeaderWithWildcardSuffix {
+    int configured = 0;
+    
+    STAssertEquals((int)_lcl_component_level[lcl_cMain], lcl_vOff, nil);
+    STAssertEquals((int)_lcl_component_level[lcl_cMainComponent1], lcl_vOff, nil);
+    STAssertEquals((int)_lcl_component_level[lcl_cMainComponent2], lcl_vOff, nil);
+    STAssertEquals((int)_lcl_component_level[lcl_cMain2], lcl_vOff, nil);
+    
+    configured = lcl_configure_by_header("Main:*", lcl_vDebug);
+    STAssertEquals(configured, 2, nil);
+    STAssertEquals((int)_lcl_component_level[lcl_cMain], lcl_vOff, nil);
+    STAssertEquals((int)_lcl_component_level[lcl_cMainComponent1], lcl_vDebug, nil);
+    STAssertEquals((int)_lcl_component_level[lcl_cMainComponent2], lcl_vDebug, nil);
+    STAssertEquals((int)_lcl_component_level[lcl_cMain2], lcl_vOff, nil);
+}
+
 - (void)testConfigureByName {
     int configured = 0;
     
@@ -80,6 +209,18 @@
     STAssertEquals((int)_lcl_component_level[lcl_cMainComponent1], lcl_vOff, nil);
     STAssertEquals((int)_lcl_component_level[lcl_cMainComponent2], lcl_vOff, nil);
     STAssertEquals((int)_lcl_component_level[lcl_cMain2], lcl_vOff, nil);
+    
+    configured = lcl_configure_by_name("Main", (_lcl_component_t)-1);
+    STAssertEquals(configured, 0, nil);
+    
+    configured = lcl_configure_by_name("Main", 99);
+    STAssertEquals(configured, 0, nil);
+    
+    configured = lcl_configure_by_name(NULL, lcl_vTrace);
+    STAssertEquals(configured, 0, nil);
+    
+    configured = lcl_configure_by_name("", lcl_vTrace);
+    STAssertEquals(configured, 0, nil);
     
     configured = lcl_configure_by_name("Main", lcl_vInfo);
     STAssertEquals(configured, 1, nil);
@@ -138,6 +279,13 @@
     STAssertEquals((int)_lcl_component_level[lcl_cMainComponent1], lcl_vError, nil);
     STAssertEquals((int)_lcl_component_level[lcl_cMainComponent2], lcl_vDebug, nil);
     STAssertEquals((int)_lcl_component_level[lcl_cMain2], lcl_vCritical, nil);
+    
+    configured = lcl_configure_by_name("*", lcl_vTrace);
+    STAssertEquals(configured, 4, nil);
+    STAssertEquals((int)_lcl_component_level[lcl_cMain], lcl_vTrace, nil);
+    STAssertEquals((int)_lcl_component_level[lcl_cMainComponent1], lcl_vTrace, nil);
+    STAssertEquals((int)_lcl_component_level[lcl_cMainComponent2], lcl_vTrace, nil);
+    STAssertEquals((int)_lcl_component_level[lcl_cMain2], lcl_vTrace, nil);
 }
 
 @end

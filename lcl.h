@@ -171,6 +171,26 @@ typedef uint32_t _lcl_component_t;
 //
 uint32_t lcl_configure_by_component(_lcl_component_t component, _lcl_level_t level);
 
+// lcl_configure_by_identifier(<identifier>, <level>)
+//
+// <identifier>: a log component's identifier with optional '*' wildcard suffix
+// <level>     : a log level with prefix 'lcl_v'
+//
+// Configures the given log level for the given log component(s).
+// Returns the number of configured log components, or 0 on failure.
+//
+uint32_t lcl_configure_by_identifier(const char *identifier, _lcl_level_t level);
+
+// lcl_configure_by_header(<header>, <level>)
+//
+// <header>    : a log component's header with optional '*' wildcard suffix
+// <level>     : a log level with prefix 'lcl_v'
+//
+// Configures the given log level for the given log component(s).
+// Returns the number of configured log components, or 0 on failure.
+//
+uint32_t lcl_configure_by_header(const char *header, _lcl_level_t level);
+
 // lcl_configure_by_name(<name>, <level>)
 //
 // <name>     : a log component's name with optional '*' wildcard suffix
