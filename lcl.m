@@ -30,6 +30,14 @@
 // Active log levels, indexed by log component.
 _lcl_level_narrow_t _lcl_component_level[_lcl_component_t_count];
 
+// Log component identifiers, indexed by log component.
+const char * const _lcl_component_identifier[] = {
+#   define  _lcl_component(_identifier, _header, _name)                        \
+    #_identifier,
+#   include "lcl_config_components.h"
+#   undef   _lcl_component
+};
+
 // Log component headers, indexed by log component.
 const char * const _lcl_component_header[] = {
 #   define  _lcl_component(_identifier, _header, _name)                        \

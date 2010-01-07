@@ -51,6 +51,13 @@
     STAssertEquals(_lcl_component_t_count, 4, nil);
 }
 
+- (void)testLogComponentsIdentifiers {
+    STAssertEqualObjects(_(_lcl_component_identifier[lcl_cMain]), _("Main"), nil);
+    STAssertEqualObjects(_(_lcl_component_identifier[lcl_cMainComponent1]), _("MainComponent1"), nil);
+    STAssertEqualObjects(_(_lcl_component_identifier[lcl_cMainComponent2]), _("MainComponent2"), nil);
+    STAssertEqualObjects(_(_lcl_component_identifier[lcl_cMain2]), _("Main2"), nil);
+}
+
 - (void)testLogComponentsNames {
     STAssertEqualObjects(_(_lcl_component_name[lcl_cMain]), _("Main"), nil);
     STAssertEqualObjects(_(_lcl_component_name[lcl_cMainComponent1]), _("Main/Component1"), nil);
