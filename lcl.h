@@ -247,5 +247,7 @@ enum {
 // Concrete logging backend and definition of _lcl_logger.
 #import "lcl_config_logger.h"
 
+// Include extensions.
+#import "lcl_config_extensions.h"
 
 #endif // __LCL_H__
