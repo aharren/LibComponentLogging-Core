@@ -57,6 +57,7 @@
 		E09F2CAE10F4B75E00246AAA /* CoreTests.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreTests.pch; path = "Core-Tests/CoreTests.pch"; sourceTree = "<group>"; };
 		E09F2CBA10F4B82400246AAA /* CoreTestsLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreTestsLogger.h; path = "Core-Tests/CoreTestsLogger.h"; sourceTree = "<group>"; };
 		E09F2CBB10F4B82400246AAA /* CoreTestsLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreTestsLogger.m; path = "Core-Tests/CoreTestsLogger.m"; sourceTree = "<group>"; };
+		E0A6310D1114D5B700E42352 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.md; path = ../README.md; sourceTree = SOURCE_ROOT; };
 		E0EB42DB10F4ABB4009540E4 /* lcl_config_components.template.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lcl_config_components.template.h; path = ../lcl_config_components.template.h; sourceTree = SOURCE_ROOT; };
 		E0EB42DC10F4ABB4009540E4 /* lcl_config_logger.template.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lcl_config_logger.template.h; path = ../lcl_config_logger.template.h; sourceTree = SOURCE_ROOT; };
 		E0EB42DD10F4ABB4009540E4 /* lcl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lcl.h; path = ../lcl.h; sourceTree = SOURCE_ROOT; };
@@ -98,6 +99,7 @@
 		29B97314FDCFA39411CA2CEA /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				E0A6310D1114D5B700E42352 /* README.md */,
 				E0E417970F2128750036D6FD /* Core */,
 				E0EB42E310F4ABE9009540E4 /* Core-Tests */,
 				E0EB43E810F4B365009540E4 /* Core-Tests.octest */,
