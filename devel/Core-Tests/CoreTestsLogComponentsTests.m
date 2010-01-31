@@ -66,10 +66,10 @@
 }
 
 - (void)testLogComponentsHeaders {
-    STAssertEqualObjects(_(_lcl_component_header[lcl_cMain]), _("Main"), nil);
-    STAssertEqualObjects(_(_lcl_component_header[lcl_cMainComponent1]), _("Main:Component1"), nil);
-    STAssertEqualObjects(_(_lcl_component_header[lcl_cMainComponent2]), _("Main:Component2"), nil);
-    STAssertEqualObjects(_(_lcl_component_header[lcl_cMain2]), _("Main2"), nil);
+    STAssertEqualObjects(_(_lcl_component_header[lcl_cMain]), _("main"), nil);
+    STAssertEqualObjects(_(_lcl_component_header[lcl_cMainComponent1]), _("main.component1"), nil);
+    STAssertEqualObjects(_(_lcl_component_header[lcl_cMainComponent2]), _("main.component2"), nil);
+    STAssertEqualObjects(_(_lcl_component_header[lcl_cMain2]), _("main2"), nil);
 }
 
 @end

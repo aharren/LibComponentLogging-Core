@@ -82,27 +82,27 @@
     int counter = 0;
     
     lcl_log(lcl_cMain, lcl_vCritical, @"message %d", ++counter);
-    STAssertEqualObjects([CoreTestsLogger lastLogEntry], @"CRITICAL Main message 1", nil);
+    STAssertEqualObjects([CoreTestsLogger lastLogEntry], @"CRITICAL main message 1", nil);
     STAssertEquals(counter, 1, nil);
     
     lcl_log(lcl_cMain, lcl_vError, @"message %d", ++counter);
-    STAssertEqualObjects([CoreTestsLogger lastLogEntry], @"ERROR Main message 2", nil);
+    STAssertEqualObjects([CoreTestsLogger lastLogEntry], @"ERROR main message 2", nil);
     STAssertEquals(counter, 2, nil);
     
     lcl_log(lcl_cMain, lcl_vWarning, @"message %d", ++counter);
-    STAssertEqualObjects([CoreTestsLogger lastLogEntry], @"WARNING Main message 3", nil);
+    STAssertEqualObjects([CoreTestsLogger lastLogEntry], @"WARNING main message 3", nil);
     STAssertEquals(counter, 3, nil);
     
     lcl_log(lcl_cMain, lcl_vInfo, @"message %d", ++counter);
-    STAssertEqualObjects([CoreTestsLogger lastLogEntry], @"INFO Main message 4", nil);
+    STAssertEqualObjects([CoreTestsLogger lastLogEntry], @"INFO main message 4", nil);
     STAssertEquals(counter, 4, nil);
     
     lcl_log(lcl_cMain, lcl_vDebug, @"message %d", ++counter);
-    STAssertEqualObjects([CoreTestsLogger lastLogEntry], @"INFO Main message 4", nil);
+    STAssertEqualObjects([CoreTestsLogger lastLogEntry], @"INFO main message 4", nil);
     STAssertEquals(counter, 4, nil);
     
     lcl_log(lcl_cMain, lcl_vTrace, @"message %d", ++counter);
-    STAssertEqualObjects([CoreTestsLogger lastLogEntry], @"INFO Main message 4", nil);
+    STAssertEqualObjects([CoreTestsLogger lastLogEntry], @"INFO main message 4", nil);
     STAssertEquals(counter, 4, nil);
 }
 
@@ -115,27 +115,27 @@
     int counter = 0;
     
     lcl_log(lcl_cMain, lcl_vCritical, @"message %d", ++counter);
-    STAssertEqualObjects([CoreTestsLogger lastLogEntry], @"CRITICAL Main message 1", nil);
+    STAssertEqualObjects([CoreTestsLogger lastLogEntry], @"CRITICAL main message 1", nil);
     STAssertEquals(counter, 1, nil);
     
     lcl_log(lcl_cMain, lcl_vError, @"message %d", ++counter);
-    STAssertEqualObjects([CoreTestsLogger lastLogEntry], @"ERROR Main message 2", nil);
+    STAssertEqualObjects([CoreTestsLogger lastLogEntry], @"ERROR main message 2", nil);
     STAssertEquals(counter, 2, nil);
     
     lcl_log(lcl_cMain, lcl_vWarning, @"message %d", ++counter);
-    STAssertEqualObjects([CoreTestsLogger lastLogEntry], @"WARNING Main message 3", nil);
+    STAssertEqualObjects([CoreTestsLogger lastLogEntry], @"WARNING main message 3", nil);
     STAssertEquals(counter, 3, nil);
     
     lcl_log(lcl_cMain, lcl_vInfo, @"message %d", ++counter);
-    STAssertEqualObjects([CoreTestsLogger lastLogEntry], @"INFO Main message 4", nil);
+    STAssertEqualObjects([CoreTestsLogger lastLogEntry], @"INFO main message 4", nil);
     STAssertEquals(counter, 4, nil);
     
     lcl_log(lcl_cMain, lcl_vDebug, @"message %d", ++counter);
-    STAssertEqualObjects([CoreTestsLogger lastLogEntry], @"DEBUG Main message 5", nil);
+    STAssertEqualObjects([CoreTestsLogger lastLogEntry], @"DEBUG main message 5", nil);
     STAssertEquals(counter, 5, nil);
     
     lcl_log(lcl_cMain, lcl_vTrace, @"message %d", ++counter);
-    STAssertEqualObjects([CoreTestsLogger lastLogEntry], @"TRACE Main message 6", nil);
+    STAssertEqualObjects([CoreTestsLogger lastLogEntry], @"TRACE main message 6", nil);
     STAssertEquals(counter, 6, nil);
 }
 
