@@ -65,3 +65,5 @@ _lcl_component(MainComponent2,  "main.component2",  "Main/Component2")
 
 _lcl_component(Main2,           "main2",            "Main2")
 
+_lcl_component(Main3,           "main3",            "Main3")
+

@@ -23,3 +23,10 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+
+#ifdef CORE_TESTS_TEMPLATES_BUILD
+#include "lcl_config_extensions.template.h"
+#else
+// emtpy
+#endif
+

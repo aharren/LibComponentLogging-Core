@@ -24,9 +24,13 @@
 // THE SOFTWARE.
 
 
+#ifdef CORE_TESTS_TEMPLATES_BUILD
+#include "lcl_config_components.template.h"
+#else
 _lcl_component(Main,            "main",             "Main")
 _lcl_component(MainComponent1,  "main.component1",  "Main/Component1")
 _lcl_component(MainComponent2,  "main.component2",  "Main/Component2")
 
 _lcl_component(Main2,           "main2",            "Main2")
+#endif
 
