@@ -27,6 +27,6 @@
 #ifdef CORE_TESTS_TEMPLATES_BUILD
 #include "lcl_config_extensions.template.h"
 #else
-// emtpy
+// no extensions
 #endif
 
