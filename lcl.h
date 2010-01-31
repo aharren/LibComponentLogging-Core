@@ -111,7 +111,6 @@ typedef uint32_t _lcl_level_t;
 typedef uint8_t  _lcl_level_narrow_t;
 
 
-
 //
 // Log components.
 //
@@ -251,3 +250,4 @@ enum {
 #import "lcl_config_extensions.h"
 
 #endif // __LCL_H__
+

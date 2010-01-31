@@ -172,3 +172,4 @@ uint32_t lcl_configure_by_name(const char *name, _lcl_level_t level) {
     return _lcl_configure_by_text(_lcl_component_t_count, _lcl_component_name,
                                   _lcl_component_level, name, level);
 }
+
