@@ -24,6 +24,12 @@
 // THE SOFTWARE.
 
 //
-// This file contains the definitions (e.g. includes) of log extensions.
+// lcl_config_extensions.h template.
+//
+
+
+//
+// The lcl_config_extensions.h file can be used to #include, #import, or define
+// log extensions.
 //
 
