@@ -103,9 +103,9 @@ const char * const _lcl_version = __lcl_version_to_string(_LCL_VERSION_MAJOR)
 
 // Configures the given log level for the given log component.
 uint32_t lcl_configure_by_component(_lcl_component_t component, _lcl_level_t level) {
-    // unsupported level, quit
+    // unsupported level, clip to last level
     if (level > _lcl_level_t_last) {
-        return 0;
+        level = _lcl_level_t_last;
     }
     
     // configure the component
@@ -126,9 +126,9 @@ static uint32_t _lcl_configure_by_text(uint32_t count, const char * const *texts
         return 0;
     }
     
-    // unsupported level, quit
+    // unsupported level, clip to last level
     if (level > _lcl_level_t_last) {
-        return 0;
+        level = _lcl_level_t_last;
     }
     
     // configure the components
