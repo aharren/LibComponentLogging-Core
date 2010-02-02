@@ -81,6 +81,9 @@
 //   or a logger which writes to a log file. The concrete logger is configured
 //   at build-time.
 //
+// Note: If the preprocessor symbol _LCL_NO_LOGGING is defined, the log macro
+// will be defined to an empty effect.
+//
 
 
 #import <Foundation/Foundation.h>
@@ -152,14 +155,18 @@ typedef uint32_t _lcl_component_t;
 // The actual logging is done by _lcl_logger which must be defined by a concrete
 // logging backend. _lcl_logger has the same signature as lcl_log.
 //
-#define lcl_log(_component, _level, _format, ...)                              \
-    if ((_lcl_component_level[(__lcl_log_symbol(_component))]) >=              \
-          (__lcl_log_symbol(_level))) {                                        \
-            _lcl_logger(_component,                                            \
-                        _level,                                                \
-                        _format,                                               \
-                        ##__VA_ARGS__);                                        \
-    }
+#ifdef _LCL_NO_LOGGING
+#   define lcl_log(_component, _level, _format, ...)
+#else
+#   define lcl_log(_component, _level, _format, ...)                           \
+        if ((_lcl_component_level[(__lcl_log_symbol(_component))]) >=          \
+            (__lcl_log_symbol(_level))) {                                      \
+                _lcl_logger(_component,                                        \
+                            _level,                                            \
+                            _format,                                           \
+                            ##__VA_ARGS__);                                    \
+        }
+#endif
 
 // lcl_configure_by_component(<component>, <level>)
 //

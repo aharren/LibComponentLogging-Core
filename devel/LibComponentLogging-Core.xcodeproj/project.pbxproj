@@ -10,6 +10,7 @@
 		E013FA5F1118A6D1003A58EA /* CoreTestsInformationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E013FA5E1118A6D1003A58EA /* CoreTestsInformationTests.m */; };
 		E013FA601118A6D1003A58EA /* CoreTestsInformationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E013FA5E1118A6D1003A58EA /* CoreTestsInformationTests.m */; };
 		E013FA611118A6D1003A58EA /* CoreTestsInformationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E013FA5E1118A6D1003A58EA /* CoreTestsInformationTests.m */; };
+		E013FA941118AC3E003A58EA /* CoreTestsNoLoggingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E013FA931118AC3E003A58EA /* CoreTestsNoLoggingTests.m */; };
 		E0303DED10F4D26B0032A42B /* CoreTestsLoggingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E0303DEC10F4D26B0032A42B /* CoreTestsLoggingTests.m */; };
 		E0303E3F10F4DC960032A42B /* CoreTestsLoggingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E0303DEC10F4D26B0032A42B /* CoreTestsLoggingTests.m */; };
 		E0303E4510F4DCB50032A42B /* CoreTestsLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = E09F2CBB10F4B82400246AAA /* CoreTestsLogger.m */; };
@@ -61,6 +62,7 @@
 
 /* Begin PBXFileReference section */
 		E013FA5E1118A6D1003A58EA /* CoreTestsInformationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreTestsInformationTests.m; path = "Core-Tests/CoreTestsInformationTests.m"; sourceTree = "<group>"; };
+		E013FA931118AC3E003A58EA /* CoreTestsNoLoggingTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreTestsNoLoggingTests.m; path = "Core-Tests/CoreTestsNoLoggingTests.m"; sourceTree = "<group>"; };
 		E0303DEC10F4D26B0032A42B /* CoreTestsLoggingTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreTestsLoggingTests.m; path = "Core-Tests/CoreTestsLoggingTests.m"; sourceTree = "<group>"; };
 		E0303E5710F4DDF60032A42B /* CoreTestsLogLevelsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreTestsLogLevelsTests.m; path = "Core-Tests/CoreTestsLogLevelsTests.m"; sourceTree = "<group>"; };
 		E0303E6610F4DEF60032A42B /* CoreTestsLogComponentsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreTestsLogComponentsTests.m; path = "Core-Tests/CoreTestsLogComponentsTests.m"; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				E09F2CBB10F4B82400246AAA /* CoreTestsLogger.m */,
 				E0303EC410F4E9CF0032A42B /* CoreTestsConfigureTests.m */,
 				E0303DEC10F4D26B0032A42B /* CoreTestsLoggingTests.m */,
+				E013FA931118AC3E003A58EA /* CoreTestsNoLoggingTests.m */,
 				E0303E5710F4DDF60032A42B /* CoreTestsLogLevelsTests.m */,
 				E0303E6610F4DEF60032A42B /* CoreTestsLogComponentsTests.m */,
 				E013FA5E1118A6D1003A58EA /* CoreTestsInformationTests.m */,
@@ -402,6 +405,7 @@
 				E0303E8310F4E15C0032A42B /* CoreTestsCustomLogMacrosTests.m in Sources */,
 				E0303EC510F4E9CF0032A42B /* CoreTestsConfigureTests.m in Sources */,
 				E013FA5F1118A6D1003A58EA /* CoreTestsInformationTests.m in Sources */,
+				E013FA941118AC3E003A58EA /* CoreTestsNoLoggingTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
