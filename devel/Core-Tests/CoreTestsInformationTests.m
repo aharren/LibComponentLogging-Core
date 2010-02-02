@@ -39,7 +39,7 @@
 #define _(cstring) ((cstring == NULL) ? @"(null)" : [NSString stringWithUTF8String:cstring])
 
 - (void)testInformationVersion {
-    STAssertEqualObjects(_(_lcl_version), @"1.1.0", nil);
+    STAssertEqualObjects(_(_lcl_version), @"1.1.0-devel", nil);
 }
 
 @end
