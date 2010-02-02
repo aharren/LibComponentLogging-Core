@@ -19,11 +19,14 @@ This Git repository contains the library's Core part.
 
 The Git repository contains the following branches:
 
-* *master*: The *master* branch contains stable builds of the main logging code
+* [master](http://github.com/aharren/LibComponentLogging-Core/tree/master):
+  The *master* branch contains stable builds of the main logging code
   which are tagged with version numbers.
 
-* *devel*: The *devel* branch is the development branch for the logging code
-  which contains an Xcode project and unit tests. The code in this branch is not stable.
+* [devel](http://github.com/aharren/LibComponentLogging-Core/tree/devel):
+  The *devel* branch is the development branch for the logging code
+  which contains an Xcode project and unit tests. The code in this branch is
+  not stable.
 
 ## Related Repositories
 
