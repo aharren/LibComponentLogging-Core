@@ -99,7 +99,8 @@ const char * const _lcl_level_name[] = {
 #define __lcl_version_to_string0(_text) #_text
 const char * const _lcl_version = __lcl_version_to_string(_LCL_VERSION_MAJOR) 
                               "." __lcl_version_to_string(_LCL_VERSION_MINOR)
-                              "." __lcl_version_to_string(_LCL_VERSION_BUILD);
+                              "." __lcl_version_to_string(_LCL_VERSION_BUILD)
+                              ""  _LCL_VERSION_SUFFIX;
 
 // Configures the given log level for the given log component.
 uint32_t lcl_configure_by_component(_lcl_component_t component, _lcl_level_t level) {

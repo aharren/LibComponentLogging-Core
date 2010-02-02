@@ -29,6 +29,7 @@
 #define _LCL_VERSION_MAJOR  1
 #define _LCL_VERSION_MINOR  1
 #define _LCL_VERSION_BUILD  0
+#define _LCL_VERSION_SUFFIX ""
 
 //
 // lcl -- LibComponentLogging
