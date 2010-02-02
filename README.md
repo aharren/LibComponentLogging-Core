@@ -21,35 +21,38 @@ This Git repository contains the library's Core part.
 
 ## Installation
 
-* Download the files of the library Core and a logging back-end, e.g. the
-  LogFile logger, from their repositories on GitHub:
+Download the files of the library Core and a logging back-end, e.g. the
+LogFile logger, from their repositories on GitHub:
 
-  * [Library Core](http://github.com/aharren/LibComponentLogging-Core/downloads)
-  * [LogFile Logger](http://github.com/aharren/LibComponentLogging-LogFile/downloads)
-  * [SystemLog Logger](http://github.com/aharren/LibComponentLogging-SystemLog/downloads)
-  * [NSLog Logger](http://github.com/aharren/LibComponentLogging-NSLog/downloads)
+* [Library Core](http://github.com/aharren/LibComponentLogging-Core/downloads)
 
-* Extract the files and copy the extracted files to your application's source
-  directory.
+* [LogFile Logger](http://github.com/aharren/LibComponentLogging-LogFile/downloads)
 
-* Open Xcode and add all files of the library to your application's project.
-  Xcode will automatically add the library's implementation files to your
-  project's target.
+* [SystemLog Logger](http://github.com/aharren/LibComponentLogging-SystemLog/downloads)
 
-* Create a lcl_config_logger.h file and set up the logger, e.g. set the maximum
-  file size and the name of the log file for the LogFile logger.
+* [NSLog Logger](http://github.com/aharren/LibComponentLogging-NSLog/downloads)
 
-* Create a lcl_config_extensions.h file and optionally add #import statements
-  for logging extensions.
+Extract the files and copy the extracted files to your application's source
+directory.
 
-* Create your application's lcl_config_components.h file.
+Open Xcode and add all files of the library to your application's project.
+Xcode will automatically add the library's implementation files to your
+project's target.
 
-* Add a #import statement for lcl.h to your application files, e.g. to your
-  application's prefix header file.
+Create a lcl_config_logger.h file and set up the logger, e.g. set the maximum
+file size and the name of the log file for the LogFile logger.
 
-* Define your log components in lcl_config_components.h.
+Create a lcl_config_extensions.h file and optionally add #import statements
+for logging extensions.
 
-* Add lcl_log(...) log statements to your application.
+Create your application's lcl_config_components.h file.
+
+Add a #import statement for lcl.h to your application files, e.g. to your
+application's prefix header file.
+
+Define your log components in lcl_config_components.h.
+
+Add lcl_log(...) log statements to your application.
 
 
 ## Repository Branches
