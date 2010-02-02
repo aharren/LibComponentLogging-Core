@@ -45,7 +45,7 @@
 //   The library provides log components for identifying different parts of an
 //   application. A log component contains a unique identifier, a short name
 //   which is used as a header in a log message, and a full name which can be
-//   used in a user-interface.
+//   used in a user interface.
 //
 // - Active log level per log component
 //   At runtime, the library provides an active log level for each log
@@ -66,7 +66,7 @@
 //   with Xcode's code completion. All symbols, e.g. values or functions, which
 //   are relevant when using the logging library in an application, are prefixed
 //   with 'lcl_'. Internal symbols, which are needed when working with meta
-//   data, when defining log components, or when writing a logging backend, are
+//   data, when defining log components, or when writing a logging back-end, are
 //   prefixed with '_lcl_'. Internal symbols, which are only used by the logging
 //   library itself, are prefixed with '__lcl_'.
 //
@@ -153,7 +153,7 @@ typedef uint32_t _lcl_component_t;
 // log level is active for the log component.
 //
 // The actual logging is done by _lcl_logger which must be defined by a concrete
-// logging backend. _lcl_logger has the same signature as lcl_log.
+// logging back-end. _lcl_logger has the same signature as lcl_log.
 //
 #ifdef _LCL_NO_LOGGING
 #   define lcl_log(_component, _level, _format, ...)
@@ -251,7 +251,7 @@ enum {
 #define __lcl_log_symbol(_symbol)                                              \
     __lcl_log_symbol_##_symbol
 
-// Concrete logging backend and definition of _lcl_logger.
+// Include logging back-end and definition of _lcl_logger.
 #import "lcl_config_logger.h"
 
 // Include extensions.
