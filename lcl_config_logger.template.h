@@ -3,7 +3,7 @@
 // lcl_config_logger.h
 //
 //
-// Copyright (c) 2008-2009 Arne Harren <ah@0xc0.de>
+// Copyright (c) 2008-2010 Arne Harren <ah@0xc0.de>
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -24,33 +24,35 @@
 // THE SOFTWARE.
 
 //
-// This file contains the definition of _lcl_logger which defines the logging
-// action of a concrete logging backend.
-//
-// Use the code
-//
-//   #define _lcl_logger(log_component, log_level, log_format, ...)            \
-//       <logging action>
-//
-// for defining _lcl_logger.
+// lcl_config_logger.h template.
 //
 
 
-#if 0
+//
+// The lcl_config_logger.h file is used to define the logging back-end which
+// is used by the lcl_log() logging macro.
+//
+// For integration with the logging macro, a back-end simply defines the
+// _lcl_logger macro which has the following signature:
+//
+//   #define _lcl_logger(_component, _level, _format, ...) <logging action>
+//
+
 
 //
 // Example
 //
-#define _lcl_logger(log_component, log_level, log_format, ...) {               \
+
+// A very simple logger, which redirects to NSLog().
+#define _lcl_logger(_component, _level, _format, ...) {                        \
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];                \
-    NSLog(@"%s %s:%@:%d " log_format,                                          \
-          _lcl_level_header_1[log_level],                                      \
-          _lcl_component_header[log_component],                                \
+    NSLog(@"%s %s:%@:%d:%s " _format,                                          \
+          _lcl_level_header_1[_level],                                         \
+          _lcl_component_header[_component],                                   \
           [@__FILE__ lastPathComponent],                                       \
           __LINE__,                                                            \
+          __FUNCTION__,                                                        \
           ## __VA_ARGS__);                                                     \
     [pool release];                                                            \
 }
-
-#endif
 

@@ -3,7 +3,7 @@
 // lcl_config_components.h
 //
 //
-// Copyright (c) 2008-2009 Arne Harren <ah@0xc0.de>
+// Copyright (c) 2008-2010 Arne Harren <ah@0xc0.de>
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -24,7 +24,13 @@
 // THE SOFTWARE.
 
 //
-// This file contains the definitions of all available log components.
+// lcl_config_components.h template.
+//
+
+
+//
+// The lcl_config_components.h file is used to define the application's log
+// components.
 //
 // Use the code
 //
@@ -36,32 +42,28 @@
 //   to lcl_log etc. A symbol 'lcl_c<identifier>' is automatically created for
 //   each log component.
 //
-// - <header> is a C string in UTF-8 which should be used by concrete
-//   logging backends when writing a log message for the log component.
+// - <header> is a C string in UTF-8 which should be used by a logging back-end
+//   when writing a log message for the log component. The header is a technical
+//   key for identifying a log component's messages. It is recommended to use
+//   a 'Reverse ICANN' naming scheme when the header contains grouping
+//   information, e.g. 'example.main.component1'.
 //
 // - <name> is a C string in UTF-8 which contains the name of the log component
-//   and its grouping information. Each group should be separated by the path
-//   separator '/'.
+//   and its grouping information in a non-technical, human-readable way
+//   which could be used by a user interface. Groups should be separated by the
+//   path separator '/', e.g. 'Example/Main/Component 1'.
 // 
 
 
-#if 0
-
 //
-// Example
+// Examples
 //
-_lcl_component(Main,    "MAIN",         "Tests/Main")
-_lcl_component(MainC1,  "MAINC1",       "Tests/Main/C1")
-_lcl_component(MainC2,  "MAINC2",       "Tests/Main/C2")
 
-_lcl_component(UI1,     "UI1",          "Tests/UI/1")
-_lcl_component(UI2,     "UI2",          "Tests/UI/2")
+_lcl_component(Main,            "main",             "Main")
+_lcl_component(MainComponent1,  "main.component1",  "Main/Component1")
+_lcl_component(MainComponent2,  "main.component2",  "Main/Component2")
 
-_lcl_component(LibA1,   "LibA1",        "LibA/Component1")
-_lcl_component(LibA2,   "LibA2",        "LibA/Component2")
+_lcl_component(Main2,           "main2",            "Main2")
 
-_lcl_component(LibB1,   "LibB1",        "LibB/Component1")
-_lcl_component(LibB2,   "LibB2",        "LibB/Component2")
-
-#endif
+_lcl_component(Main3,           "main3",            "Main3")
 

@@ -3,7 +3,7 @@
 // lcl.h -- LibComponentLogging
 //
 //
-// Copyright (c) 2008-2009 Arne Harren <ah@0xc0.de>
+// Copyright (c) 2008-2010 Arne Harren <ah@0xc0.de>
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -27,8 +27,9 @@
 #define __LCL_H__
 
 #define _LCL_VERSION_MAJOR  1
-#define _LCL_VERSION_MINOR  0
-#define _LCL_VERSION_BUILD  4
+#define _LCL_VERSION_MINOR  1
+#define _LCL_VERSION_BUILD  1
+#define _LCL_VERSION_SUFFIX ""
 
 //
 // lcl -- LibComponentLogging
@@ -44,7 +45,7 @@
 //   The library provides log components for identifying different parts of an
 //   application. A log component contains a unique identifier, a short name
 //   which is used as a header in a log message, and a full name which can be
-//   used in a user-interface.
+//   used in a user interface.
 //
 // - Active log level per log component
 //   At runtime, the library provides an active log level for each log
@@ -65,7 +66,7 @@
 //   with Xcode's code completion. All symbols, e.g. values or functions, which
 //   are relevant when using the logging library in an application, are prefixed
 //   with 'lcl_'. Internal symbols, which are needed when working with meta
-//   data, when defining log components, or when writing a logging backend, are
+//   data, when defining log components, or when writing a logging back-end, are
 //   prefixed with '_lcl_'. Internal symbols, which are only used by the logging
 //   library itself, are prefixed with '__lcl_'.
 //
@@ -79,6 +80,9 @@
 //   application's requirements, e.g. a logger which writes to the system log,
 //   or a logger which writes to a log file. The concrete logger is configured
 //   at build-time.
+//
+// Note: If the preprocessor symbol _LCL_NO_LOGGING is defined, the log macro
+// will be defined to an empty effect.
 //
 
 
@@ -109,7 +113,6 @@ enum {
 // Log level type.
 typedef uint32_t _lcl_level_t;
 typedef uint8_t  _lcl_level_narrow_t;
-
 
 
 //
@@ -150,16 +153,20 @@ typedef uint32_t _lcl_component_t;
 // log level is active for the log component.
 //
 // The actual logging is done by _lcl_logger which must be defined by a concrete
-// logging backend. _lcl_logger has the same signature as lcl_log.
+// logging back-end. _lcl_logger has the same signature as lcl_log.
 //
-#define lcl_log(_component, _level, _format, ...)                              \
-    if ((_lcl_component_level[(__lcl_log_symbol(_component))]) >=              \
-          (__lcl_log_symbol(_level))) {                                        \
-            _lcl_logger(_component,                                            \
-                        _level,                                                \
-                        _format,                                               \
-                        ##__VA_ARGS__);                                        \
-    }
+#ifdef _LCL_NO_LOGGING
+#   define lcl_log(_component, _level, _format, ...)
+#else
+#   define lcl_log(_component, _level, _format, ...)                           \
+        if ((_lcl_component_level[(__lcl_log_symbol(_component))]) >=          \
+            (__lcl_log_symbol(_level))) {                                      \
+                _lcl_logger(_component,                                        \
+                            _level,                                            \
+                            _format,                                           \
+                            ##__VA_ARGS__);                                    \
+        }
+#endif
 
 // lcl_configure_by_component(<component>, <level>)
 //
@@ -170,6 +177,26 @@ typedef uint32_t _lcl_component_t;
 // Returns the number of configured log components, or 0 on failure.
 //
 uint32_t lcl_configure_by_component(_lcl_component_t component, _lcl_level_t level);
+
+// lcl_configure_by_identifier(<identifier>, <level>)
+//
+// <identifier>: a log component's identifier with optional '*' wildcard suffix
+// <level>     : a log level with prefix 'lcl_v'
+//
+// Configures the given log level for the given log component(s).
+// Returns the number of configured log components, or 0 on failure.
+//
+uint32_t lcl_configure_by_identifier(const char *identifier, _lcl_level_t level);
+
+// lcl_configure_by_header(<header>, <level>)
+//
+// <header>    : a log component's header with optional '*' wildcard suffix
+// <level>     : a log level with prefix 'lcl_v'
+//
+// Configures the given log level for the given log component(s).
+// Returns the number of configured log components, or 0 on failure.
+//
+uint32_t lcl_configure_by_header(const char *header, _lcl_level_t level);
 
 // lcl_configure_by_name(<name>, <level>)
 //
@@ -189,6 +216,9 @@ uint32_t lcl_configure_by_name(const char *name, _lcl_level_t level);
 
 // Active log levels, indexed by log component.
 _lcl_level_narrow_t _lcl_component_level[_lcl_component_t_count];
+
+// Log component identifiers, indexed by log component.
+const char * const _lcl_component_identifier[_lcl_component_t_count];
 
 // Log component headers, indexed by log component.
 const char * const _lcl_component_header[_lcl_component_t_count];
@@ -221,8 +251,11 @@ enum {
 #define __lcl_log_symbol(_symbol)                                              \
     __lcl_log_symbol_##_symbol
 
-// Concrete logging backend and definition of _lcl_logger.
+// Include logging back-end and definition of _lcl_logger.
 #import "lcl_config_logger.h"
 
+// Include extensions.
+#import "lcl_config_extensions.h"
 
 #endif // __LCL_H__
+
