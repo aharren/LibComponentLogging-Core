@@ -2,7 +2,7 @@
 
 # LibComponentLogging-Core
 
-[http://0xc0.de/LibComponentLogging](http://0xc0.de/LibComponentLogging)    
+[http://0xc0.de/LibComponentLogging](http://0xc0.de/LibComponentLogging)
 [http://github.com/aharren/LibComponentLogging-Core](http://github.com/aharren/LibComponentLogging-Core)
 
 
