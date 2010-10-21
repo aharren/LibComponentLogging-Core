@@ -34,6 +34,9 @@
 		E09F2CBC10F4B82400246AAA /* CoreTestsLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = E09F2CBB10F4B82400246AAA /* CoreTestsLogger.m */; };
 		E0EB42DF10F4ABB4009540E4 /* lcl.m in Sources */ = {isa = PBXBuildFile; fileRef = E0EB42DE10F4ABB4009540E4 /* lcl.m */; };
 		E0EB440510F4B3C6009540E4 /* lcl.m in Sources */ = {isa = PBXBuildFile; fileRef = E0EB42DE10F4ABB4009540E4 /* lcl.m */; };
+		E0F11FCB1270B78E00877F8B /* CoreTestsObjectiveCPlusPlus.mm in Sources */ = {isa = PBXBuildFile; fileRef = E0F11FCA1270B78E00877F8B /* CoreTestsObjectiveCPlusPlus.mm */; };
+		E0F11FCC1270B78E00877F8B /* CoreTestsObjectiveCPlusPlus.mm in Sources */ = {isa = PBXBuildFile; fileRef = E0F11FCA1270B78E00877F8B /* CoreTestsObjectiveCPlusPlus.mm */; };
+		E0F11FCD1270B78E00877F8B /* CoreTestsObjectiveCPlusPlus.mm in Sources */ = {isa = PBXBuildFile; fileRef = E0F11FCA1270B78E00877F8B /* CoreTestsObjectiveCPlusPlus.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +87,7 @@
 		E0EB430010F4ACEF009540E4 /* lcl_config_logger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lcl_config_logger.h; path = "Core-Tests/lcl_config_logger.h"; sourceTree = "<group>"; };
 		E0EB43A810F4B1EB009540E4 /* Core-Tests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Core-Tests-Info.plist"; path = "Core-Tests/Core-Tests-Info.plist"; sourceTree = "<group>"; };
 		E0EB43E810F4B365009540E4 /* Core-Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Core-Tests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0F11FCA1270B78E00877F8B /* CoreTestsObjectiveCPlusPlus.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CoreTestsObjectiveCPlusPlus.mm; path = "Core-Tests/CoreTestsObjectiveCPlusPlus.mm"; sourceTree = "<group>"; };
 		E0F6E48910F693B700CC544C /* lcl_config_extensions.template.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lcl_config_extensions.template.h; path = ../lcl_config_extensions.template.h; sourceTree = SOURCE_ROOT; };
 		E0F6E49710F693F600CC544C /* lcl_config_extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lcl_config_extensions.h; path = "Core-Tests/lcl_config_extensions.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -164,6 +168,7 @@
 				E013FA5E1118A6D1003A58EA /* CoreTestsInformationTests.m */,
 				E0303E8210F4E15C0032A42B /* CoreTestsCustomLogMacrosTests.m */,
 				E05D56561116153200E7E36E /* CoreTestsTemplatesTests.m */,
+				E0F11FCA1270B78E00877F8B /* CoreTestsObjectiveCPlusPlus.mm */,
 			);
 			name = "Core-Tests";
 			sourceTree = "<group>";
@@ -370,6 +375,7 @@
 				E0303E8410F4E15C0032A42B /* CoreTestsCustomLogMacrosTests.m in Sources */,
 				E0303EC610F4E9CF0032A42B /* CoreTestsConfigureTests.m in Sources */,
 				E013FA601118A6D1003A58EA /* CoreTestsInformationTests.m in Sources */,
+				E0F11FCD1270B78E00877F8B /* CoreTestsObjectiveCPlusPlus.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,6 +391,7 @@
 				E03C9EBD10F65B3A0090E09B /* CoreTestsCustomLogMacrosTests.m in Sources */,
 				E03C9EBE10F65B3A0090E09B /* CoreTestsConfigureTests.m in Sources */,
 				E013FA611118A6D1003A58EA /* CoreTestsInformationTests.m in Sources */,
+				E0F11FCC1270B78E00877F8B /* CoreTestsObjectiveCPlusPlus.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,6 +417,7 @@
 				E0303EC510F4E9CF0032A42B /* CoreTestsConfigureTests.m in Sources */,
 				E013FA5F1118A6D1003A58EA /* CoreTestsInformationTests.m in Sources */,
 				E013FA941118AC3E003A58EA /* CoreTestsNoLoggingTests.m in Sources */,
+				E0F11FCB1270B78E00877F8B /* CoreTestsObjectiveCPlusPlus.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
