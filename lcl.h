@@ -28,7 +28,7 @@
 
 #define _LCL_VERSION_MAJOR  1
 #define _LCL_VERSION_MINOR  1
-#define _LCL_VERSION_BUILD  1
+#define _LCL_VERSION_BUILD  2
 #define _LCL_VERSION_SUFFIX ""
 
 //
@@ -87,6 +87,12 @@
 
 
 #import <Foundation/Foundation.h>
+
+
+// Use C linkage.
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 
 //
@@ -218,24 +224,24 @@ uint32_t lcl_configure_by_name(const char *name, _lcl_level_t level);
 _lcl_level_narrow_t _lcl_component_level[_lcl_component_t_count];
 
 // Log component identifiers, indexed by log component.
-const char * const _lcl_component_identifier[_lcl_component_t_count];
+extern const char * const _lcl_component_identifier[_lcl_component_t_count];
 
 // Log component headers, indexed by log component.
-const char * const _lcl_component_header[_lcl_component_t_count];
+extern const char * const _lcl_component_header[_lcl_component_t_count];
 
 // Log component names, indexed by log component.
-const char * const _lcl_component_name[_lcl_component_t_count];
+extern const char * const _lcl_component_name[_lcl_component_t_count];
 
 // Log level headers, indexed by log level.
-const char * const _lcl_level_header[_lcl_level_t_count];   // full header
-const char * const _lcl_level_header_1[_lcl_level_t_count]; // header with 1 character
-const char * const _lcl_level_header_3[_lcl_level_t_count]; // header with 3 characters
+extern const char * const _lcl_level_header[_lcl_level_t_count];   // full header
+extern const char * const _lcl_level_header_1[_lcl_level_t_count]; // header with 1 character
+extern const char * const _lcl_level_header_3[_lcl_level_t_count]; // header with 3 characters
 
 // Log level names, indexed by log level.
-const char * const _lcl_level_name[_lcl_level_t_count];
+extern const char * const _lcl_level_name[_lcl_level_t_count];
 
 // Version.
-const char * const _lcl_version;
+extern const char * const _lcl_version;
 
 // Log level symbols used by lcl_log, prefixed with '__lcl_log_symbol_lcl_v'.
 enum {
@@ -251,11 +257,19 @@ enum {
 #define __lcl_log_symbol(_symbol)                                              \
     __lcl_log_symbol_##_symbol
 
+
+// End C linkage.
+#ifdef __cplusplus
+}
+#endif
+
+
 // Include logging back-end and definition of _lcl_logger.
 #import "lcl_config_logger.h"
 
 // Include extensions.
 #import "lcl_config_extensions.h"
+
 
 #endif // __LCL_H__
 
