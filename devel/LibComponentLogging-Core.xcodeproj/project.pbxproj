@@ -253,7 +253,11 @@
 			isa = PBXProject;
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "LibComponentLogging-Core" */;
 			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* Core */;
 			productRefGroup = 29B97314FDCFA39411CA2CEA /* Core */;
 			projectDirPath = "";
