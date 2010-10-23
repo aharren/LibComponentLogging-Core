@@ -88,8 +88,14 @@ The following Git repositories are related to this repository:
   location (file name and line number).
 
 * [LibComponentLogging-NSLogger](http://github.com/aharren/LibComponentLogging-NSLogger):
-  A logger which integrates the logging client from Florent Pillet's NSLogger project.
+  A logger which integrates the logging client from Florent Pillet's NSLogger project.    
   See [http://github.com/fpillet/NSLogger](http://github.com/fpillet/NSLogger) for more details about NSLogger.
+
+* [LibComponentLogging-qlog](http://github.com/aharren/LibComponentLogging-qlog):
+  An extension which provides a set of quick logging macros.
+
+* [LibComponentLogging-UserDefaults](http://github.com/aharren/LibComponentLogging-UserDefaults)
+  An extension which stores/restores log level settings to/from the user defaults.
 
 ## Copyright and License
 
