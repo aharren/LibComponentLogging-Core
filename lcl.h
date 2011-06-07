@@ -174,6 +174,9 @@ typedef uint32_t _lcl_component_t;
         }
 #endif
 
+// A convenience macro for tracing method invocations
+#define lcl_trace(_component) lcl_log(_component, lcl_vTrace, @"")
+
 // lcl_configure_by_component(<component>, <level>)
 //
 // <component>: a log component with prefix 'lcl_c'
