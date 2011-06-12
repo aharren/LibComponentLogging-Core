@@ -71,22 +71,22 @@
 		E0303E6610F4DEF60032A42B /* CoreTestsLogComponentsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreTestsLogComponentsTests.m; path = "Core-Tests/CoreTestsLogComponentsTests.m"; sourceTree = "<group>"; };
 		E0303E8210F4E15C0032A42B /* CoreTestsCustomLogMacrosTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreTestsCustomLogMacrosTests.m; path = "Core-Tests/CoreTestsCustomLogMacrosTests.m"; sourceTree = "<group>"; };
 		E0303EC410F4E9CF0032A42B /* CoreTestsConfigureTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreTestsConfigureTests.m; path = "Core-Tests/CoreTestsConfigureTests.m"; sourceTree = "<group>"; };
-		E03C9EC410F65B3A0090E09B /* Core-Tests-iPhoneOS-Device-3.0.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Core-Tests-iPhoneOS-Device-3.0.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E05D5651111614DE00E7E36E /* Core-Tests-MacOSX-10.5.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Core-Tests-MacOSX-10.5.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E05D56561116153200E7E36E /* CoreTestsTemplatesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreTestsTemplatesTests.m; path = "Core-Tests/CoreTestsTemplatesTests.m"; sourceTree = "<group>"; };
 		E09F2CAE10F4B75E00246AAA /* CoreTests.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreTests.pch; path = "Core-Tests/CoreTests.pch"; sourceTree = "<group>"; };
 		E09F2CBA10F4B82400246AAA /* CoreTestsLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreTestsLogger.h; path = "Core-Tests/CoreTestsLogger.h"; sourceTree = "<group>"; };
 		E09F2CBB10F4B82400246AAA /* CoreTestsLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreTestsLogger.m; path = "Core-Tests/CoreTestsLogger.m"; sourceTree = "<group>"; };
 		E0A6310D1114D5B700E42352 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.md; path = ../README.md; sourceTree = SOURCE_ROOT; };
+		E0B4803813A518E500130E13 /* Core-Tests-MacOSX.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Core-Tests-MacOSX.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0B4803913A5192800130E13 /* Core-Tests-iPhoneOS.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Core-Tests-iPhoneOS.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0B4803A13A5194500130E13 /* Core-Tests-Templates.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Core-Tests-Templates.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0B4803B13A51ABB00130E13 /* Core-Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Core-Tests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0EB42DB10F4ABB4009540E4 /* lcl_config_components.template.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lcl_config_components.template.h; path = ../lcl_config_components.template.h; sourceTree = SOURCE_ROOT; };
 		E0EB42DC10F4ABB4009540E4 /* lcl_config_logger.template.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lcl_config_logger.template.h; path = ../lcl_config_logger.template.h; sourceTree = SOURCE_ROOT; };
 		E0EB42DD10F4ABB4009540E4 /* lcl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lcl.h; path = ../lcl.h; sourceTree = SOURCE_ROOT; };
 		E0EB42DE10F4ABB4009540E4 /* lcl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = lcl.m; path = ../lcl.m; sourceTree = SOURCE_ROOT; };
-		E0EB42EF10F4AC57009540E4 /* Core-Tests-MacOSX-10.5.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Core-Tests-MacOSX-10.5.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0EB42FF10F4ACEF009540E4 /* lcl_config_components.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lcl_config_components.h; path = "Core-Tests/lcl_config_components.h"; sourceTree = "<group>"; };
 		E0EB430010F4ACEF009540E4 /* lcl_config_logger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lcl_config_logger.h; path = "Core-Tests/lcl_config_logger.h"; sourceTree = "<group>"; };
 		E0EB43A810F4B1EB009540E4 /* Core-Tests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Core-Tests-Info.plist"; path = "Core-Tests/Core-Tests-Info.plist"; sourceTree = "<group>"; };
-		E0EB43E810F4B365009540E4 /* Core-Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Core-Tests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0F11FCA1270B78E00877F8B /* CoreTestsObjectiveCPlusPlus.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CoreTestsObjectiveCPlusPlus.mm; path = "Core-Tests/CoreTestsObjectiveCPlusPlus.mm"; sourceTree = "<group>"; };
 		E0F6E48910F693B700CC544C /* lcl_config_extensions.template.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lcl_config_extensions.template.h; path = ../lcl_config_extensions.template.h; sourceTree = SOURCE_ROOT; };
 		E0F6E49710F693F600CC544C /* lcl_config_extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lcl_config_extensions.h; path = "Core-Tests/lcl_config_extensions.h"; sourceTree = "<group>"; };
@@ -130,10 +130,10 @@
 				E0A6310D1114D5B700E42352 /* README.md */,
 				E0E417970F2128750036D6FD /* Core */,
 				E0EB42E310F4ABE9009540E4 /* Core-Tests */,
-				E0EB43E810F4B365009540E4 /* Core-Tests.octest */,
-				E0EB42EF10F4AC57009540E4 /* Core-Tests-MacOSX-10.5.octest */,
-				E03C9EC410F65B3A0090E09B /* Core-Tests-iPhoneOS-Device-3.0.octest */,
-				E05D5651111614DE00E7E36E /* Core-Tests-MacOSX-10.5.octest */,
+				E0B4803B13A51ABB00130E13 /* Core-Tests.octest */,
+				E0B4803813A518E500130E13 /* Core-Tests-MacOSX.octest */,
+				E0B4803913A5192800130E13 /* Core-Tests-iPhoneOS.octest */,
+				E0B4803A13A5194500130E13 /* Core-Tests-Templates.octest */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -176,9 +176,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E00B95E40F2C88F800309460 /* Core-Tests-MacOSX-10.5 */ = {
+		E00B95E40F2C88F800309460 /* Core-Tests-MacOSX */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E00B95E90F2C88F900309460 /* Build configuration list for PBXNativeTarget "Core-Tests-MacOSX-10.5" */;
+			buildConfigurationList = E00B95E90F2C88F900309460 /* Build configuration list for PBXNativeTarget "Core-Tests-MacOSX" */;
 			buildPhases = (
 				E00B95E00F2C88F800309460 /* Resources */,
 				E00B95E10F2C88F800309460 /* Sources */,
@@ -189,14 +189,14 @@
 			);
 			dependencies = (
 			);
-			name = "Core-Tests-MacOSX-10.5";
+			name = "Core-Tests-MacOSX";
 			productName = Tests;
-			productReference = E0EB42EF10F4AC57009540E4 /* Core-Tests-MacOSX-10.5.octest */;
+			productReference = E0B4803813A518E500130E13 /* Core-Tests-MacOSX.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
-		E03C9EB510F65B3A0090E09B /* Core-Tests-iPhoneOS-Device-3.0 */ = {
+		E03C9EB510F65B3A0090E09B /* Core-Tests-iPhoneOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E03C9EC110F65B3A0090E09B /* Build configuration list for PBXNativeTarget "Core-Tests-iPhoneOS-Device-3.0" */;
+			buildConfigurationList = E03C9EC110F65B3A0090E09B /* Build configuration list for PBXNativeTarget "Core-Tests-iPhoneOS" */;
 			buildPhases = (
 				E03C9EB610F65B3A0090E09B /* Resources */,
 				E03C9EB710F65B3A0090E09B /* Sources */,
@@ -207,9 +207,9 @@
 			);
 			dependencies = (
 			);
-			name = "Core-Tests-iPhoneOS-Device-3.0";
+			name = "Core-Tests-iPhoneOS";
 			productName = Tests;
-			productReference = E03C9EC410F65B3A0090E09B /* Core-Tests-iPhoneOS-Device-3.0.octest */;
+			productReference = E0B4803913A5192800130E13 /* Core-Tests-iPhoneOS.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
 		E05D5642111614DE00E7E36E /* Core-Tests-Templates */ = {
@@ -227,7 +227,7 @@
 			);
 			name = "Core-Tests-Templates";
 			productName = Tests;
-			productReference = E05D5651111614DE00E7E36E /* Core-Tests-MacOSX-10.5.octest */;
+			productReference = E0B4803A13A5194500130E13 /* Core-Tests-Templates.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
 		E0EB43E710F4B365009540E4 /* Core-Tests */ = {
@@ -248,7 +248,7 @@
 			);
 			name = "Core-Tests";
 			productName = "Core-Tests";
-			productReference = E0EB43E810F4B365009540E4 /* Core-Tests.octest */;
+			productReference = E0B4803B13A51ABB00130E13 /* Core-Tests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -269,8 +269,8 @@
 			projectRoot = "";
 			targets = (
 				E0EB43E710F4B365009540E4 /* Core-Tests */,
-				E00B95E40F2C88F800309460 /* Core-Tests-MacOSX-10.5 */,
-				E03C9EB510F65B3A0090E09B /* Core-Tests-iPhoneOS-Device-3.0 */,
+				E00B95E40F2C88F800309460 /* Core-Tests-MacOSX */,
+				E03C9EB510F65B3A0090E09B /* Core-Tests-iPhoneOS */,
 				E05D5642111614DE00E7E36E /* Core-Tests-Templates */,
 			);
 		};
@@ -426,7 +426,7 @@
 /* Begin PBXTargetDependency section */
 		E03C9ECD10F65BA40090E09B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E03C9EB510F65B3A0090E09B /* Core-Tests-iPhoneOS-Device-3.0 */;
+			target = E03C9EB510F65B3A0090E09B /* Core-Tests-iPhoneOS */;
 			targetProxy = E03C9ECC10F65BA40090E09B /* PBXContainerItemProxy */;
 		};
 		E05D56691116165700E7E36E /* PBXTargetDependency */ = {
@@ -436,7 +436,7 @@
 		};
 		E0EB43F210F4B371009540E4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E00B95E40F2C88F800309460 /* Core-Tests-MacOSX-10.5 */;
+			target = E00B95E40F2C88F800309460 /* Core-Tests-MacOSX */;
 			targetProxy = E0EB43F110F4B371009540E4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -452,7 +452,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
-				SDKROOT = macosx10.5;
+				SDKROOT = macosx;
+				TEST_AFTER_BUILD = YES;
 			};
 			name = Debug;
 		};
@@ -464,7 +465,8 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				SDKROOT = macosx10.5;
+				SDKROOT = macosx;
+				TEST_AFTER_BUILD = YES;
 			};
 			name = Release;
 		};
@@ -472,11 +474,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = (
-					i386,
-					x86_64,
-					ppc,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -513,7 +511,8 @@
 					SenTestingKit,
 				);
 				PREBINDING = NO;
-				PRODUCT_NAME = "Core-Tests-MacOSX-10.5";
+				PRODUCT_NAME = "Core-Tests-MacOSX";
+				SDKROOT = macosx;
 				WARNING_CFLAGS = "-Wall";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -523,11 +522,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = (
-					i386,
-					x86_64,
-					ppc,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
@@ -562,7 +557,8 @@
 					SenTestingKit,
 				);
 				PREBINDING = NO;
-				PRODUCT_NAME = "Core-Tests-MacOSX-10.5";
+				PRODUCT_NAME = "Core-Tests-MacOSX";
+				SDKROOT = macosx;
 				WARNING_CFLAGS = "-Wall";
 				WRAPPER_EXTENSION = octest;
 				ZERO_LINK = NO;
@@ -611,9 +607,10 @@
 					SenTestingKit,
 				);
 				PREBINDING = NO;
-				PRODUCT_NAME = "Core-Tests-iPhoneOS-Device-3.0";
+				PRODUCT_NAME = "Core-Tests-iPhoneOS";
 				PROVISIONING_PROFILE = "";
-				SDKROOT = iphoneos4.1;
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = iphonesimulator;
 				WARNING_CFLAGS = "-Wall";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -659,9 +656,10 @@
 					SenTestingKit,
 				);
 				PREBINDING = NO;
-				PRODUCT_NAME = "Core-Tests-iPhoneOS-Device-3.0";
+				PRODUCT_NAME = "Core-Tests-iPhoneOS";
 				PROVISIONING_PROFILE = "";
-				SDKROOT = iphoneos4.1;
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = iphonesimulator;
 				WARNING_CFLAGS = "-Wall";
 				WRAPPER_EXTENSION = octest;
 				ZERO_LINK = NO;
@@ -672,11 +670,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = (
-					i386,
-					x86_64,
-					ppc,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -714,7 +708,8 @@
 					SenTestingKit,
 				);
 				PREBINDING = NO;
-				PRODUCT_NAME = "Core-Tests-MacOSX-10.5";
+				PRODUCT_NAME = "Core-Tests-Templates";
+				SDKROOT = macosx;
 				WARNING_CFLAGS = "-Wall";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -724,11 +719,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = (
-					i386,
-					x86_64,
-					ppc,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
@@ -764,7 +755,8 @@
 					SenTestingKit,
 				);
 				PREBINDING = NO;
-				PRODUCT_NAME = "Core-Tests-MacOSX-10.5";
+				PRODUCT_NAME = "Core-Tests-Templates";
+				SDKROOT = macosx;
 				WARNING_CFLAGS = "-Wall";
 				WRAPPER_EXTENSION = octest;
 				ZERO_LINK = NO;
@@ -775,6 +767,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -785,6 +778,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				INFOPLIST_FILE = "Core-Tests/Core-Tests-Info.plist";
 				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
@@ -793,6 +787,7 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = "Core-Tests";
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
@@ -801,6 +796,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
@@ -818,6 +814,7 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = "Core-Tests";
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = octest;
 				ZERO_LINK = NO;
 			};
@@ -835,7 +832,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E00B95E90F2C88F900309460 /* Build configuration list for PBXNativeTarget "Core-Tests-MacOSX-10.5" */ = {
+		E00B95E90F2C88F900309460 /* Build configuration list for PBXNativeTarget "Core-Tests-MacOSX" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E00B95E70F2C88F900309460 /* Debug */,
@@ -844,7 +841,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E03C9EC110F65B3A0090E09B /* Build configuration list for PBXNativeTarget "Core-Tests-iPhoneOS-Device-3.0" */ = {
+		E03C9EC110F65B3A0090E09B /* Build configuration list for PBXNativeTarget "Core-Tests-iPhoneOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E03C9EC210F65B3A0090E09B /* Debug */,
