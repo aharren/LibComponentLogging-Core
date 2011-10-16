@@ -66,7 +66,7 @@
           _lcl_component_header[_component],                                   \
           [@__FILE__ lastPathComponent],                                       \
           __LINE__,                                                            \
-          __FUNCTION__,                                                        \
+          __PRETTY_FUNCTION__,                                                 \
           ## __VA_ARGS__);                                                     \
     _lcl_logger_autoreleasepool_end                                            \
 }
