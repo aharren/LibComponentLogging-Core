@@ -43,9 +43,24 @@
 // Example
 //
 
+
+// ARC/non-ARC autorelease pool
+#if __has_feature(objc_arc)
+#define _lcl_logger_autoreleasepool_begin                                      \
+    @autoreleasepool {
+#define _lcl_logger_autoreleasepool_end                                        \
+    }
+#else
+#define _lcl_logger_autoreleasepool_begin                                      \
+    NSAutoreleasePool *_lcl_logger_autoreleasepool = [[NSAutoreleasePool alloc] init];
+#define _lcl_logger_autoreleasepool_end                                        \
+    [_lcl_logger_autoreleasepool release];
+#endif
+
+
 // A very simple logger, which redirects to NSLog().
 #define _lcl_logger(_component, _level, _format, ...) {                        \
-    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];                \
+    _lcl_logger_autoreleasepool_begin                                          \
     NSLog(@"%s %s:%@:%d:%s " _format,                                          \
           _lcl_level_header_1[_level],                                         \
           _lcl_component_header[_component],                                   \
@@ -53,6 +68,6 @@
           __LINE__,                                                            \
           __FUNCTION__,                                                        \
           ## __VA_ARGS__);                                                     \
-    [pool release];                                                            \
+    _lcl_logger_autoreleasepool_end                                            \
 }
 

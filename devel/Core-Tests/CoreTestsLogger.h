@@ -53,13 +53,27 @@
 //
 
 
+// ARC/non-ARC autorelease pool
+#if __has_feature(objc_arc)
+#define _lcl_logger_autoreleasepool_begin                                      \
+    @autoreleasepool {
+#define _lcl_logger_autoreleasepool_end                                        \
+    }
+#else
+#define _lcl_logger_autoreleasepool_begin                                      \
+    NSAutoreleasePool *_lcl_logger_autoreleasepool = [[NSAutoreleasePool alloc] init];
+#define _lcl_logger_autoreleasepool_end                                        \
+    [_lcl_logger_autoreleasepool release];
+#endif
+
+
 // Definition of _lcl_logger.
 #define _lcl_logger(log_component, log_level, log_format, ...) {               \
-    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];                \
+    _lcl_logger_autoreleasepool_begin                                          \
     [CoreTestsLogger logWithComponent:log_component                            \
                                 level:log_level                                \
                                format:log_format,                              \
                                       ## __VA_ARGS__];                         \
-    [pool release];                                                            \
+    _lcl_logger_autoreleasepool_end                                            \
 }
 

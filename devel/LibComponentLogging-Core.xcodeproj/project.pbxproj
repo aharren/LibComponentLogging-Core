@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E00C11C0144B29C800A3488C /* lcl.m in Sources */ = {isa = PBXBuildFile; fileRef = E0EB42DE10F4ABB4009540E4 /* lcl.m */; };
+		E00C11C1144B29C800A3488C /* CoreTestsLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = E09F2CBB10F4B82400246AAA /* CoreTestsLogger.m */; };
+		E00C11C2144B29C800A3488C /* CoreTestsLoggingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E0303DEC10F4D26B0032A42B /* CoreTestsLoggingTests.m */; };
+		E00C11C3144B29C800A3488C /* CoreTestsLogLevelsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E0303E5710F4DDF60032A42B /* CoreTestsLogLevelsTests.m */; };
+		E00C11C4144B29C800A3488C /* CoreTestsLogComponentsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E0303E6610F4DEF60032A42B /* CoreTestsLogComponentsTests.m */; };
+		E00C11C5144B29C800A3488C /* CoreTestsCustomLogMacrosTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E0303E8210F4E15C0032A42B /* CoreTestsCustomLogMacrosTests.m */; };
+		E00C11C6144B29C800A3488C /* CoreTestsConfigureTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E0303EC410F4E9CF0032A42B /* CoreTestsConfigureTests.m */; };
+		E00C11C7144B29C800A3488C /* CoreTestsInformationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E013FA5E1118A6D1003A58EA /* CoreTestsInformationTests.m */; };
+		E00C11C8144B29C800A3488C /* CoreTestsObjectiveCPlusPlus.mm in Sources */ = {isa = PBXBuildFile; fileRef = E0F11FCA1270B78E00877F8B /* CoreTestsObjectiveCPlusPlus.mm */; };
 		E013FA5F1118A6D1003A58EA /* CoreTestsInformationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E013FA5E1118A6D1003A58EA /* CoreTestsInformationTests.m */; };
 		E013FA601118A6D1003A58EA /* CoreTestsInformationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E013FA5E1118A6D1003A58EA /* CoreTestsInformationTests.m */; };
 		E013FA611118A6D1003A58EA /* CoreTestsInformationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E013FA5E1118A6D1003A58EA /* CoreTestsInformationTests.m */; };
@@ -31,6 +40,8 @@
 		E03C9EBE10F65B3A0090E09B /* CoreTestsConfigureTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E0303EC410F4E9CF0032A42B /* CoreTestsConfigureTests.m */; };
 		E05D5645111614DE00E7E36E /* lcl.m in Sources */ = {isa = PBXBuildFile; fileRef = E0EB42DE10F4ABB4009540E4 /* lcl.m */; };
 		E05D56571116153200E7E36E /* CoreTestsTemplatesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E05D56561116153200E7E36E /* CoreTestsTemplatesTests.m */; };
+		E0861D60144B2ADA00A5B70C /* lcl.m in Sources */ = {isa = PBXBuildFile; fileRef = E0EB42DE10F4ABB4009540E4 /* lcl.m */; };
+		E0861D61144B2ADA00A5B70C /* CoreTestsTemplatesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E05D56561116153200E7E36E /* CoreTestsTemplatesTests.m */; };
 		E09F2CBC10F4B82400246AAA /* CoreTestsLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = E09F2CBB10F4B82400246AAA /* CoreTestsLogger.m */; };
 		E0A222B113EDB997002D1D94 /* CoreTestsSyntaxTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E0A222B013EDB997002D1D94 /* CoreTestsSyntaxTests.m */; };
 		E0A222B413EDBB87002D1D94 /* CoreTestsNoLoggingSyntaxTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E0A222B313EDBB87002D1D94 /* CoreTestsNoLoggingSyntaxTests.m */; };
@@ -42,12 +53,26 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		E00C11D2144B2A3E00A3488C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E00C11BD144B29C800A3488C;
+			remoteInfo = "Core-Tests-MacOSX-ARC";
+		};
 		E05D56681116165700E7E36E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = E05D5642111614DE00E7E36E;
 			remoteInfo = "Core-Tests-Templates";
+		};
+		E0861D6A144B2AFD00A5B70C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E0861D5D144B2ADA00A5B70C;
+			remoteInfo = "Core-Tests-Templates-ARC";
 		};
 		E0EB43F110F4B371009540E4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -59,6 +84,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E00C11CF144B29C800A3488C /* Core-Tests-MacOSX-ARC.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Core-Tests-MacOSX-ARC.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E013FA5E1118A6D1003A58EA /* CoreTestsInformationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreTestsInformationTests.m; path = "Core-Tests/CoreTestsInformationTests.m"; sourceTree = "<group>"; };
 		E013FA931118AC3E003A58EA /* CoreTestsNoLoggingTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreTestsNoLoggingTests.m; path = "Core-Tests/CoreTestsNoLoggingTests.m"; sourceTree = "<group>"; };
 		E0303DEC10F4D26B0032A42B /* CoreTestsLoggingTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreTestsLoggingTests.m; path = "Core-Tests/CoreTestsLoggingTests.m"; sourceTree = "<group>"; };
@@ -67,6 +93,7 @@
 		E0303E8210F4E15C0032A42B /* CoreTestsCustomLogMacrosTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreTestsCustomLogMacrosTests.m; path = "Core-Tests/CoreTestsCustomLogMacrosTests.m"; sourceTree = "<group>"; };
 		E0303EC410F4E9CF0032A42B /* CoreTestsConfigureTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreTestsConfigureTests.m; path = "Core-Tests/CoreTestsConfigureTests.m"; sourceTree = "<group>"; };
 		E05D56561116153200E7E36E /* CoreTestsTemplatesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreTestsTemplatesTests.m; path = "Core-Tests/CoreTestsTemplatesTests.m"; sourceTree = "<group>"; };
+		E0861D68144B2ADA00A5B70C /* Core-Tests-Templates-ARC.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Core-Tests-Templates-ARC.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E09F2CAE10F4B75E00246AAA /* CoreTests.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreTests.pch; path = "Core-Tests/CoreTests.pch"; sourceTree = "<group>"; };
 		E09F2CBA10F4B82400246AAA /* CoreTestsLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreTestsLogger.h; path = "Core-Tests/CoreTestsLogger.h"; sourceTree = "<group>"; };
 		E09F2CBB10F4B82400246AAA /* CoreTestsLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreTestsLogger.m; path = "Core-Tests/CoreTestsLogger.m"; sourceTree = "<group>"; };
@@ -97,6 +124,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E00C11CA144B29C800A3488C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E03C9EBF10F65B3A0090E09B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -105,6 +139,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		E05D564C111614DE00E7E36E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E0861D63144B2ADA00A5B70C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -129,8 +170,10 @@
 				E0EB42E310F4ABE9009540E4 /* Core-Tests */,
 				E0B4803B13A51ABB00130E13 /* Core-Tests.octest */,
 				E0B4803813A518E500130E13 /* Core-Tests-MacOSX.octest */,
+				E00C11CF144B29C800A3488C /* Core-Tests-MacOSX-ARC.octest */,
 				E0B4803913A5192800130E13 /* Core-Tests-iPhoneOS.octest */,
 				E0B4803A13A5194500130E13 /* Core-Tests-Templates.octest */,
+				E0861D68144B2ADA00A5B70C /* Core-Tests-Templates-ARC.octest */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -193,6 +236,24 @@
 			productReference = E0B4803813A518E500130E13 /* Core-Tests-MacOSX.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
+		E00C11BD144B29C800A3488C /* Core-Tests-MacOSX-ARC */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E00C11CC144B29C800A3488C /* Build configuration list for PBXNativeTarget "Core-Tests-MacOSX-ARC" */;
+			buildPhases = (
+				E00C11BE144B29C800A3488C /* Resources */,
+				E00C11BF144B29C800A3488C /* Sources */,
+				E00C11CA144B29C800A3488C /* Frameworks */,
+				E00C11CB144B29C800A3488C /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Core-Tests-MacOSX-ARC";
+			productName = Tests;
+			productReference = E00C11CF144B29C800A3488C /* Core-Tests-MacOSX-ARC.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
 		E03C9EB510F65B3A0090E09B /* Core-Tests-iPhoneOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E03C9EC110F65B3A0090E09B /* Build configuration list for PBXNativeTarget "Core-Tests-iPhoneOS" */;
@@ -229,6 +290,24 @@
 			productReference = E0B4803A13A5194500130E13 /* Core-Tests-Templates.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
+		E0861D5D144B2ADA00A5B70C /* Core-Tests-Templates-ARC */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E0861D65144B2ADA00A5B70C /* Build configuration list for PBXNativeTarget "Core-Tests-Templates-ARC" */;
+			buildPhases = (
+				E0861D5E144B2ADA00A5B70C /* Resources */,
+				E0861D5F144B2ADA00A5B70C /* Sources */,
+				E0861D63144B2ADA00A5B70C /* Frameworks */,
+				E0861D64144B2ADA00A5B70C /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Core-Tests-Templates-ARC";
+			productName = Tests;
+			productReference = E0861D68144B2ADA00A5B70C /* Core-Tests-Templates-ARC.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
 		E0EB43E710F4B365009540E4 /* Core-Tests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E0EB43EC10F4B366009540E4 /* Build configuration list for PBXNativeTarget "Core-Tests" */;
@@ -242,7 +321,9 @@
 			);
 			dependencies = (
 				E0EB43F210F4B371009540E4 /* PBXTargetDependency */,
+				E00C11D3144B2A3E00A3488C /* PBXTargetDependency */,
 				E05D56691116165700E7E36E /* PBXTargetDependency */,
+				E0861D6B144B2AFD00A5B70C /* PBXTargetDependency */,
 			);
 			name = "Core-Tests";
 			productName = "Core-Tests";
@@ -271,14 +352,23 @@
 			targets = (
 				E0EB43E710F4B365009540E4 /* Core-Tests */,
 				E00B95E40F2C88F800309460 /* Core-Tests-MacOSX */,
+				E00C11BD144B29C800A3488C /* Core-Tests-MacOSX-ARC */,
 				E03C9EB510F65B3A0090E09B /* Core-Tests-iPhoneOS */,
 				E05D5642111614DE00E7E36E /* Core-Tests-Templates */,
+				E0861D5D144B2ADA00A5B70C /* Core-Tests-Templates-ARC */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		E00B95E00F2C88F800309460 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E00C11BE144B29C800A3488C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -293,6 +383,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		E05D5643111614DE00E7E36E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E0861D5E144B2ADA00A5B70C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -322,6 +419,19 @@
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
 		};
+		E00C11CB144B29C800A3488C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
 		E03C9EC010F65B3A0090E09B /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -336,6 +446,19 @@
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
 		};
 		E05D564D111614DE00E7E36E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+		E0861D64144B2ADA00A5B70C /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -380,6 +503,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E00C11BF144B29C800A3488C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E00C11C0144B29C800A3488C /* lcl.m in Sources */,
+				E00C11C1144B29C800A3488C /* CoreTestsLogger.m in Sources */,
+				E00C11C2144B29C800A3488C /* CoreTestsLoggingTests.m in Sources */,
+				E00C11C3144B29C800A3488C /* CoreTestsLogLevelsTests.m in Sources */,
+				E00C11C4144B29C800A3488C /* CoreTestsLogComponentsTests.m in Sources */,
+				E00C11C5144B29C800A3488C /* CoreTestsCustomLogMacrosTests.m in Sources */,
+				E00C11C6144B29C800A3488C /* CoreTestsConfigureTests.m in Sources */,
+				E00C11C7144B29C800A3488C /* CoreTestsInformationTests.m in Sources */,
+				E00C11C8144B29C800A3488C /* CoreTestsObjectiveCPlusPlus.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E03C9EB710F65B3A0090E09B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -405,6 +544,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E0861D5F144B2ADA00A5B70C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E0861D60144B2ADA00A5B70C /* lcl.m in Sources */,
+				E0861D61144B2ADA00A5B70C /* CoreTestsTemplatesTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E0EB43E410F4B365009540E4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -427,10 +575,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		E00C11D3144B2A3E00A3488C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E00C11BD144B29C800A3488C /* Core-Tests-MacOSX-ARC */;
+			targetProxy = E00C11D2144B2A3E00A3488C /* PBXContainerItemProxy */;
+		};
 		E05D56691116165700E7E36E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = E05D5642111614DE00E7E36E /* Core-Tests-Templates */;
 			targetProxy = E05D56681116165700E7E36E /* PBXContainerItemProxy */;
+		};
+		E0861D6B144B2AFD00A5B70C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E0861D5D144B2ADA00A5B70C /* Core-Tests-Templates-ARC */;
+			targetProxy = E0861D6A144B2AFD00A5B70C /* PBXContainerItemProxy */;
 		};
 		E0EB43F210F4B371009540E4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -506,6 +664,7 @@
 					SenTestingKit,
 				);
 				PRODUCT_NAME = "Core-Tests-MacOSX";
+				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = macosx;
 				WARNING_CFLAGS = "-Wall";
 				WRAPPER_EXTENSION = octest;
@@ -550,7 +709,105 @@
 					SenTestingKit,
 				);
 				PRODUCT_NAME = "Core-Tests-MacOSX";
+				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = macosx;
+				WARNING_CFLAGS = "-Wall";
+				WRAPPER_EXTENSION = octest;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		E00C11CD144B29C800A3488C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Core-Tests/CoreTests.pch";
+				GCC_TREAT_IMPLICIT_FUNCTION_DECLARATIONS_AS_ERRORS = YES;
+				GCC_TREAT_NONCONFORMANT_CODE_ERRORS_AS_WARNINGS = YES;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_CHECK_SWITCH_STATEMENTS = YES;
+				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
+				GCC_WARN_MISSING_PARENTHESES = YES;
+				GCC_WARN_PROTOTYPE_CONVERSION = YES;
+				GCC_WARN_SHADOW = YES;
+				GCC_WARN_SIGN_COMPARE = YES;
+				GCC_WARN_UNKNOWN_PRAGMAS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_LABEL = YES;
+				GCC_WARN_UNUSED_PARAMETER = YES;
+				GCC_WARN_UNUSED_VALUE = YES;
+				INFOPLIST_FILE = "Core-Tests/Core-Tests-Info.plist";
+				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "Core-Tests-MacOSX-ARC";
+				RUN_CLANG_STATIC_ANALYZER = YES;
+				SDKROOT = macosx;
+				VALID_ARCHS = x86_64;
+				WARNING_CFLAGS = "-Wall";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		E00C11CE144B29C800A3488C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Core-Tests/CoreTests.pch";
+				GCC_TREAT_IMPLICIT_FUNCTION_DECLARATIONS_AS_ERRORS = YES;
+				GCC_TREAT_NONCONFORMANT_CODE_ERRORS_AS_WARNINGS = YES;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_CHECK_SWITCH_STATEMENTS = YES;
+				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
+				GCC_WARN_MISSING_PARENTHESES = YES;
+				GCC_WARN_PROTOTYPE_CONVERSION = YES;
+				GCC_WARN_SHADOW = YES;
+				GCC_WARN_SIGN_COMPARE = YES;
+				GCC_WARN_UNKNOWN_PRAGMAS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_LABEL = YES;
+				GCC_WARN_UNUSED_PARAMETER = YES;
+				GCC_WARN_UNUSED_VALUE = YES;
+				INFOPLIST_FILE = "Core-Tests/Core-Tests-Info.plist";
+				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "Core-Tests-MacOSX-ARC";
+				RUN_CLANG_STATIC_ANALYZER = YES;
+				SDKROOT = macosx;
+				VALID_ARCHS = x86_64;
 				WARNING_CFLAGS = "-Wall";
 				WRAPPER_EXTENSION = octest;
 				ZERO_LINK = NO;
@@ -600,6 +857,7 @@
 				);
 				PRODUCT_NAME = "Core-Tests-iPhoneOS";
 				PROVISIONING_PROFILE = "";
+				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = iphonesimulator;
 				WARNING_CFLAGS = "-Wall";
@@ -648,6 +906,7 @@
 				);
 				PRODUCT_NAME = "Core-Tests-iPhoneOS";
 				PROVISIONING_PROFILE = "";
+				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = iphonesimulator;
 				WARNING_CFLAGS = "-Wall";
@@ -697,6 +956,7 @@
 					SenTestingKit,
 				);
 				PRODUCT_NAME = "Core-Tests-Templates";
+				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = macosx;
 				WARNING_CFLAGS = "-Wall";
 				WRAPPER_EXTENSION = octest;
@@ -742,7 +1002,107 @@
 					SenTestingKit,
 				);
 				PRODUCT_NAME = "Core-Tests-Templates";
+				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = macosx;
+				WARNING_CFLAGS = "-Wall";
+				WRAPPER_EXTENSION = octest;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		E0861D66144B2ADA00A5B70C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Core-Tests/CoreTests.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = CORE_TESTS_TEMPLATES_BUILD;
+				GCC_TREAT_IMPLICIT_FUNCTION_DECLARATIONS_AS_ERRORS = YES;
+				GCC_TREAT_NONCONFORMANT_CODE_ERRORS_AS_WARNINGS = YES;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_CHECK_SWITCH_STATEMENTS = YES;
+				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
+				GCC_WARN_MISSING_PARENTHESES = YES;
+				GCC_WARN_PROTOTYPE_CONVERSION = YES;
+				GCC_WARN_SHADOW = YES;
+				GCC_WARN_SIGN_COMPARE = YES;
+				GCC_WARN_UNKNOWN_PRAGMAS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_LABEL = YES;
+				GCC_WARN_UNUSED_PARAMETER = YES;
+				GCC_WARN_UNUSED_VALUE = YES;
+				INFOPLIST_FILE = "Core-Tests/Core-Tests-Info.plist";
+				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "Core-Tests-Templates-ARC";
+				RUN_CLANG_STATIC_ANALYZER = YES;
+				SDKROOT = macosx;
+				VALID_ARCHS = x86_64;
+				WARNING_CFLAGS = "-Wall";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		E0861D67144B2ADA00A5B70C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Core-Tests/CoreTests.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = CORE_TESTS_TEMPLATES_BUILD;
+				GCC_TREAT_IMPLICIT_FUNCTION_DECLARATIONS_AS_ERRORS = YES;
+				GCC_TREAT_NONCONFORMANT_CODE_ERRORS_AS_WARNINGS = YES;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_CHECK_SWITCH_STATEMENTS = YES;
+				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
+				GCC_WARN_MISSING_PARENTHESES = YES;
+				GCC_WARN_PROTOTYPE_CONVERSION = YES;
+				GCC_WARN_SHADOW = YES;
+				GCC_WARN_SIGN_COMPARE = YES;
+				GCC_WARN_UNKNOWN_PRAGMAS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_LABEL = YES;
+				GCC_WARN_UNUSED_PARAMETER = YES;
+				GCC_WARN_UNUSED_VALUE = YES;
+				INFOPLIST_FILE = "Core-Tests/Core-Tests-Info.plist";
+				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "Core-Tests-Templates-ARC";
+				RUN_CLANG_STATIC_ANALYZER = YES;
+				SDKROOT = macosx;
+				VALID_ARCHS = x86_64;
 				WARNING_CFLAGS = "-Wall";
 				WRAPPER_EXTENSION = octest;
 				ZERO_LINK = NO;
@@ -771,6 +1131,7 @@
 					SenTestingKit,
 				);
 				PRODUCT_NAME = "Core-Tests";
+				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = octest;
 			};
@@ -796,6 +1157,7 @@
 					SenTestingKit,
 				);
 				PRODUCT_NAME = "Core-Tests";
+				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = octest;
 				ZERO_LINK = NO;
@@ -823,6 +1185,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		E00C11CC144B29C800A3488C /* Build configuration list for PBXNativeTarget "Core-Tests-MacOSX-ARC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E00C11CD144B29C800A3488C /* Debug */,
+				E00C11CE144B29C800A3488C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		E03C9EC110F65B3A0090E09B /* Build configuration list for PBXNativeTarget "Core-Tests-iPhoneOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -837,6 +1208,15 @@
 			buildConfigurations = (
 				E05D564F111614DE00E7E36E /* Debug */,
 				E05D5650111614DE00E7E36E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E0861D65144B2ADA00A5B70C /* Build configuration list for PBXNativeTarget "Core-Tests-Templates-ARC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E0861D66144B2ADA00A5B70C /* Debug */,
+				E0861D67144B2ADA00A5B70C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

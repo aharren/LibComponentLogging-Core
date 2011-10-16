@@ -34,7 +34,9 @@ static NSString *CoreTestsLogger_lastLogEntry = nil;
 
 // Resets the logger.
 + (void)reset {
+#   if !__has_feature(objc_arc)
     [CoreTestsLogger_lastLogEntry release];
+#   endif
     CoreTestsLogger_lastLogEntry = nil;
 }
 
@@ -44,7 +46,11 @@ static NSString *CoreTestsLogger_lastLogEntry = nil;
     if (CoreTestsLogger_lastLogEntry == nil) {
         return @"NO LOG ENTRY";
     } else {
-        return [[CoreTestsLogger_lastLogEntry copy] autorelease];
+        NSString* result = [CoreTestsLogger_lastLogEntry copy];
+#       if !__has_feature(objc_arc)
+        [result autorelease];
+#       endif
+        return result;
     }
 }
 
@@ -60,12 +66,16 @@ static NSString *CoreTestsLogger_lastLogEntry = nil;
     
     // create log message: "<level header> <component header> <formatted args>"
     NSString *message = [[NSString alloc] initWithFormat:@"%s %s %@", _lcl_level_header[level], _lcl_component_header[component], formatted_args];
+#   if !__has_feature(objc_arc)
     [CoreTestsLogger_lastLogEntry release];
+#   endif
     CoreTestsLogger_lastLogEntry = [message copy];
     
     // release temporary objects
+#   if !__has_feature(objc_arc)
     [message release];
     [formatted_args release];
+#   endif
 }
 
 @end
