@@ -45,7 +45,14 @@
 
 
 // ARC/non-ARC autorelease pool
-#if __has_feature(objc_arc)
+#define _lcl_logger_autoreleasepool_arc 0
+#if defined(__has_feature)
+#   if __has_feature(objc_arc)
+#   undef  _lcl_logger_autoreleasepool_arc
+#   define _lcl_logger_autoreleasepool_arc 1
+#   endif
+#endif
+#if _lcl_logger_autoreleasepool_arc
 #define _lcl_logger_autoreleasepool_begin                                      \
     @autoreleasepool {
 #define _lcl_logger_autoreleasepool_end                                        \
