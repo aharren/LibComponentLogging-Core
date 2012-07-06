@@ -178,6 +178,43 @@ typedef uint32_t _lcl_component_t;
         } while (false)
 #endif
 
+// lcl_log_if(<component>, <level>, <predicate>, <format>[, <arg1>[, ...]])
+//
+// <component>: a log component with prefix 'lcl_c'
+// <level>    : a log level with prefix 'lcl_v'
+// <predicate>: a predicate for conditional logging
+// <format>   : a format string of type NSString (may include %@)
+// <arg..>    : optional arguments required by the format string
+//
+// Logs a message for the given log component at the given log level if the
+// log level is active for the log component and if the predicate evaluates
+// to true.
+//
+// The predicate is only evaluated if the given log level is active.
+//
+// The actual logging is done by _lcl_logger which must be defined by a concrete
+// logging back-end. _lcl_logger has the same signature as lcl_log.
+//
+#ifdef _LCL_NO_LOGGING
+#   define lcl_log_if(_component, _level, _predicate, _format, ...)            \
+        do {                                                                   \
+        } while (false)
+#else
+#   define lcl_log_if(_component, _level, _predicate, _format, ...)            \
+        do {                                                                   \
+            if ((_lcl_component_level[(__lcl_log_symbol(_component))]) >=      \
+                  (__lcl_log_symbol(_level))                                   \
+                &&                                                             \
+                (_predicate)                                                   \
+               ) {                                                             \
+                    _lcl_logger(_component,                                    \
+                                _level,                                        \
+                                _format,                                       \
+                                ##__VA_ARGS__);                                \
+            }                                                                  \
+        } while (false)
+#endif
+
 // lcl_configure_by_component(<component>, <level>)
 //
 // <component>: a log component with prefix 'lcl_c'

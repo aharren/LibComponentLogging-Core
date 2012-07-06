@@ -55,5 +55,18 @@
     STAssertEquals(counter, 0, nil);
 }
 
+- (void)testNoLoggingWithPredicate {
+    lcl_configure_by_component(lcl_cMain, lcl_vTrace);
+    
+    int counter = 0;
+    int predicateeffect = 0;
+    
+    lcl_log_if(lcl_cMain, lcl_vCritical, predicateeffect = 1, @"message %d", ++counter);
+    STAssertTrue(lcl_vCritical <= _lcl_component_level[lcl_cMain], nil);
+    STAssertEqualObjects([CoreTestsLogger lastLogEntry], @"NO LOG ENTRY", nil);
+    STAssertEquals(counter, 0, nil);
+    STAssertEquals(predicateeffect, 0, nil);
+}
+
 @end
 

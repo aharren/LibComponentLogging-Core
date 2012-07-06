@@ -139,5 +139,125 @@
     STAssertEquals(counter, 6, nil);
 }
 
+- (void)testLoggingAtLogLevelOffWithPredicate {
+    lcl_configure_by_component(lcl_cMain, lcl_vOff);
+    lcl_configure_by_component(lcl_cMainComponent1, lcl_vTrace);
+    lcl_configure_by_component(lcl_cMainComponent2, lcl_vTrace);
+    lcl_configure_by_component(lcl_cMain2, lcl_vTrace);
+    
+    int counter = 0;
+    int predicateeffect = 0;
+    
+    lcl_log_if(lcl_cMain, lcl_vCritical, predicateeffect = 1, @"message %d", ++counter);
+    STAssertEqualObjects([CoreTestsLogger lastLogEntry], @"NO LOG ENTRY", nil);
+    STAssertEquals(counter, 0, nil);
+    STAssertEquals(predicateeffect, 0, nil);
+    
+    lcl_log_if(lcl_cMain, lcl_vError, predicateeffect = 2, @"message %d", ++counter);
+    STAssertEqualObjects([CoreTestsLogger lastLogEntry], @"NO LOG ENTRY", nil);
+    STAssertEquals(counter, 0, nil);
+    STAssertEquals(predicateeffect, 0, nil);
+    
+    lcl_log_if(lcl_cMain, lcl_vWarning, predicateeffect = 3, @"message %d", ++counter);
+    STAssertEqualObjects([CoreTestsLogger lastLogEntry], @"NO LOG ENTRY", nil);
+    STAssertEquals(counter, 0, nil);
+    STAssertEquals(predicateeffect, 0, nil);
+    
+    lcl_log_if(lcl_cMain, lcl_vInfo, predicateeffect = 4, @"message %d", ++counter);
+    STAssertEqualObjects([CoreTestsLogger lastLogEntry], @"NO LOG ENTRY", nil);
+    STAssertEquals(counter, 0, nil);
+    STAssertEquals(predicateeffect, 0, nil);
+    
+    lcl_log_if(lcl_cMain, lcl_vDebug, predicateeffect = 5, @"message %d", ++counter);
+    STAssertEqualObjects([CoreTestsLogger lastLogEntry], @"NO LOG ENTRY", nil);
+    STAssertEquals(counter, 0, nil);
+    STAssertEquals(predicateeffect, 0, nil);
+    
+    lcl_log_if(lcl_cMain, lcl_vTrace, predicateeffect = 6, @"message %d", ++counter);
+    STAssertEqualObjects([CoreTestsLogger lastLogEntry], @"NO LOG ENTRY", nil);
+    STAssertEquals(counter, 0, nil);
+    STAssertEquals(predicateeffect, 0, nil);
+}
+
+- (void)testLoggingAtLogLevelInfoWithPredicate {
+    lcl_configure_by_component(lcl_cMain, lcl_vInfo);
+    lcl_configure_by_component(lcl_cMainComponent1, lcl_vOff);
+    lcl_configure_by_component(lcl_cMainComponent2, lcl_vOff);
+    lcl_configure_by_component(lcl_cMain2, lcl_vOff);
+    
+    int counter = 0;
+    int predicateeffect = 0;
+    
+    lcl_log_if(lcl_cMain, lcl_vCritical, predicateeffect = 1, @"message %d", ++counter);
+    STAssertEqualObjects([CoreTestsLogger lastLogEntry], @"CRITICAL main message 1", nil);
+    STAssertEquals(counter, 1, nil);
+    STAssertEquals(predicateeffect, 1, nil);
+    
+    lcl_log_if(lcl_cMain, lcl_vError, predicateeffect = 2, @"message %d", ++counter);
+    STAssertEqualObjects([CoreTestsLogger lastLogEntry], @"ERROR main message 2", nil);
+    STAssertEquals(counter, 2, nil);
+    STAssertEquals(predicateeffect, 2, nil);
+    
+    lcl_log_if(lcl_cMain, lcl_vWarning, predicateeffect = 3, @"message %d", ++counter);
+    STAssertEqualObjects([CoreTestsLogger lastLogEntry], @"WARNING main message 3", nil);
+    STAssertEquals(counter, 3, nil);
+    STAssertEquals(predicateeffect, 3, nil);
+    
+    lcl_log_if(lcl_cMain, lcl_vInfo, predicateeffect = 4, @"message %d", ++counter);
+    STAssertEqualObjects([CoreTestsLogger lastLogEntry], @"INFO main message 4", nil);
+    STAssertEquals(counter, 4, nil);
+    STAssertEquals(predicateeffect, 4, nil);
+    
+    lcl_log_if(lcl_cMain, lcl_vDebug, predicateeffect = 5, @"message %d", ++counter);
+    STAssertEqualObjects([CoreTestsLogger lastLogEntry], @"INFO main message 4", nil);
+    STAssertEquals(counter, 4, nil);
+    STAssertEquals(predicateeffect, 4, nil);
+    
+    lcl_log_if(lcl_cMain, lcl_vTrace, predicateeffect = 6, @"message %d", ++counter);
+    STAssertEqualObjects([CoreTestsLogger lastLogEntry], @"INFO main message 4", nil);
+    STAssertEquals(counter, 4, nil);
+    STAssertEquals(predicateeffect, 4, nil);
+}
+
+- (void)testLoggingAtLogLevelTraceWithPredicate {
+    lcl_configure_by_component(lcl_cMain, lcl_vTrace);
+    lcl_configure_by_component(lcl_cMainComponent1, lcl_vOff);
+    lcl_configure_by_component(lcl_cMainComponent2, lcl_vOff);
+    lcl_configure_by_component(lcl_cMain2, lcl_vOff);
+    
+    int counter = 0;
+    int predicateeffect = 0;
+    
+    lcl_log_if(lcl_cMain, lcl_vCritical, predicateeffect = 1, @"message %d", ++counter);
+    STAssertEqualObjects([CoreTestsLogger lastLogEntry], @"CRITICAL main message 1", nil);
+    STAssertEquals(counter, 1, nil);
+    STAssertEquals(predicateeffect, 1, nil);
+    
+    lcl_log_if(lcl_cMain, lcl_vError, predicateeffect = 2, @"message %d", ++counter);
+    STAssertEqualObjects([CoreTestsLogger lastLogEntry], @"ERROR main message 2", nil);
+    STAssertEquals(counter, 2, nil);
+    STAssertEquals(predicateeffect, 2, nil);
+    
+    lcl_log_if(lcl_cMain, lcl_vWarning, predicateeffect = 3, @"message %d", ++counter);
+    STAssertEqualObjects([CoreTestsLogger lastLogEntry], @"WARNING main message 3", nil);
+    STAssertEquals(counter, 3, nil);
+    STAssertEquals(predicateeffect, 3, nil);
+    
+    lcl_log_if(lcl_cMain, lcl_vInfo, predicateeffect = 4, @"message %d", ++counter);
+    STAssertEqualObjects([CoreTestsLogger lastLogEntry], @"INFO main message 4", nil);
+    STAssertEquals(counter, 4, nil);
+    STAssertEquals(predicateeffect, 4, nil);
+    
+    lcl_log_if(lcl_cMain, lcl_vDebug, predicateeffect = 5, @"message %d", ++counter);
+    STAssertEqualObjects([CoreTestsLogger lastLogEntry], @"DEBUG main message 5", nil);
+    STAssertEquals(counter, 5, nil);
+    STAssertEquals(predicateeffect, 5, nil);
+    
+    lcl_log_if(lcl_cMain, lcl_vTrace, predicateeffect = 6, @"message %d", ++counter);
+    STAssertEqualObjects([CoreTestsLogger lastLogEntry], @"TRACE main message 6", nil);
+    STAssertEquals(counter, 6, nil);
+    STAssertEquals(predicateeffect, 6, nil);
+}
+
 @end
 
