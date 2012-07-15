@@ -101,7 +101,7 @@ extern "C" {
 
 
 // Log levels, prefixed with 'lcl_v'.
-enum {
+enum _lcl_enum_level_t {
     lcl_vOff = 0,
 
     lcl_vCritical,              // critical situation
@@ -127,7 +127,7 @@ typedef uint8_t  _lcl_level_narrow_t;
 
 
 // Log components, prefixed with 'lcl_c'.
-enum {
+enum _lcl_enum_component_t {
 #   define  _lcl_component(_identifier, _header, _name)                        \
     lcl_c##_identifier,                                                        \
   __lcl_log_symbol_lcl_c##_identifier = lcl_c##_identifier,
