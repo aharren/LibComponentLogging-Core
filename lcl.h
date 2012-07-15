@@ -168,8 +168,8 @@ typedef uint32_t _lcl_component_t;
 #else
 #   define lcl_log(_component, _level, _format, ...)                           \
         do {                                                                   \
-            if ((_lcl_component_level[(__lcl_log_symbol(_component))]) >=      \
-                  (__lcl_log_symbol(_level))                                   \
+            if (((_lcl_component_level[(__lcl_log_symbol(_component))]) >=     \
+                  (__lcl_log_symbol(_level)))                                  \
                ) {                                                             \
                     _lcl_logger(_component,                                    \
                                 _level,                                        \
@@ -203,8 +203,8 @@ typedef uint32_t _lcl_component_t;
 #else
 #   define lcl_log_if(_component, _level, _predicate, _format, ...)            \
         do {                                                                   \
-            if ((_lcl_component_level[(__lcl_log_symbol(_component))]) >=      \
-                  (__lcl_log_symbol(_level))                                   \
+            if (((_lcl_component_level[(__lcl_log_symbol(_component))]) >=     \
+                  (__lcl_log_symbol(_level)))                                  \
                 &&                                                             \
                 (_predicate)                                                   \
                ) {                                                             \
