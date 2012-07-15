@@ -164,7 +164,7 @@ typedef uint32_t _lcl_component_t;
 #ifdef _LCL_NO_LOGGING
 #   define lcl_log(_component, _level, _format, ...)                           \
         do {                                                                   \
-        } while (false)
+        } while (0)
 #else
 #   define lcl_log(_component, _level, _format, ...)                           \
         do {                                                                   \
@@ -176,7 +176,7 @@ typedef uint32_t _lcl_component_t;
                                 _format,                                       \
                                 ##__VA_ARGS__);                                \
             }                                                                  \
-        } while (false)
+        } while (0)
 #endif
 
 // lcl_log_if(<component>, <level>, <predicate>, <format>[, <arg1>[, ...]])
@@ -199,7 +199,7 @@ typedef uint32_t _lcl_component_t;
 #ifdef _LCL_NO_LOGGING
 #   define lcl_log_if(_component, _level, _predicate, _format, ...)            \
         do {                                                                   \
-        } while (false)
+        } while (0)
 #else
 #   define lcl_log_if(_component, _level, _predicate, _format, ...)            \
         do {                                                                   \
@@ -213,7 +213,7 @@ typedef uint32_t _lcl_component_t;
                                 _format,                                       \
                                 ##__VA_ARGS__);                                \
             }                                                                  \
-        } while (false)
+        } while (0)
 #endif
 
 // lcl_configure_by_component(<component>, <level>)
