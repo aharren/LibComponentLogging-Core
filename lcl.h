@@ -28,7 +28,7 @@
 
 #define _LCL_VERSION_MAJOR  1
 #define _LCL_VERSION_MINOR  2
-#define _LCL_VERSION_BUILD  1
+#define _LCL_VERSION_BUILD  2
 #define _LCL_VERSION_SUFFIX ""
 
 //
@@ -101,7 +101,7 @@ extern "C" {
 
 
 // Log levels, prefixed with 'lcl_v'.
-enum {
+enum _lcl_enum_level_t {
     lcl_vOff = 0,
 
     lcl_vCritical,              // critical situation
@@ -127,7 +127,7 @@ typedef uint8_t  _lcl_level_narrow_t;
 
 
 // Log components, prefixed with 'lcl_c'.
-enum {
+enum _lcl_enum_component_t {
 #   define  _lcl_component(_identifier, _header, _name)                        \
     lcl_c##_identifier,                                                        \
   __lcl_log_symbol_lcl_c##_identifier = lcl_c##_identifier,
@@ -164,19 +164,19 @@ typedef uint32_t _lcl_component_t;
 #ifdef _LCL_NO_LOGGING
 #   define lcl_log(_component, _level, _format, ...)                           \
         do {                                                                   \
-        } while (false)
+        } while (0)
 #else
 #   define lcl_log(_component, _level, _format, ...)                           \
         do {                                                                   \
-            if ((_lcl_component_level[(__lcl_log_symbol(_component))]) >=      \
-                  (__lcl_log_symbol(_level))                                   \
+            if (((_lcl_component_level[(__lcl_log_symbol(_component))]) >=     \
+                  (__lcl_log_symbol(_level)))                                  \
                ) {                                                             \
                     _lcl_logger(_component,                                    \
                                 _level,                                        \
                                 _format,                                       \
                                 ##__VA_ARGS__);                                \
             }                                                                  \
-        } while (false)
+        } while (0)
 #endif
 
 // lcl_log_if(<component>, <level>, <predicate>, <format>[, <arg1>[, ...]])
@@ -199,12 +199,12 @@ typedef uint32_t _lcl_component_t;
 #ifdef _LCL_NO_LOGGING
 #   define lcl_log_if(_component, _level, _predicate, _format, ...)            \
         do {                                                                   \
-        } while (false)
+        } while (0)
 #else
 #   define lcl_log_if(_component, _level, _predicate, _format, ...)            \
         do {                                                                   \
-            if ((_lcl_component_level[(__lcl_log_symbol(_component))]) >=      \
-                  (__lcl_log_symbol(_level))                                   \
+            if (((_lcl_component_level[(__lcl_log_symbol(_component))]) >=     \
+                  (__lcl_log_symbol(_level)))                                  \
                 &&                                                             \
                 (_predicate)                                                   \
                ) {                                                             \
@@ -213,7 +213,7 @@ typedef uint32_t _lcl_component_t;
                                 _format,                                       \
                                 ##__VA_ARGS__);                                \
             }                                                                  \
-        } while (false)
+        } while (0)
 #endif
 
 // lcl_configure_by_component(<component>, <level>)
