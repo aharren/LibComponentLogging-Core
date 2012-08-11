@@ -667,7 +667,11 @@
 				PRODUCT_NAME = "Core-Tests-MacOSX";
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = "";
-				WARNING_CFLAGS = "-Wall";
+				WARNING_CFLAGS = (
+					"-Wall",
+					"-Weverything",
+					"-fdiagnostics-show-category=id",
+				);
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
@@ -713,7 +717,11 @@
 				PRODUCT_NAME = "Core-Tests-MacOSX";
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = "";
-				WARNING_CFLAGS = "-Wall";
+				WARNING_CFLAGS = (
+					"-Wall",
+					"-Weverything",
+					"-fdiagnostics-show-category=id",
+				);
 				WRAPPER_EXTENSION = octest;
 				ZERO_LINK = NO;
 			};
@@ -764,7 +772,11 @@
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = "";
 				VALID_ARCHS = x86_64;
-				WARNING_CFLAGS = "-Wall";
+				WARNING_CFLAGS = (
+					"-Wall",
+					"-Weverything",
+					"-fdiagnostics-show-category=id",
+				);
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
@@ -812,7 +824,11 @@
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = "";
 				VALID_ARCHS = x86_64;
-				WARNING_CFLAGS = "-Wall";
+				WARNING_CFLAGS = (
+					"-Wall",
+					"-Weverything",
+					"-fdiagnostics-show-category=id",
+				);
 				WRAPPER_EXTENSION = octest;
 				ZERO_LINK = NO;
 			};
@@ -963,7 +979,11 @@
 				PRODUCT_NAME = "Core-Tests-Templates";
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = "";
-				WARNING_CFLAGS = "-Wall";
+				WARNING_CFLAGS = (
+					"-Wall",
+					"-Weverything",
+					"-fdiagnostics-show-category=id",
+				);
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
@@ -1010,7 +1030,11 @@
 				PRODUCT_NAME = "Core-Tests-Templates";
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = "";
-				WARNING_CFLAGS = "-Wall";
+				WARNING_CFLAGS = (
+					"-Wall",
+					"-Weverything",
+					"-fdiagnostics-show-category=id",
+				);
 				WRAPPER_EXTENSION = octest;
 				ZERO_LINK = NO;
 			};
@@ -1062,7 +1086,11 @@
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = "";
 				VALID_ARCHS = x86_64;
-				WARNING_CFLAGS = "-Wall";
+				WARNING_CFLAGS = (
+					"-Wall",
+					"-Weverything",
+					"-fdiagnostics-show-category=id",
+				);
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
@@ -1111,7 +1139,11 @@
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = "";
 				VALID_ARCHS = x86_64;
-				WARNING_CFLAGS = "-Wall";
+				WARNING_CFLAGS = (
+					"-Wall",
+					"-Weverything",
+					"-fdiagnostics-show-category=id",
+				);
 				WRAPPER_EXTENSION = octest;
 				ZERO_LINK = NO;
 			};

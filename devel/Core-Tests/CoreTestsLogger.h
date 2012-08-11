@@ -66,6 +66,13 @@
     [_lcl_logger_autoreleasepool release];
 #endif
 
+#ifdef __clang__
+// Ignore some warnings about variadic macros when compiled with '-Weverything'.
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wunknown-pragmas"
+#pragma clang diagnostic ignored "-Wvariadic-macros"
+#pragma clang diagnostic ignored "-Wpedantic"
+#endif
 
 // Definition of _lcl_logger.
 #define _lcl_logger(log_component, log_level, log_format, ...) {               \
@@ -76,4 +83,8 @@
                                       ## __VA_ARGS__];                         \
     _lcl_logger_autoreleasepool_end                                            \
 }
+
+#ifdef __clang__
+#pragma clang diagnostic pop
+#endif
 
