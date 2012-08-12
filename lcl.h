@@ -27,9 +27,9 @@
 #define __LCL_H__
 
 #define _LCL_VERSION_MAJOR  1
-#define _LCL_VERSION_MINOR  2
-#define _LCL_VERSION_BUILD  2
-#define _LCL_VERSION_SUFFIX ""
+#define _LCL_VERSION_MINOR  3
+#define _LCL_VERSION_BUILD  0
+#define _LCL_VERSION_SUFFIX "-dev"
 
 //
 // lcl -- LibComponentLogging
