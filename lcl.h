@@ -147,12 +147,14 @@ typedef uint32_t _lcl_component_t;
 // Functions and macros.
 //
 
-#ifdef __clang__
-// Ignore some warnings about variadic macros when compiled with '-Weverything'.
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wunknown-pragmas"
-#pragma clang diagnostic ignored "-Wvariadic-macros"
-#pragma clang diagnostic ignored "-Wpedantic"
+#ifndef _LCL_NO_IGNORE_WARNINGS
+#   ifdef __clang__
+    // Ignore some warnings about variadic macros when using '-Weverything'.
+#   pragma clang diagnostic push
+#   pragma clang diagnostic ignored "-Wunknown-pragmas"
+#   pragma clang diagnostic ignored "-Wvariadic-macros"
+#   pragma clang diagnostic ignored "-Wpedantic"
+#   endif
 #endif
 
 // lcl_log(<component>, <level>, <format>[, <arg1>[, <arg2>[, ...]]])
@@ -223,8 +225,10 @@ typedef uint32_t _lcl_component_t;
         } while (0)
 #endif
 
-#ifdef __clang__
-#pragma clang diagnostic pop
+#ifndef _LCL_NO_IGNORE_WARNINGS
+#   ifdef __clang__
+#   pragma clang diagnostic pop
+#   endif
 #endif
 
 // lcl_configure_by_component(<component>, <level>)
