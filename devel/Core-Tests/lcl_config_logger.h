@@ -24,8 +24,9 @@
 // THE SOFTWARE.
 
 
-#ifdef CORE_TESTS_TEMPLATES_BUILD
+#if defined(CORE_TESTS_TEMPLATES_BUILD)
 #include "lcl_config_logger.template.h"
+#elif defined(CORE_TESTS_NOLOGGER_BUILD)
 #else
 #import "CoreTestsLogger.h"
 #endif
