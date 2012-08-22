@@ -27,8 +27,8 @@
 #define __LCL_H__
 
 #define _LCL_VERSION_MAJOR  1
-#define _LCL_VERSION_MINOR  2
-#define _LCL_VERSION_BUILD  2
+#define _LCL_VERSION_MINOR  3
+#define _LCL_VERSION_BUILD  1
 #define _LCL_VERSION_SUFFIX ""
 
 //
@@ -147,6 +147,15 @@ typedef uint32_t _lcl_component_t;
 // Functions and macros.
 //
 
+#ifndef _LCL_NO_IGNORE_WARNINGS
+#   ifdef __clang__
+    // Ignore some warnings about variadic macros when using '-Weverything'.
+#   pragma clang diagnostic push
+#   pragma clang diagnostic ignored "-Wunknown-pragmas"
+#   pragma clang diagnostic ignored "-Wvariadic-macros"
+#   pragma clang diagnostic ignored "-Wpedantic"
+#   endif
+#endif
 
 // lcl_log(<component>, <level>, <format>[, <arg1>[, <arg2>[, ...]]])
 //
@@ -214,6 +223,12 @@ typedef uint32_t _lcl_component_t;
                                 ##__VA_ARGS__);                                \
             }                                                                  \
         } while (0)
+#endif
+
+#ifndef _LCL_NO_IGNORE_WARNINGS
+#   ifdef __clang__
+#   pragma clang diagnostic pop
+#   endif
 #endif
 
 // lcl_configure_by_component(<component>, <level>)
@@ -308,6 +323,62 @@ enum {
 
 // Include logging back-end and definition of _lcl_logger.
 #import "lcl_config_logger.h"
+
+
+// For simple configurations where 'lcl_config_logger.h' is empty, define a
+// default NSLog()-based _lcl_logger here.
+#ifndef _lcl_logger
+
+// ARC/non-ARC autorelease pool
+#define _lcl_logger_autoreleasepool_arc 0
+#if defined(__has_feature)
+#   if __has_feature(objc_arc)
+#   undef  _lcl_logger_autoreleasepool_arc
+#   define _lcl_logger_autoreleasepool_arc 1
+#   endif
+#endif
+#if _lcl_logger_autoreleasepool_arc
+#   define _lcl_logger_autoreleasepool_begin                                   \
+        @autoreleasepool {
+#   define _lcl_logger_autoreleasepool_end                                     \
+        }
+#else
+#   define _lcl_logger_autoreleasepool_begin                                   \
+        NSAutoreleasePool *_lcl_logger_autoreleasepool = [[NSAutoreleasePool alloc] init];
+#   define _lcl_logger_autoreleasepool_end                                     \
+        [_lcl_logger_autoreleasepool release];
+#endif
+
+#ifndef _LCL_NO_IGNORE_WARNINGS
+#   ifdef __clang__
+    // Ignore some warnings about variadic macros when using '-Weverything'.
+#   pragma clang diagnostic push
+#   pragma clang diagnostic ignored "-Wunknown-pragmas"
+#   pragma clang diagnostic ignored "-Wvariadic-macros"
+#   pragma clang diagnostic ignored "-Wpedantic"
+#   endif
+#endif
+
+// A simple default logger, which redirects to NSLog().
+#define _lcl_logger(_component, _level, _format, ...) {                        \
+    _lcl_logger_autoreleasepool_begin                                          \
+    NSLog(@"%s %s:%@:%d " _format,                                             \
+          _lcl_level_header_1[_level],                                         \
+          _lcl_component_header[_component],                                   \
+          [@__FILE__ lastPathComponent],                                       \
+          __LINE__,                                                            \
+          ## __VA_ARGS__);                                                     \
+    _lcl_logger_autoreleasepool_end                                            \
+}
+
+#ifndef _LCL_NO_IGNORE_WARNINGS
+#   ifdef __clang__
+#   pragma clang diagnostic pop
+#   endif
+#endif
+
+#endif
+
 
 // Include extensions.
 #import "lcl_config_extensions.h"
