@@ -1,5 +1,4 @@
 
-
 # LibComponentLogging-Core
 
 [http://0xc0.de/LibComponentLogging](http://0xc0.de/LibComponentLogging)    
@@ -18,6 +17,26 @@ LibComponentLogging is available under the terms of the MIT license.
 
 This Git repository contains the library's Core part.
 
+
+## Example
+
+For example, the example usage of **LogFile Logger** is as below:
+
+you can
+simply start logging to the log file by using the standard logging macro from
+LibComponentLogging, e.g.
+
+    lcl_log(lcl_cMyComponent, lcl_vError, @"message ...");
+
+The LogFile logger uses the format
+
+    <date> <time> <pid>:<tid> <level> <component>:<file>:<line>:<function> <message>
+
+Output:
+
+    2009-02-01 12:38:32.796 4964:10b D component1:main.m:28:-[Class method] Message
+    2009-02-01 12:38:32.798 4964:10b D component2:main.m:32:-[Class method] Message
+    2009-02-01 12:38:32.799 4964:10b D component3:main.m:36:-[Class method] Message
 
 ## Installation
 
