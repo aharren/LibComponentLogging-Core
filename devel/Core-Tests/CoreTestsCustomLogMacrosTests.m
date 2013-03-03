@@ -47,10 +47,24 @@
     lcl_configure_by_component(lcl_cMain2, lcl_vOff);
     
     int counter = 0;
+
+#   ifdef __clang__
+    // Ignore some warnings about variadic macros when using '-Weverything'.
+#   pragma clang diagnostic push
+#   pragma clang diagnostic ignored "-Wunknown-pragmas"
+#   pragma clang diagnostic ignored "-Wvariadic-macros"
+#   pragma clang diagnostic ignored "-Wpedantic"
+#   endif
     
     // define a custom log macro which references a #define which contains the
     // log component to use and the log level to use
 #   define Log(_format, ...) lcl_log(LogComponentToUse, LogLevelToUse, _format, ##__VA_ARGS__);
+
+#ifndef _LCL_NO_IGNORE_WARNINGS
+#   ifdef __clang__
+#   pragma clang diagnostic pop
+#   endif
+#endif
     
     // define the log component to use
 #   define LogComponentToUse lcl_cMainComponent1
