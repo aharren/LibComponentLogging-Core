@@ -8,15 +8,35 @@
 
 ## Overview
 
-LibComponentLogging is a small logging library for Objective-C applications on
-Mac OS X and the iPhone OS which provides conditional logging based on log
-levels and log components. Additionally, different logging strategies can be
-used, e.g. writing log messages to a file or sending them to the system log,
-while using the same logging interface.
+LibComponentLogging is a small logging library for Objective-C on Mac OS X and
+iOS which provides log levels, log components, and pluggable logging back-ends,
+e.g. writing log messages to a file, or sending them to the system log.
 
 LibComponentLogging is available under the terms of the MIT license.
 
 This Git repository contains the library's Core part.
+
+
+## Example
+
+After configuring a logging back-end, e.g. the LogFile back-end, you can simply
+start logging to the log file by using LibComponentLogging's standard logging
+macro lcl_log(...), e.g.
+
+    lcl_log(lcl_cMyComponent, lcl_vError, @"message ...");
+
+The LogFile logger uses the format
+
+    <date> <time> <pid>:<tid> <level> <component>:<file>:<line>:<function> <message>
+
+an produces
+
+    2009-02-01 12:38:32.796 4964:10b D component1:main.m:28:-[Class method] Message
+    2009-02-01 12:38:32.798 4964:10b D component2:main.m:32:-[Class method] Message
+    2009-02-01 12:38:32.799 4964:10b D component3:main.m:36:-[Class method] Message
+
+See [http://0xc0.de/LibComponentLogging](http://0xc0.de/LibComponentLogging)
+for more information about LibComponentLogging and more examples.
 
 
 ## Installation
@@ -24,15 +44,15 @@ This Git repository contains the library's Core part.
 Download the files of the library Core and a logging back-end, e.g. the
 LogFile logger, from their repositories on GitHub:
 
-* [Library Core](http://github.com/aharren/LibComponentLogging-Core/downloads)
+* [Library Core](http://github.com/aharren/LibComponentLogging-Core/)
 
-* [LogFile Logger](http://github.com/aharren/LibComponentLogging-LogFile/downloads)
+* [LogFile Logger](http://github.com/aharren/LibComponentLogging-LogFile/)
 
-* [SystemLog Logger](http://github.com/aharren/LibComponentLogging-SystemLog/downloads)
+* [SystemLog Logger](http://github.com/aharren/LibComponentLogging-SystemLog/)
 
-* [NSLog Logger](http://github.com/aharren/LibComponentLogging-NSLog/downloads)
+* [NSLog Logger](http://github.com/aharren/LibComponentLogging-NSLog/)
 
-* [NSLogger Logger](http://github.com/aharren/LibComponentLogging-NSLogger/downloads)
+* [NSLogger Logger](http://github.com/aharren/LibComponentLogging-NSLogger/)
 
 Extract the files and copy the extracted files to your application's source
 directory.
@@ -55,6 +75,9 @@ application's prefix header file.
 Define your log components in lcl_config_components.h.
 
 Add lcl_log(...) log statements to your application.
+
+See [http://0xc0.de/LibComponentLogging#Installation](http://0xc0.de/LibComponentLogging#Installation)
+for more information about installing and configuring LibComponentLogging.
 
 
 ## Repository Branches
@@ -96,6 +119,7 @@ The following Git repositories are related to this repository:
 
 * [LibComponentLogging-UserDefaults](http://github.com/aharren/LibComponentLogging-UserDefaults)
   An extension which stores/restores log level settings to/from the user defaults.
+
 
 ## Copyright and License
 
