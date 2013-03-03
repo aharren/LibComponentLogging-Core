@@ -7,11 +7,9 @@
 
 ## Overview
 
-LibComponentLogging is a small logging library for Objective-C applications on
-Mac OS X and the iPhone OS which provides conditional logging based on log
-levels and log components. Additionally, different logging strategies can be
-used, e.g. writing log messages to a file or sending them to the system log,
-while using the same logging interface.
+LibComponentLogging is a small logging library for Objective-C on Mac OS X and
+iOS which provides log levels, log components, and pluggable logging back-ends,
+e.g. writing log messages to a file, or sending them to the system log.
 
 LibComponentLogging is available under the terms of the MIT license.
 
@@ -20,11 +18,9 @@ This Git repository contains the library's Core part.
 
 ## Example
 
-For example, the example usage of **LogFile Logger** is as below:
-
-you can
-simply start logging to the log file by using the standard logging macro from
-LibComponentLogging, e.g.
+After configuring a logging back-end, e.g. the LogFile back-end, you can simply
+start logging (to the log file) by using LibComponentLogging's standard logging
+macro lcl_log(...), e.g.
 
     lcl_log(lcl_cMyComponent, lcl_vError, @"message ...");
 
@@ -32,11 +28,15 @@ The LogFile logger uses the format
 
     <date> <time> <pid>:<tid> <level> <component>:<file>:<line>:<function> <message>
 
-Output:
+and produces the output
 
     2009-02-01 12:38:32.796 4964:10b D component1:main.m:28:-[Class method] Message
     2009-02-01 12:38:32.798 4964:10b D component2:main.m:32:-[Class method] Message
     2009-02-01 12:38:32.799 4964:10b D component3:main.m:36:-[Class method] Message
+
+See [http://0xc0.de/LibComponentLogging](http://0xc0.de/LibComponentLogging)
+for more information about LibComponentLogging and more examples.
+
 
 ## Installation
 
@@ -74,6 +74,9 @@ application's prefix header file.
 Define your log components in lcl_config_components.h.
 
 Add lcl_log(...) log statements to your application.
+
+See [http://0xc0.de/LibComponentLogging#Installation](http://0xc0.de/LibComponentLogging#Installation)
+for more information about installing and configuring LibComponentLogging.
 
 
 ## Repository Branches
@@ -116,9 +119,10 @@ The following Git repositories are related to this repository:
 * [LibComponentLogging-UserDefaults](http://github.com/aharren/LibComponentLogging-UserDefaults)
   An extension which stores/restores log level settings to/from the user defaults.
 
+
 ## Copyright and License
 
-Copyright (c) 2008-2012 Arne Harren <ah@0xc0.de>
+Copyright (c) 2008-2013 Arne Harren <ah@0xc0.de>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
