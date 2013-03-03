@@ -20,7 +20,7 @@ This Git repository contains the library's Core part.
 ## Example
 
 After configuring a logging back-end, e.g. the LogFile back-end, you can simply
-start logging to the log file by using LibComponentLogging's standard logging
+start logging (to the log file) by using LibComponentLogging's standard logging
 macro lcl_log(...), e.g.
 
     lcl_log(lcl_cMyComponent, lcl_vError, @"message ...");
@@ -29,7 +29,7 @@ The LogFile logger uses the format
 
     <date> <time> <pid>:<tid> <level> <component>:<file>:<line>:<function> <message>
 
-an produces
+and produces the output
 
     2009-02-01 12:38:32.796 4964:10b D component1:main.m:28:-[Class method] Message
     2009-02-01 12:38:32.798 4964:10b D component2:main.m:32:-[Class method] Message
