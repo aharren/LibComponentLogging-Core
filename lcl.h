@@ -100,6 +100,14 @@ extern "C" {
 //
 
 
+#ifndef _LCL_NO_IGNORE_WARNINGS
+#   ifdef __clang__
+    // Ignore warnings about duplicate enum values when using '-Weverything'.
+#   pragma clang diagnostic push
+#   pragma clang diagnostic ignored "-Wduplicate-enum"
+#   endif
+#endif
+
 // Log levels, prefixed with 'lcl_v'.
 enum _lcl_enum_level_t {
     lcl_vOff = 0,
@@ -116,6 +124,12 @@ enum _lcl_enum_level_t {
    _lcl_level_t_last  = _lcl_level_t_count-1
 };
 
+#ifndef _LCL_NO_IGNORE_WARNINGS
+#   ifdef __clang__
+#   pragma clang diagnostic pop
+#   endif
+#endif
+
 // Log level type.
 typedef uint32_t _lcl_level_t;
 typedef uint8_t  _lcl_level_narrow_t;
@@ -125,6 +139,14 @@ typedef uint8_t  _lcl_level_narrow_t;
 // Log components.
 //
 
+
+#ifndef _LCL_NO_IGNORE_WARNINGS
+#   ifdef __clang__
+    // Ignore warnings about duplicate enum values when using '-Weverything'.
+#   pragma clang diagnostic push
+#   pragma clang diagnostic ignored "-Wduplicate-enum"
+#   endif
+#endif
 
 // Log components, prefixed with 'lcl_c'.
 enum _lcl_enum_component_t {
@@ -138,6 +160,12 @@ enum _lcl_enum_component_t {
    _lcl_component_t_first = 0,
    _lcl_component_t_last  = _lcl_component_t_count-1
 };
+
+#ifndef _LCL_NO_IGNORE_WARNINGS
+#   ifdef __clang__
+#   pragma clang diagnostic pop
+#   endif
+#endif
 
 // Log component type.
 typedef uint32_t _lcl_component_t;
