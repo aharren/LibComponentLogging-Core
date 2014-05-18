@@ -6,6 +6,8 @@
 *.mode1v3
 *.xcuserdatad
 
+*.xccheckout
+
 # Xcode build files
 build/
 
