@@ -205,8 +205,7 @@ typedef uint32_t _lcl_component_t;
 #else
 #   define lcl_log(_component, _level, _format, ...)                           \
         do {                                                                   \
-            if (((_lcl_component_level[(__lcl_log_symbol(_component))]) >=     \
-                  (__lcl_log_symbol(_level)))                                  \
+            if (_lcl_component_is_active_at_level(_component, _level)          \
                ) {                                                             \
                     _lcl_logger(_component,                                    \
                                 _level,                                        \
@@ -240,8 +239,7 @@ typedef uint32_t _lcl_component_t;
 #else
 #   define lcl_log_if(_component, _level, _predicate, _format, ...)            \
         do {                                                                   \
-            if (((_lcl_component_level[(__lcl_log_symbol(_component))]) >=     \
-                  (__lcl_log_symbol(_level)))                                  \
+            if (_lcl_component_is_active_at_level(_component, _level)          \
                 &&                                                             \
                 (_predicate)                                                   \
                ) {                                                             \
@@ -307,6 +305,14 @@ uint32_t lcl_configure_by_name(const char *name, _lcl_level_t level);
 
 // Active log levels, indexed by log component.
 extern _lcl_level_narrow_t _lcl_component_level[_lcl_component_t_count];
+
+// Checks whether the given log component is active at the given log level.
+#define _lcl_component_is_active_at_level(_component, _level)                  \
+    (                                                                          \
+        (_lcl_component_level[(__lcl_log_symbol(_component))])                 \
+        >=                                                                     \
+        (__lcl_log_symbol(_level))                                             \
+    )
 
 // Log component identifiers, indexed by log component.
 extern const char * const _lcl_component_identifier[_lcl_component_t_count];
