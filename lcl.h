@@ -85,8 +85,11 @@
 // will be defined to an empty effect.
 //
 
-
+#ifdef __OBJC__
 #import <Foundation/Foundation.h>
+#else
+#define _LCL_LOG_C_STRING
+#endif
 
 
 // Use C linkage.
@@ -118,7 +121,7 @@ enum _lcl_enum_level_t {
     lcl_vInfo,                  // informational message
     lcl_vDebug,                 // coarse-grained debugging information
     lcl_vTrace,                 // fine-grained debugging information
-    
+
    _lcl_level_t_count,
    _lcl_level_t_first = 0,
    _lcl_level_t_last  = _lcl_level_t_count-1
@@ -131,8 +134,8 @@ enum _lcl_enum_level_t {
 #endif
 
 // Log level type.
-typedef uint32_t _lcl_level_t;
-typedef uint8_t  _lcl_level_narrow_t;
+typedef unsigned int   _lcl_level_t;
+typedef unsigned char  _lcl_level_narrow_t;
 
 
 //
@@ -153,7 +156,12 @@ enum _lcl_enum_component_t {
 #   define  _lcl_component(_identifier, _header, _name)                        \
     lcl_c##_identifier,                                                        \
   __lcl_log_symbol_lcl_c##_identifier = lcl_c##_identifier,
+#if __has_include("lcl_config_components.h")
 #   include "lcl_config_components.h"
+#else
+    // default component
+    _lcl_component(Main, "main", "Main")
+#endif
 #   undef   _lcl_component
 
    _lcl_component_t_count,
@@ -168,7 +176,7 @@ enum _lcl_enum_component_t {
 #endif
 
 // Log component type.
-typedef uint32_t _lcl_component_t;
+typedef unsigned int _lcl_component_t;
 
 
 //
@@ -206,7 +214,8 @@ typedef uint32_t _lcl_component_t;
 #   define lcl_log(_component, _level, _format, ...)                           \
         do {                                                                   \
             if (((_lcl_component_level[(__lcl_log_symbol(_component))]) >=     \
-                  (__lcl_log_symbol(_level)))                                  \
+                  (__lcl_log_symbol(_level))) ||                               \
+             _lcl_default_level >= _level   \
                ) {                                                             \
                     _lcl_logger(_component,                                    \
                                 _level,                                        \
@@ -267,7 +276,7 @@ typedef uint32_t _lcl_component_t;
 // Configures the given log level for the given log component.
 // Returns the number of configured log components, or 0 on failure.
 //
-uint32_t lcl_configure_by_component(_lcl_component_t component, _lcl_level_t level);
+unsigned int lcl_configure_by_component(_lcl_component_t component, _lcl_level_t level);
 
 // lcl_configure_by_identifier(<identifier>, <level>)
 //
@@ -277,7 +286,7 @@ uint32_t lcl_configure_by_component(_lcl_component_t component, _lcl_level_t lev
 // Configures the given log level for the given log component(s).
 // Returns the number of configured log components, or 0 on failure.
 //
-uint32_t lcl_configure_by_identifier(const char *identifier, _lcl_level_t level);
+unsigned int lcl_configure_by_identifier(const char *identifier, _lcl_level_t level);
 
 // lcl_configure_by_header(<header>, <level>)
 //
@@ -287,7 +296,7 @@ uint32_t lcl_configure_by_identifier(const char *identifier, _lcl_level_t level)
 // Configures the given log level for the given log component(s).
 // Returns the number of configured log components, or 0 on failure.
 //
-uint32_t lcl_configure_by_header(const char *header, _lcl_level_t level);
+unsigned int lcl_configure_by_header(const char *header, _lcl_level_t level);
 
 // lcl_configure_by_name(<name>, <level>)
 //
@@ -297,7 +306,7 @@ uint32_t lcl_configure_by_header(const char *header, _lcl_level_t level);
 // Configures the given log level for the given log component(s).
 // Returns the number of configured log components, or 0 on failure.
 //
-uint32_t lcl_configure_by_name(const char *name, _lcl_level_t level);
+unsigned int lcl_configure_by_name(const char *name, _lcl_level_t level);
 
 
 //
@@ -307,6 +316,9 @@ uint32_t lcl_configure_by_name(const char *name, _lcl_level_t level);
 
 // Active log levels, indexed by log component.
 extern _lcl_level_narrow_t _lcl_component_level[_lcl_component_t_count];
+
+// Default log level.
+extern _lcl_level_t _lcl_default_level;
 
 // Log component identifiers, indexed by log component.
 extern const char * const _lcl_component_identifier[_lcl_component_t_count];
@@ -343,19 +355,27 @@ enum {
     __lcl_log_symbol_##_symbol
 
 
+// Helper macros
+#ifndef __FILENAME__
+#    define __FILENAME__ (strrchr(__FILE__, '/') ? strrchr(__FILE__, '/') + 1 : __FILE__)
+#endif
+
 // End C linkage.
 #ifdef __cplusplus
 }
 #endif
 
-
 // Include logging back-end and definition of _lcl_logger.
+#if __has_include("lcl_config_logger.h")
 #import "lcl_config_logger.h"
+#endif
 
 
 // For simple configurations where 'lcl_config_logger.h' is empty, define a
 // default NSLog()-based _lcl_logger here.
 #ifndef _lcl_logger
+
+#ifdef __OBJC__
 
 // ARC/non-ARC autorelease pool
 #define _lcl_logger_autoreleasepool_arc 0
@@ -377,6 +397,11 @@ enum {
         [_lcl_logger_autoreleasepool release];
 #endif
 
+#else // not __OBJC__
+#   define _lcl_logger_autoreleasepool_begin
+#   define _lcl_logger_autoreleasepool_end
+#endif
+
 #ifndef _LCL_NO_IGNORE_WARNINGS
 #   ifdef __clang__
     // Ignore some warnings about variadic macros when using '-Weverything'.
@@ -386,6 +411,8 @@ enum {
 #   pragma clang diagnostic ignored "-Wpedantic"
 #   endif
 #endif
+
+#ifndef _LCL_LOG_C_STRING
 
 // A simple default logger, which redirects to NSLog().
 #define _lcl_logger(_component, _level, _format, ...) {                        \
@@ -399,6 +426,20 @@ enum {
     _lcl_logger_autoreleasepool_end                                            \
 }
 
+#else // _LCL_LOG_C_STRING defined
+
+// A simple default C string logger, which redirects to stderr.
+#define _lcl_logger(_component, _level, _format, ...) {                        \
+    fprintf(stdout, "%s %s:%s:%d " _format "\n",                               \
+          _lcl_level_header_1[_level],                                         \
+          _lcl_component_header[_component],                                   \
+          __FILENAME__,                                                        \
+          __LINE__,                                                            \
+          ## __VA_ARGS__);                                                     \
+}
+
+#endif
+
 #ifndef _LCL_NO_IGNORE_WARNINGS
 #   ifdef __clang__
 #   pragma clang diagnostic pop
@@ -409,8 +450,8 @@ enum {
 
 
 // Include extensions.
+#if __has_include("lcl_config_extensions.h")
 #import "lcl_config_extensions.h"
-
+#endif
 
 #endif // __LCL_H__
-
