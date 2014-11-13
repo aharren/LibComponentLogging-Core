@@ -24,10 +24,10 @@
 // THE SOFTWARE.
 
 #import "lcl.h"
-#import <SenTestingKit/SenTestingKit.h>
+#import "TestCase.h"
 
 
-@interface CoreTestsCustomLogMacrosTests : SenTestCase {
+@interface CoreTestsCustomLogMacrosTests : TestCase {
     
 }
 
@@ -74,8 +74,8 @@
     
     // create a log entry
     Log(@"message %d from Log macro", ++counter);
-    STAssertEqualObjects([CoreTestsLogger lastLogEntry], @"INFO main.component1 message 1 from Log macro", nil);
-    STAssertEquals(counter, 1, nil);
+    AssertEqualObjects([CoreTestsLogger lastLogEntry], @"INFO main.component1 message 1 from Log macro");
+    AssertEquals(counter, 1);
 }
 
 @end

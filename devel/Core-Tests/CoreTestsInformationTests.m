@@ -24,10 +24,10 @@
 // THE SOFTWARE.
 
 #import "lcl.h"
-#import <SenTestingKit/SenTestingKit.h>
+#import "TestCase.h"
 
 
-@interface CoreTestsInformationTests : SenTestCase {
+@interface CoreTestsInformationTests : TestCase {
 
 }
 
@@ -39,7 +39,7 @@
 #define _(cstring) ((cstring == NULL) ? @"(null)" : [NSString stringWithUTF8String:cstring])
 
 - (void)testInformationVersion {
-    STAssertEqualObjects(_(_lcl_version), @"1.3.3", nil);
+    AssertEqualObjects(_(_lcl_version), @"1.3.3");
 }
 
 @end

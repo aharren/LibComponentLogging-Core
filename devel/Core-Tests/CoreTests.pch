@@ -24,18 +24,5 @@
 // THE SOFTWARE.
 
 #import "lcl.h"
+#import "TestCase.h"
 
-#ifdef __clang__
-// Ignore some warnings about variadic macros when using '-Weverything'.
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wunknown-pragmas"
-#pragma clang diagnostic ignored "-Wvariadic-macros"
-#pragma clang diagnostic ignored "-Wpedantic"
-#pragma clang diagnostic ignored "-Wobjc-interface-ivars"
-#endif
-
-#import <SenTestingKit/SenTestingKit.h>
-
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif

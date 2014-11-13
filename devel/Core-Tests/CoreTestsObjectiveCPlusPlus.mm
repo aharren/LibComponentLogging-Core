@@ -24,7 +24,7 @@
 // THE SOFTWARE.
 
 #import "lcl.h"
-#import <SenTestingKit/SenTestingKit.h>
+#import "TestCase.h"
 
 
 class CoreTestsObjectiveCPlusPlusTestsClass {
@@ -57,7 +57,7 @@ void CoreTestsObjectiveCPlusPlusTestsClass::logAtLevelDebug() {
 }
 
 
-@interface CoreTestsObjectiveCPlusPlusTests : SenTestCase {
+@interface CoreTestsObjectiveCPlusPlusTests : TestCase {
     
 }
 
@@ -73,11 +73,11 @@ void CoreTestsObjectiveCPlusPlusTestsClass::logAtLevelDebug() {
 - (void)testLoggingAtLogLevelInfo {
     CoreTestsObjectiveCPlusPlusTestsClass::configureByComponent();
     CoreTestsObjectiveCPlusPlusTestsClass::logAtLevelCritical();
-    STAssertEqualObjects([CoreTestsLogger lastLogEntry], @"CRITICAL main message 1", nil);
+    AssertEqualObjects([CoreTestsLogger lastLogEntry], @"CRITICAL main message 1");
     CoreTestsObjectiveCPlusPlusTestsClass::logAtLevelInfo();
-    STAssertEqualObjects([CoreTestsLogger lastLogEntry], @"INFO main message 2", nil);
+    AssertEqualObjects([CoreTestsLogger lastLogEntry], @"INFO main message 2");
     CoreTestsObjectiveCPlusPlusTestsClass::logAtLevelDebug();
-    STAssertEqualObjects([CoreTestsLogger lastLogEntry], @"INFO main message 2", nil);
+    AssertEqualObjects([CoreTestsLogger lastLogEntry], @"INFO main message 2");
 }
 
 @end

@@ -118,9 +118,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		E00C11CF144B29C800A3488C /* Core-Tests-MacOSX-ARC.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Core-Tests-MacOSX-ARC.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E00C11CF144B29C800A3488C /* Core-Tests-MacOSX-ARC.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Core-Tests-MacOSX-ARC.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E013FA5E1118A6D1003A58EA /* CoreTestsInformationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreTestsInformationTests.m; path = "Core-Tests/CoreTestsInformationTests.m"; sourceTree = "<group>"; };
 		E013FA931118AC3E003A58EA /* CoreTestsNoLoggingTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreTestsNoLoggingTests.m; path = "Core-Tests/CoreTestsNoLoggingTests.m"; sourceTree = "<group>"; };
+		E019D2551A15441C0095F3AF /* TestCase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TestCase.h; path = "Core-Tests/TestCase.h"; sourceTree = "<group>"; };
 		E0303DEC10F4D26B0032A42B /* CoreTestsLoggingTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreTestsLoggingTests.m; path = "Core-Tests/CoreTestsLoggingTests.m"; sourceTree = "<group>"; };
 		E0303E5710F4DDF60032A42B /* CoreTestsLogLevelsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreTestsLogLevelsTests.m; path = "Core-Tests/CoreTestsLogLevelsTests.m"; sourceTree = "<group>"; };
 		E0303E6610F4DEF60032A42B /* CoreTestsLogComponentsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreTestsLogComponentsTests.m; path = "Core-Tests/CoreTestsLogComponentsTests.m"; sourceTree = "<group>"; };
@@ -128,20 +129,20 @@
 		E0303EC410F4E9CF0032A42B /* CoreTestsConfigureTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreTestsConfigureTests.m; path = "Core-Tests/CoreTestsConfigureTests.m"; sourceTree = "<group>"; };
 		E05D56561116153200E7E36E /* CoreTestsTemplatesTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreTestsTemplatesTests.m; path = "Core-Tests/CoreTestsTemplatesTests.m"; sourceTree = "<group>"; };
 		E076A70E15D7B37600115B6E /* CoreTestsNoLoggerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreTestsNoLoggerTests.m; path = "Core-Tests/CoreTestsNoLoggerTests.m"; sourceTree = "<group>"; };
-		E0861D68144B2ADA00A5B70C /* Core-Tests-Templates-ARC.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Core-Tests-Templates-ARC.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E0919D1E15D7B1980009D434 /* Core-Tests-NoLogger.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Core-Tests-NoLogger.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E0919D2B15D7B20E0009D434 /* Core-Tests-NoLogger-ARC.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Core-Tests-NoLogger-ARC.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0861D68144B2ADA00A5B70C /* Core-Tests-Templates-ARC.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Core-Tests-Templates-ARC.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0919D1E15D7B1980009D434 /* Core-Tests-NoLogger.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Core-Tests-NoLogger.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0919D2B15D7B20E0009D434 /* Core-Tests-NoLogger-ARC.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Core-Tests-NoLogger-ARC.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E09F2CAE10F4B75E00246AAA /* CoreTests.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreTests.pch; path = "Core-Tests/CoreTests.pch"; sourceTree = "<group>"; };
 		E09F2CBA10F4B82400246AAA /* CoreTestsLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreTestsLogger.h; path = "Core-Tests/CoreTestsLogger.h"; sourceTree = "<group>"; };
 		E09F2CBB10F4B82400246AAA /* CoreTestsLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreTestsLogger.m; path = "Core-Tests/CoreTestsLogger.m"; sourceTree = "<group>"; };
 		E0A222B013EDB997002D1D94 /* CoreTestsSyntaxTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreTestsSyntaxTests.m; path = "Core-Tests/CoreTestsSyntaxTests.m"; sourceTree = "<group>"; };
 		E0A222B313EDBB87002D1D94 /* CoreTestsNoLoggingSyntaxTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreTestsNoLoggingSyntaxTests.m; path = "Core-Tests/CoreTestsNoLoggingSyntaxTests.m"; sourceTree = "<group>"; };
 		E0A6310D1114D5B700E42352 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.md; path = ../README.md; sourceTree = SOURCE_ROOT; };
-		E0B4803813A518E500130E13 /* Core-Tests-MacOSX.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Core-Tests-MacOSX.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E0B4803913A5192800130E13 /* Core-Tests-iPhoneOS.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Core-Tests-iPhoneOS.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E0B4803A13A5194500130E13 /* Core-Tests-Templates.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Core-Tests-Templates.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E0B4803B13A51ABB00130E13 /* Core-Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Core-Tests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E0C394C715D7A9480070B99C /* Core-Tests-Warnings.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Core-Tests-Warnings.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0B4803813A518E500130E13 /* Core-Tests-MacOSX.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Core-Tests-MacOSX.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0B4803913A5192800130E13 /* Core-Tests-iPhoneOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Core-Tests-iPhoneOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0B4803A13A5194500130E13 /* Core-Tests-Templates.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Core-Tests-Templates.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0B4803B13A51ABB00130E13 /* Core-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Core-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0C394C715D7A9480070B99C /* Core-Tests-Warnings.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Core-Tests-Warnings.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0EB42DB10F4ABB4009540E4 /* lcl_config_components.template.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lcl_config_components.template.h; path = ../lcl_config_components.template.h; sourceTree = SOURCE_ROOT; };
 		E0EB42DC10F4ABB4009540E4 /* lcl_config_logger.template.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lcl_config_logger.template.h; path = ../lcl_config_logger.template.h; sourceTree = SOURCE_ROOT; };
 		E0EB42DD10F4ABB4009540E4 /* lcl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lcl.h; path = ../lcl.h; sourceTree = SOURCE_ROOT; };
@@ -227,15 +228,15 @@
 				E0A6310D1114D5B700E42352 /* README.md */,
 				E0E417970F2128750036D6FD /* Core */,
 				E0EB42E310F4ABE9009540E4 /* Core-Tests */,
-				E0B4803B13A51ABB00130E13 /* Core-Tests.octest */,
-				E0B4803813A518E500130E13 /* Core-Tests-MacOSX.octest */,
-				E00C11CF144B29C800A3488C /* Core-Tests-MacOSX-ARC.octest */,
-				E0B4803913A5192800130E13 /* Core-Tests-iPhoneOS.octest */,
-				E0B4803A13A5194500130E13 /* Core-Tests-Templates.octest */,
-				E0861D68144B2ADA00A5B70C /* Core-Tests-Templates-ARC.octest */,
-				E0C394C715D7A9480070B99C /* Core-Tests-Warnings.octest */,
-				E0919D1E15D7B1980009D434 /* Core-Tests-NoLogger.octest */,
-				E0919D2B15D7B20E0009D434 /* Core-Tests-NoLogger-ARC.octest */,
+				E0B4803B13A51ABB00130E13 /* Core-Tests.xctest */,
+				E0B4803813A518E500130E13 /* Core-Tests-MacOSX.xctest */,
+				E00C11CF144B29C800A3488C /* Core-Tests-MacOSX-ARC.xctest */,
+				E0B4803913A5192800130E13 /* Core-Tests-iPhoneOS.xctest */,
+				E0B4803A13A5194500130E13 /* Core-Tests-Templates.xctest */,
+				E0861D68144B2ADA00A5B70C /* Core-Tests-Templates-ARC.xctest */,
+				E0C394C715D7A9480070B99C /* Core-Tests-Warnings.xctest */,
+				E0919D1E15D7B1980009D434 /* Core-Tests-NoLogger.xctest */,
+				E0919D2B15D7B20E0009D434 /* Core-Tests-NoLogger-ARC.xctest */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -258,6 +259,7 @@
 				E0EB42FF10F4ACEF009540E4 /* lcl_config_components.h */,
 				E0EB430010F4ACEF009540E4 /* lcl_config_logger.h */,
 				E0F6E49710F693F600CC544C /* lcl_config_extensions.h */,
+				E019D2551A15441C0095F3AF /* TestCase.h */,
 				E09F2CAE10F4B75E00246AAA /* CoreTests.pch */,
 				E0EB43A810F4B1EB009540E4 /* Core-Tests-Info.plist */,
 				E09F2CBA10F4B82400246AAA /* CoreTestsLogger.h */,
@@ -295,8 +297,8 @@
 			);
 			name = "Core-Tests-MacOSX";
 			productName = Tests;
-			productReference = E0B4803813A518E500130E13 /* Core-Tests-MacOSX.octest */;
-			productType = "com.apple.product-type.bundle";
+			productReference = E0B4803813A518E500130E13 /* Core-Tests-MacOSX.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		E00C11BD144B29C800A3488C /* Core-Tests-MacOSX-ARC */ = {
 			isa = PBXNativeTarget;
@@ -312,8 +314,8 @@
 			);
 			name = "Core-Tests-MacOSX-ARC";
 			productName = Tests;
-			productReference = E00C11CF144B29C800A3488C /* Core-Tests-MacOSX-ARC.octest */;
-			productType = "com.apple.product-type.bundle";
+			productReference = E00C11CF144B29C800A3488C /* Core-Tests-MacOSX-ARC.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		E03C9EB510F65B3A0090E09B /* Core-Tests-iPhoneOS */ = {
 			isa = PBXNativeTarget;
@@ -329,8 +331,8 @@
 			);
 			name = "Core-Tests-iPhoneOS";
 			productName = Tests;
-			productReference = E0B4803913A5192800130E13 /* Core-Tests-iPhoneOS.octest */;
-			productType = "com.apple.product-type.bundle";
+			productReference = E0B4803913A5192800130E13 /* Core-Tests-iPhoneOS.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		E05D5642111614DE00E7E36E /* Core-Tests-Templates */ = {
 			isa = PBXNativeTarget;
@@ -346,8 +348,8 @@
 			);
 			name = "Core-Tests-Templates";
 			productName = Tests;
-			productReference = E0B4803A13A5194500130E13 /* Core-Tests-Templates.octest */;
-			productType = "com.apple.product-type.bundle";
+			productReference = E0B4803A13A5194500130E13 /* Core-Tests-Templates.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		E0861D5D144B2ADA00A5B70C /* Core-Tests-Templates-ARC */ = {
 			isa = PBXNativeTarget;
@@ -363,8 +365,8 @@
 			);
 			name = "Core-Tests-Templates-ARC";
 			productName = Tests;
-			productReference = E0861D68144B2ADA00A5B70C /* Core-Tests-Templates-ARC.octest */;
-			productType = "com.apple.product-type.bundle";
+			productReference = E0861D68144B2ADA00A5B70C /* Core-Tests-Templates-ARC.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		E0919D1415D7B1980009D434 /* Core-Tests-NoLogger */ = {
 			isa = PBXNativeTarget;
@@ -380,8 +382,8 @@
 			);
 			name = "Core-Tests-NoLogger";
 			productName = Tests;
-			productReference = E0919D1E15D7B1980009D434 /* Core-Tests-NoLogger.octest */;
-			productType = "com.apple.product-type.bundle";
+			productReference = E0919D1E15D7B1980009D434 /* Core-Tests-NoLogger.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		E0919D2115D7B20E0009D434 /* Core-Tests-NoLogger-ARC */ = {
 			isa = PBXNativeTarget;
@@ -397,8 +399,8 @@
 			);
 			name = "Core-Tests-NoLogger-ARC";
 			productName = Tests;
-			productReference = E0919D2B15D7B20E0009D434 /* Core-Tests-NoLogger-ARC.octest */;
-			productType = "com.apple.product-type.bundle";
+			productReference = E0919D2B15D7B20E0009D434 /* Core-Tests-NoLogger-ARC.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		E0C394B315D7A9390070B99C /* Core-Tests-Warnings */ = {
 			isa = PBXNativeTarget;
@@ -414,8 +416,8 @@
 			);
 			name = "Core-Tests-Warnings";
 			productName = Tests;
-			productReference = E0C394C715D7A9480070B99C /* Core-Tests-Warnings.octest */;
-			productType = "com.apple.product-type.bundle";
+			productReference = E0C394C715D7A9480070B99C /* Core-Tests-Warnings.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		E0EB43E710F4B365009540E4 /* Core-Tests */ = {
 			isa = PBXNativeTarget;
@@ -438,8 +440,8 @@
 			);
 			name = "Core-Tests";
 			productName = "Core-Tests";
-			productReference = E0B4803B13A51ABB00130E13 /* Core-Tests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productReference = E0B4803B13A51ABB00130E13 /* Core-Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -709,6 +711,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				TEST_AFTER_BUILD = YES;
@@ -722,6 +725,7 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				SDKROOT = macosx;
 				TEST_AFTER_BUILD = YES;
 			};
@@ -764,18 +768,16 @@
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
-					"-framework",
-					SenTestingKit,
 				);
 				PRODUCT_NAME = "Core-Tests-MacOSX";
 				RUN_CLANG_STATIC_ANALYZER = YES;
-				SDKROOT = "";
+				SDKROOT = macosx;
 				WARNING_CFLAGS = (
 					"-Wall",
 					"-Weverything",
 					"-fdiagnostics-show-category=id",
 				);
-				WRAPPER_EXTENSION = octest;
+				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
 		};
@@ -814,18 +816,16 @@
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
-					"-framework",
-					SenTestingKit,
 				);
 				PRODUCT_NAME = "Core-Tests-MacOSX";
 				RUN_CLANG_STATIC_ANALYZER = YES;
-				SDKROOT = "";
+				SDKROOT = macosx;
 				WARNING_CFLAGS = (
 					"-Wall",
 					"-Weverything",
 					"-fdiagnostics-show-category=id",
 				);
-				WRAPPER_EXTENSION = octest;
+				WRAPPER_EXTENSION = xctest;
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -868,8 +868,6 @@
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
-					"-framework",
-					SenTestingKit,
 				);
 				PRODUCT_NAME = "Core-Tests-MacOSX-ARC";
 				RUN_CLANG_STATIC_ANALYZER = YES;
@@ -880,7 +878,7 @@
 					"-Weverything",
 					"-fdiagnostics-show-category=id",
 				);
-				WRAPPER_EXTENSION = octest;
+				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
 		};
@@ -920,8 +918,6 @@
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
-					"-framework",
-					SenTestingKit,
 				);
 				PRODUCT_NAME = "Core-Tests-MacOSX-ARC";
 				RUN_CLANG_STATIC_ANALYZER = YES;
@@ -932,7 +928,7 @@
 					"-Weverything",
 					"-fdiagnostics-show-category=id",
 				);
-				WRAPPER_EXTENSION = octest;
+				WRAPPER_EXTENSION = xctest;
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -941,9 +937,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_MODULES_AUTOLINK = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_MODEL_TUNING = G5;
@@ -970,21 +971,22 @@
 				GCC_WARN_UNUSED_VALUE = YES;
 				INFOPLIST_FILE = "Core-Tests/Core-Tests-Info.plist";
 				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
-				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
 					"-framework",
-					SenTestingKit,
+					XCTest,
 				);
 				PRODUCT_NAME = "Core-Tests-iPhoneOS";
 				PROVISIONING_PROFILE = "";
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = iphonesimulator;
+				VALID_ARCHS = "arm64 armv7 armv7s";
 				WARNING_CFLAGS = "-Wall";
-				WRAPPER_EXTENSION = octest;
+				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
 		};
@@ -992,10 +994,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_MODULES_AUTOLINK = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1020,20 +1027,21 @@
 				GCC_WARN_UNUSED_VALUE = YES;
 				INFOPLIST_FILE = "Core-Tests/Core-Tests-Info.plist";
 				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
-				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
 					"-framework",
-					SenTestingKit,
+					XCTest,
 				);
 				PRODUCT_NAME = "Core-Tests-iPhoneOS";
 				PROVISIONING_PROFILE = "";
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = iphonesimulator;
+				VALID_ARCHS = "arm64 armv7 armv7s";
 				WARNING_CFLAGS = "-Wall";
-				WRAPPER_EXTENSION = octest;
+				WRAPPER_EXTENSION = xctest;
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -1076,8 +1084,6 @@
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
-					"-framework",
-					SenTestingKit,
 				);
 				PRODUCT_NAME = "Core-Tests-Templates";
 				RUN_CLANG_STATIC_ANALYZER = YES;
@@ -1087,7 +1093,7 @@
 					"-Weverything",
 					"-fdiagnostics-show-category=id",
 				);
-				WRAPPER_EXTENSION = octest;
+				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
 		};
@@ -1127,8 +1133,6 @@
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
-					"-framework",
-					SenTestingKit,
 				);
 				PRODUCT_NAME = "Core-Tests-Templates";
 				RUN_CLANG_STATIC_ANALYZER = YES;
@@ -1138,7 +1142,7 @@
 					"-Weverything",
 					"-fdiagnostics-show-category=id",
 				);
-				WRAPPER_EXTENSION = octest;
+				WRAPPER_EXTENSION = xctest;
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -1182,8 +1186,6 @@
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
-					"-framework",
-					SenTestingKit,
 				);
 				PRODUCT_NAME = "Core-Tests-Templates-ARC";
 				RUN_CLANG_STATIC_ANALYZER = YES;
@@ -1194,7 +1196,7 @@
 					"-Weverything",
 					"-fdiagnostics-show-category=id",
 				);
-				WRAPPER_EXTENSION = octest;
+				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
 		};
@@ -1235,8 +1237,6 @@
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
-					"-framework",
-					SenTestingKit,
 				);
 				PRODUCT_NAME = "Core-Tests-Templates-ARC";
 				RUN_CLANG_STATIC_ANALYZER = YES;
@@ -1247,7 +1247,7 @@
 					"-Weverything",
 					"-fdiagnostics-show-category=id",
 				);
-				WRAPPER_EXTENSION = octest;
+				WRAPPER_EXTENSION = xctest;
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -1290,8 +1290,6 @@
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
-					"-framework",
-					SenTestingKit,
 				);
 				PRODUCT_NAME = "Core-Tests-NoLogger";
 				RUN_CLANG_STATIC_ANALYZER = YES;
@@ -1301,7 +1299,7 @@
 					"-Weverything",
 					"-fdiagnostics-show-category=id",
 				);
-				WRAPPER_EXTENSION = octest;
+				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
 		};
@@ -1341,8 +1339,6 @@
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
-					"-framework",
-					SenTestingKit,
 				);
 				PRODUCT_NAME = "Core-Tests-NoLogger";
 				RUN_CLANG_STATIC_ANALYZER = YES;
@@ -1352,7 +1348,7 @@
 					"-Weverything",
 					"-fdiagnostics-show-category=id",
 				);
-				WRAPPER_EXTENSION = octest;
+				WRAPPER_EXTENSION = xctest;
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -1396,8 +1392,6 @@
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
-					"-framework",
-					SenTestingKit,
 				);
 				PRODUCT_NAME = "Core-Tests-NoLogger-ARC";
 				RUN_CLANG_STATIC_ANALYZER = YES;
@@ -1408,7 +1402,7 @@
 					"-Weverything",
 					"-fdiagnostics-show-category=id",
 				);
-				WRAPPER_EXTENSION = octest;
+				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
 		};
@@ -1449,8 +1443,6 @@
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
-					"-framework",
-					SenTestingKit,
 				);
 				PRODUCT_NAME = "Core-Tests-NoLogger-ARC";
 				RUN_CLANG_STATIC_ANALYZER = YES;
@@ -1461,7 +1453,7 @@
 					"-Weverything",
 					"-fdiagnostics-show-category=id",
 				);
-				WRAPPER_EXTENSION = octest;
+				WRAPPER_EXTENSION = xctest;
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -1505,8 +1497,6 @@
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
-					"-framework",
-					SenTestingKit,
 				);
 				PRODUCT_NAME = "Core-Tests-Warnings";
 				RUN_CLANG_STATIC_ANALYZER = YES;
@@ -1517,7 +1507,7 @@
 					"-Weverything",
 					"-fdiagnostics-show-category=id",
 				);
-				WRAPPER_EXTENSION = octest;
+				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
 		};
@@ -1558,8 +1548,6 @@
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
-					"-framework",
-					SenTestingKit,
 				);
 				PRODUCT_NAME = "Core-Tests-Warnings";
 				RUN_CLANG_STATIC_ANALYZER = YES;
@@ -1570,7 +1558,7 @@
 					"-Weverything",
 					"-fdiagnostics-show-category=id",
 				);
-				WRAPPER_EXTENSION = octest;
+				WRAPPER_EXTENSION = xctest;
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -1595,13 +1583,11 @@
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
-					"-framework",
-					SenTestingKit,
 				);
 				PRODUCT_NAME = "Core-Tests";
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = "";
-				WRAPPER_EXTENSION = octest;
+				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
 		};
@@ -1623,13 +1609,11 @@
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
-					"-framework",
-					SenTestingKit,
 				);
 				PRODUCT_NAME = "Core-Tests";
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = "";
-				WRAPPER_EXTENSION = octest;
+				WRAPPER_EXTENSION = xctest;
 				ZERO_LINK = NO;
 			};
 			name = Release;

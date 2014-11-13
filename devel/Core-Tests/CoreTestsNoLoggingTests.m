@@ -23,7 +23,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <SenTestingKit/SenTestingKit.h>
+#import "TestCase.h"
 
 
 // turn the lcl_log() macro into a no-op
@@ -31,7 +31,7 @@
 #import "lcl.h"
 
 
-@interface CoreTestsNoLoggingTests : SenTestCase {
+@interface CoreTestsNoLoggingTests : TestCase {
     
 }
 
@@ -50,9 +50,9 @@
     int counter = 0;
     
     lcl_log(lcl_cMain, lcl_vCritical, @"message %d", ++counter);
-    STAssertTrue(lcl_vCritical <= _lcl_component_level[lcl_cMain], nil);
-    STAssertEqualObjects([CoreTestsLogger lastLogEntry], @"NO LOG ENTRY", nil);
-    STAssertEquals(counter, 0, nil);
+    AssertTrue(lcl_vCritical <= _lcl_component_level[lcl_cMain]);
+    AssertEqualObjects([CoreTestsLogger lastLogEntry], @"NO LOG ENTRY");
+    AssertEquals(counter, 0);
 }
 
 - (void)testNoLoggingWithPredicate {
@@ -62,10 +62,10 @@
     int predicateeffect = 0;
     
     lcl_log_if(lcl_cMain, lcl_vCritical, predicateeffect = 1, @"message %d", ++counter);
-    STAssertTrue(lcl_vCritical <= _lcl_component_level[lcl_cMain], nil);
-    STAssertEqualObjects([CoreTestsLogger lastLogEntry], @"NO LOG ENTRY", nil);
-    STAssertEquals(counter, 0, nil);
-    STAssertEquals(predicateeffect, 0, nil);
+    AssertTrue(lcl_vCritical <= _lcl_component_level[lcl_cMain]);
+    AssertEqualObjects([CoreTestsLogger lastLogEntry], @"NO LOG ENTRY");
+    AssertEquals(counter, 0);
+    AssertEquals(predicateeffect, 0);
 }
 
 @end

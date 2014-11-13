@@ -24,10 +24,10 @@
 // THE SOFTWARE.
 
 #import "lcl.h"
-#import <SenTestingKit/SenTestingKit.h>
+#import "TestCase.h"
 
 
-@interface CoreTestsSyntaxTests : SenTestCase {
+@interface CoreTestsSyntaxTests : TestCase {
     
 }
 
@@ -46,9 +46,9 @@
     
     lcl_log(lcl_cMain, lcl_vCritical, @"message %d", ++counter);
     
-    STAssertTrue(lcl_vCritical <= _lcl_component_level[lcl_cMain], nil);
-    STAssertEqualObjects([CoreTestsLogger lastLogEntry], @"CRITICAL main message 1", nil);
-    STAssertEquals(counter, 1, nil);
+    AssertTrue(lcl_vCritical <= _lcl_component_level[lcl_cMain]);
+    AssertEqualObjects([CoreTestsLogger lastLogEntry], @"CRITICAL main message 1");
+    AssertEquals(counter, 1);
 }
 
 - (void)testIf {
@@ -58,9 +58,9 @@
         lcl_log(lcl_cMain, lcl_vCritical, @"if %d", ++counter);
     ++counter;
     
-    STAssertTrue(lcl_vCritical <= _lcl_component_level[lcl_cMain], nil);
-    STAssertEqualObjects([CoreTestsLogger lastLogEntry], @"CRITICAL main if 1", nil);
-    STAssertEquals(counter, 2, nil);
+    AssertTrue(lcl_vCritical <= _lcl_component_level[lcl_cMain]);
+    AssertEqualObjects([CoreTestsLogger lastLogEntry], @"CRITICAL main if 1");
+    AssertEquals(counter, 2);
 }
 
 - (void)testIfElseIf {
@@ -72,9 +72,9 @@
         lcl_log(lcl_cMain, lcl_vCritical, @"else %d", ++counter);
     ++counter;
     
-    STAssertTrue(lcl_vCritical <= _lcl_component_level[lcl_cMain], nil);
-    STAssertEqualObjects([CoreTestsLogger lastLogEntry], @"CRITICAL main if 1", nil);
-    STAssertEquals(counter, 2, nil);
+    AssertTrue(lcl_vCritical <= _lcl_component_level[lcl_cMain]);
+    AssertEqualObjects([CoreTestsLogger lastLogEntry], @"CRITICAL main if 1");
+    AssertEquals(counter, 2);
 }
 
 - (void)testIfElseElse {
@@ -86,9 +86,9 @@
         lcl_log(lcl_cMain, lcl_vCritical, @"else %d", ++counter);
     ++counter;
     
-    STAssertTrue(lcl_vCritical <= _lcl_component_level[lcl_cMain], nil);
-    STAssertEqualObjects([CoreTestsLogger lastLogEntry], @"CRITICAL main else 1", nil);
-    STAssertEquals(counter, 2, nil);
+    AssertTrue(lcl_vCritical <= _lcl_component_level[lcl_cMain]);
+    AssertEqualObjects([CoreTestsLogger lastLogEntry], @"CRITICAL main else 1");
+    AssertEquals(counter, 2);
 }
 
 @end

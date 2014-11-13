@@ -24,7 +24,7 @@
 // THE SOFTWARE.
 
 #import "lcl.h"
-#import <SenTestingKit/SenTestingKit.h>
+#import "TestCase.h"
 
 
 #ifndef CORE_TESTS_TEMPLATES_BUILD
@@ -32,7 +32,7 @@
 #endif
 
 
-@interface CoreTestsTemplatesTests : SenTestCase {
+@interface CoreTestsTemplatesTests : TestCase {
     
 }
 
@@ -44,33 +44,33 @@
 #define _(cstring) ((cstring == NULL) ? @"(null)" : [NSString stringWithUTF8String:cstring])
 
 - (void)testLogComponentsPrivateEnumValues {
-    STAssertEquals(_lcl_component_t_first, 0, nil);
-    STAssertEquals(_lcl_component_t_last, 4, nil);
-    STAssertEquals(_lcl_component_t_count, 5, nil);
+    AssertEquals(_lcl_component_t_first, 0);
+    AssertEquals(_lcl_component_t_last, 4);
+    AssertEquals(_lcl_component_t_count, 5);
 }
 
 - (void)testLogComponentsIdentifiers {
-    STAssertEqualObjects(_(_lcl_component_identifier[lcl_cMain]), _("Main"), nil);
-    STAssertEqualObjects(_(_lcl_component_identifier[lcl_cMainComponent1]), _("MainComponent1"), nil);
-    STAssertEqualObjects(_(_lcl_component_identifier[lcl_cMainComponent2]), _("MainComponent2"), nil);
-    STAssertEqualObjects(_(_lcl_component_identifier[lcl_cMain2]), _("Main2"), nil);
-    STAssertEqualObjects(_(_lcl_component_identifier[lcl_cMain3]), _("Main3"), nil);
+    AssertEqualObjects(_(_lcl_component_identifier[lcl_cMain]), _("Main"));
+    AssertEqualObjects(_(_lcl_component_identifier[lcl_cMainComponent1]), _("MainComponent1"));
+    AssertEqualObjects(_(_lcl_component_identifier[lcl_cMainComponent2]), _("MainComponent2"));
+    AssertEqualObjects(_(_lcl_component_identifier[lcl_cMain2]), _("Main2"));
+    AssertEqualObjects(_(_lcl_component_identifier[lcl_cMain3]), _("Main3"));
 }
 
 - (void)testLogComponentsNames {
-    STAssertEqualObjects(_(_lcl_component_name[lcl_cMain]), _("Main"), nil);
-    STAssertEqualObjects(_(_lcl_component_name[lcl_cMainComponent1]), _("Main/Component1"), nil);
-    STAssertEqualObjects(_(_lcl_component_name[lcl_cMainComponent2]), _("Main/Component2"), nil);
-    STAssertEqualObjects(_(_lcl_component_name[lcl_cMain2]), _("Main2"), nil);
-    STAssertEqualObjects(_(_lcl_component_name[lcl_cMain3]), _("Main3"), nil);
+    AssertEqualObjects(_(_lcl_component_name[lcl_cMain]), _("Main"));
+    AssertEqualObjects(_(_lcl_component_name[lcl_cMainComponent1]), _("Main/Component1"));
+    AssertEqualObjects(_(_lcl_component_name[lcl_cMainComponent2]), _("Main/Component2"));
+    AssertEqualObjects(_(_lcl_component_name[lcl_cMain2]), _("Main2"));
+    AssertEqualObjects(_(_lcl_component_name[lcl_cMain3]), _("Main3"));
 }
 
 - (void)testLogComponentsHeaders {
-    STAssertEqualObjects(_(_lcl_component_header[lcl_cMain]), _("main"), nil);
-    STAssertEqualObjects(_(_lcl_component_header[lcl_cMainComponent1]), _("main.component1"), nil);
-    STAssertEqualObjects(_(_lcl_component_header[lcl_cMainComponent2]), _("main.component2"), nil);
-    STAssertEqualObjects(_(_lcl_component_header[lcl_cMain2]), _("main2"), nil);
-    STAssertEqualObjects(_(_lcl_component_header[lcl_cMain3]), _("main3"), nil);
+    AssertEqualObjects(_(_lcl_component_header[lcl_cMain]), _("main"));
+    AssertEqualObjects(_(_lcl_component_header[lcl_cMainComponent1]), _("main.component1"));
+    AssertEqualObjects(_(_lcl_component_header[lcl_cMainComponent2]), _("main.component2"));
+    AssertEqualObjects(_(_lcl_component_header[lcl_cMain2]), _("main2"));
+    AssertEqualObjects(_(_lcl_component_header[lcl_cMain3]), _("main3"));
 }
 
 - (void)testLoggingMacro {
