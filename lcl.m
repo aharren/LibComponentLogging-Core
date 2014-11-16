@@ -31,7 +31,7 @@
 _lcl_level_narrow_t _lcl_component_level[_lcl_component_t_count];
 
 // Log component identifiers, indexed by log component.
-const char * const _lcl_component_identifier[] = {
+const char * const _lcl_component_identifier[_lcl_component_t_count] = {
 #   define  _lcl_component(_identifier, _header, _name)                        \
     #_identifier,
 #   include "lcl_config_components.h"
@@ -39,7 +39,7 @@ const char * const _lcl_component_identifier[] = {
 };
 
 // Log component headers, indexed by log component.
-const char * const _lcl_component_header[] = {
+const char * const _lcl_component_header[_lcl_component_t_count] = {
 #   define  _lcl_component(_identifier, _header, _name)                        \
     _header,
 #   include "lcl_config_components.h"
@@ -47,7 +47,7 @@ const char * const _lcl_component_header[] = {
 };
 
 // Log component names, indexed by log component.
-const char * const _lcl_component_name[] = {
+const char * const _lcl_component_name[_lcl_component_t_count] = {
 #   define  _lcl_component(_identifier, _header, _name)                        \
     _name,
 #   include "lcl_config_components.h"
