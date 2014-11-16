@@ -96,6 +96,34 @@ extern "C" {
 
 
 //
+// Settings for configuration files.
+//
+
+
+#ifndef _LCL_NO_USE_CONFIG_INCLUDES
+    // By default, use all config includes.
+#   define __lcl_use_config_include_lcl_config_components_h
+#   define __lcl_use_config_include_lcl_config_logger_h
+#   define __lcl_use_config_include_lcl_config_extensions_h
+#endif
+
+#ifndef _LCL_NO_CHECK_HAS_CONFIG_INCLUDES
+#   if defined(__has_include)
+        // Skip non-existing includes and use defaults instead.
+#       if !(__has_include("lcl_config_components.h"))
+#           undef __lcl_use_config_include_lcl_config_components_h
+#       endif
+#       if !(__has_include("lcl_config_logger.h"))
+#           undef __lcl_use_config_include_lcl_config_logger_h
+#       endif
+#       if !(__has_include("lcl_config_extensions.h"))
+#           undef __lcl_use_config_include_lcl_config_extensions_h
+#       endif
+#   endif
+#endif
+
+
+//
 // Log levels.
 //
 
@@ -153,7 +181,11 @@ enum _lcl_enum_component_t {
 #   define  _lcl_component(_identifier, _header, _name)                        \
     lcl_c##_identifier,                                                        \
   __lcl_log_symbol_lcl_c##_identifier = lcl_c##_identifier,
+#ifdef __lcl_use_config_include_lcl_config_components_h
 #   include "lcl_config_components.h"
+#else
+    _lcl_component(Main, "main", "Main")
+#endif
 #   undef   _lcl_component
 
    _lcl_component_t_count,
@@ -356,11 +388,13 @@ enum {
 
 
 // Include logging back-end and definition of _lcl_logger.
+#ifdef __lcl_use_config_include_lcl_config_logger_h
 #import "lcl_config_logger.h"
+#endif
 
 
-// For simple configurations where 'lcl_config_logger.h' is empty, define a
-// default NSLog()-based _lcl_logger here.
+// For simple configurations where 'lcl_config_logger.h' is empty or does not
+// exist, define a default NSLog()-based _lcl_logger here.
 #ifndef _lcl_logger
 
 // ARC/non-ARC autorelease pool
@@ -415,7 +449,9 @@ enum {
 
 
 // Include extensions.
+#ifdef __lcl_use_config_include_lcl_config_extensions_h
 #import "lcl_config_extensions.h"
+#endif
 
 
 #endif // __LCL_H__
