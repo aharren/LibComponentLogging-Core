@@ -86,7 +86,13 @@
 //
 
 
-#import <Foundation/Foundation.h>
+#ifdef __OBJC__
+    // Use Foundation.h in case of Objective-C and Objective-C++.
+#   import <Foundation/Foundation.h>
+#else
+    // Use stdint.h in case of C.
+#   include <stdint.h>
+#endif
 
 
 // Use C linkage.
@@ -389,7 +395,11 @@ enum {
 
 // Include logging back-end and definition of _lcl_logger.
 #ifdef __lcl_use_config_include_lcl_config_logger_h
-#import "lcl_config_logger.h"
+#   ifdef __OBJC__
+#       import "lcl_config_logger.h"
+#   else
+#       include "lcl_config_logger.h"
+#   endif
 #endif
 
 
@@ -450,7 +460,11 @@ enum {
 
 // Include extensions.
 #ifdef __lcl_use_config_include_lcl_config_extensions_h
-#import "lcl_config_extensions.h"
+#   ifdef __OBJC__
+#       import "lcl_config_extensions.h"
+#   else
+#       include "lcl_config_extensions.h"
+#   endif
 #endif
 
 
