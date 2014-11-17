@@ -84,15 +84,21 @@
 // Note: If the preprocessor symbol _LCL_NO_LOGGING is defined, the log macro
 // will be defined to an empty effect.
 //
+// Note: Define _LCL_C_MODE to force LibComponentLogging into plain C mode.
+//
 
 
-#ifdef __OBJC__
-    // Use Foundation.h in case of Objective-C and Objective-C++.
-#   import <Foundation/Foundation.h>
-#else
-    // Use C headers otherwise.
+#if (!defined(__OBJC__)) || defined(_LCL_C_MODE)
+#   define __lcl_c_mode
+#endif
+
+#ifdef __lcl_c_mode
+    // Use C headers.
 #   include <stdint.h>
 #   include <string.h>
+#else
+    // Use Objective-C Foundation headers.
+#   import <Foundation/Foundation.h>
 #endif
 
 
@@ -403,10 +409,11 @@ enum {
 
 // Include logging back-end and definition of _lcl_logger.
 #ifdef __lcl_use_config_include_lcl_config_logger_h
-#   ifdef __OBJC__
-#       import "lcl_config_logger.h"
-#   else
+#   ifdef __lcl_c_mode
+        // In C mode, _lcl_logger should not require Objective-C arguments.
 #       include "lcl_config_logger.h"
+#   else
+#       import "lcl_config_logger.h"
 #   endif
 #endif
 
@@ -468,10 +475,10 @@ enum {
 
 // Include extensions.
 #ifdef __lcl_use_config_include_lcl_config_extensions_h
-#   ifdef __OBJC__
-#       import "lcl_config_extensions.h"
-#   else
+#   ifdef __lcl_c_mode
 #       include "lcl_config_extensions.h"
+#   else
+#       import "lcl_config_extensions.h"
 #   endif
 #endif
 

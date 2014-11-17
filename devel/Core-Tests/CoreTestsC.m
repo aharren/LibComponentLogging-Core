@@ -24,7 +24,14 @@
 // THE SOFTWARE.
 
 #import "TestCase.h"
+
+#define _LCL_C_MODE
 #import "CoreTestsC.h"
+
+
+#ifndef __lcl_c_mode
+#error __lcl_c_mode should be defined
+#endif
 
 
 @interface CoreTestsC : TestCase {
@@ -39,23 +46,23 @@
 - (void)testLoggingViaC {
     lcl_configure_by_component(lcl_cMain, lcl_vTrace);
     c_log_error_main("ErrorMessage");
-    AssertEqualObjects(@"E main CoreTestsC.c:32 ErrorMessage", @(c_last_log_entry));
+    AssertEqualObjects(@"E main CoreTestsC.c:37 ErrorMessage", @(c_last_log_entry));
     
     c_log_info_main_component1("InfoMessage");
-    AssertEqualObjects(@"E main CoreTestsC.c:32 ErrorMessage", @(c_last_log_entry));
+    AssertEqualObjects(@"E main CoreTestsC.c:37 ErrorMessage", @(c_last_log_entry));
     lcl_configure_by_component(lcl_cMainComponent1, lcl_vTrace);
     c_log_info_main_component1("InfoMessage");
-    AssertEqualObjects(@"I main.component1 CoreTestsC.c:36 InfoMessage", @(c_last_log_entry));
+    AssertEqualObjects(@"I main.component1 CoreTestsC.c:41 InfoMessage", @(c_last_log_entry));
 }
 
 - (void)testLoggingViaObjectiveC {
     lcl_configure_by_component(lcl_cMain, lcl_vTrace);
     lcl_log(lcl_cMain, lcl_vInfo, "InfoMessage");
-    AssertEqualObjects(@"I main CoreTestsC.m:53 InfoMessage", @(c_last_log_entry));
+    AssertEqualObjects(@"I main CoreTestsC.m:60 InfoMessage", @(c_last_log_entry));
     
     lcl_configure_by_component(lcl_cMainComponent1, lcl_vTrace);
     lcl_log(lcl_cMainComponent1, lcl_vError, "ErrorMessage");
-    AssertEqualObjects(@"E main.component1 CoreTestsC.m:57 ErrorMessage", @(c_last_log_entry));
+    AssertEqualObjects(@"E main.component1 CoreTestsC.m:64 ErrorMessage", @(c_last_log_entry));
 }
 
 @end

@@ -26,6 +26,11 @@
 #include "CoreTestsC.h"
 
 
+#ifndef __lcl_c_mode
+#error __lcl_c_mode should be defined
+#endif
+
+
 char c_last_log_entry[256];
 
 void c_log_error_main(const char* message) {
