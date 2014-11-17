@@ -90,8 +90,9 @@
     // Use Foundation.h in case of Objective-C and Objective-C++.
 #   import <Foundation/Foundation.h>
 #else
-    // Use stdint.h in case of C.
+    // Use C headers otherwise.
 #   include <stdint.h>
+#   include <string.h>
 #endif
 
 
@@ -393,6 +394,13 @@ enum {
 #endif
 
 
+// Macro for getting the filename; can be constant-folded by some compilers.
+#ifndef _lcl_filename
+#   define _lcl_filename                                                       \
+        (strrchr(__FILE__, '/') ? strrchr(__FILE__, '/') + 1 : __FILE__)
+#endif
+
+
 // Include logging back-end and definition of _lcl_logger.
 #ifdef __lcl_use_config_include_lcl_config_logger_h
 #   ifdef __OBJC__
@@ -440,10 +448,10 @@ enum {
 // A simple default logger, which redirects to NSLog().
 #define _lcl_logger(_component, _level, _format, ...) {                        \
     _lcl_logger_autoreleasepool_begin                                          \
-    NSLog(@"%s %s:%@:%d " _format,                                             \
+    NSLog(@"%s %s:%s:%d " _format,                                             \
           _lcl_level_header_1[_level],                                         \
           _lcl_component_header[_component],                                   \
-          [@__FILE__ lastPathComponent],                                       \
+          _lcl_filename,                                                       \
           __LINE__,                                                            \
           ## __VA_ARGS__);                                                     \
     _lcl_logger_autoreleasepool_end                                            \

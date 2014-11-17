@@ -77,10 +77,10 @@
 // A very simple logger, which redirects to NSLog().
 #define _lcl_logger(_component, _level, _format, ...) {                        \
     _lcl_logger_autoreleasepool_begin                                          \
-    NSLog(@"%s %s:%@:%d:%s " _format,                                          \
+    NSLog(@"%s %s:%s:%d:%s " _format,                                          \
           _lcl_level_header_1[_level],                                         \
           _lcl_component_header[_component],                                   \
-          [@__FILE__ lastPathComponent],                                       \
+          _lcl_filename,                                                       \
           __LINE__,                                                            \
           __PRETTY_FUNCTION__,                                                 \
           ## __VA_ARGS__);                                                     \

@@ -43,6 +43,26 @@
 
 #define _(cstring) ((cstring == NULL) ? @"(null)" : [NSString stringWithUTF8String:cstring])
 
+#ifndef _LCL_NO_IGNORE_WARNINGS
+#   ifdef __clang__
+    // Ignore some warnings about variadic macros when using '-Weverything'.
+#   pragma clang diagnostic push
+#   pragma clang diagnostic ignored "-Wunknown-pragmas"
+#   pragma clang diagnostic ignored "-Wvariadic-macros"
+#   pragma clang diagnostic ignored "-Wpedantic"
+#   endif
+#endif
+
+#undef NSLog
+#define NSLog(_format, ...)                                                    \
+    lastLogEntry = [NSString stringWithFormat:_format, ## __VA_ARGS__];
+
+#ifndef _LCL_NO_IGNORE_WARNINGS
+#   ifdef __clang__
+#   pragma clang diagnostic pop
+#   endif
+#endif
+
 - (void)testLogComponentsPrivateEnumValues {
     AssertEquals(_lcl_component_t_first, 0);
     AssertEquals(_lcl_component_t_last, 3);
@@ -71,8 +91,10 @@
 }
 
 - (void)testLoggingMacro {
+    NSString *lastLogEntry = @"";
     lcl_configure_by_component(lcl_cMain, lcl_vTrace);
     lcl_log(lcl_cMain, lcl_vInfo, @"Message");
+    AssertEqualObjects(@"I main:CoreTestsNoLoggerTests.m:96 Message", lastLogEntry);
 }
 
 @end

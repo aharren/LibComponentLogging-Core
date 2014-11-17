@@ -39,23 +39,23 @@
 - (void)testLoggingViaC {
     lcl_configure_by_component(lcl_cMain, lcl_vTrace);
     c_log_error_main("ErrorMessage");
-    AssertEqualObjects(@"E main ErrorMessage", @(c_last_log_entry));
+    AssertEqualObjects(@"E main CoreTestsC.c:32 ErrorMessage", @(c_last_log_entry));
     
     c_log_info_main_component1("InfoMessage");
-    AssertEqualObjects(@"E main ErrorMessage", @(c_last_log_entry));
+    AssertEqualObjects(@"E main CoreTestsC.c:32 ErrorMessage", @(c_last_log_entry));
     lcl_configure_by_component(lcl_cMainComponent1, lcl_vTrace);
     c_log_info_main_component1("InfoMessage");
-    AssertEqualObjects(@"I main.component1 InfoMessage", @(c_last_log_entry));
+    AssertEqualObjects(@"I main.component1 CoreTestsC.c:36 InfoMessage", @(c_last_log_entry));
 }
 
 - (void)testLoggingViaObjectiveC {
     lcl_configure_by_component(lcl_cMain, lcl_vTrace);
     lcl_log(lcl_cMain, lcl_vInfo, "InfoMessage");
-    AssertEqualObjects(@"I main InfoMessage", @(c_last_log_entry));
+    AssertEqualObjects(@"I main CoreTestsC.m:53 InfoMessage", @(c_last_log_entry));
     
     lcl_configure_by_component(lcl_cMainComponent1, lcl_vTrace);
     lcl_log(lcl_cMainComponent1, lcl_vError, "ErrorMessage");
-    AssertEqualObjects(@"E main.component1 ErrorMessage", @(c_last_log_entry));
+    AssertEqualObjects(@"E main.component1 CoreTestsC.m:57 ErrorMessage", @(c_last_log_entry));
 }
 
 @end

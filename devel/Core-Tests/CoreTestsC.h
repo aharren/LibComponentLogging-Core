@@ -41,9 +41,11 @@ extern char c_last_log_entry[256];
 
 #undef _lcl_logger
 #define _lcl_logger(_component, _level, _format, ...) {                        \
-    snprintf(c_last_log_entry, 256, "%s %s " _format,                          \
+    snprintf(c_last_log_entry, 256, "%s %s %s:%d " _format,                    \
             _lcl_level_header_1[_level],                                       \
             _lcl_component_header[_component],                                 \
+            _lcl_filename,                                                     \
+            __LINE__,                                                          \
             ## __VA_ARGS__);                                                   \
 }
 
