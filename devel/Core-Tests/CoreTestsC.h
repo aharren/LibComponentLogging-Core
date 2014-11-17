@@ -39,15 +39,8 @@ extern char c_last_log_entry[256];
 #   endif
 #endif
 
-#undef _lcl_logger
-#define _lcl_logger(_component, _level, _format, ...) {                        \
-    snprintf(c_last_log_entry, 256, "%s %s %s:%d " _format,                    \
-            _lcl_level_header_1[_level],                                       \
-            _lcl_component_header[_component],                                 \
-            _lcl_filename,                                                     \
-            __LINE__,                                                          \
-            ## __VA_ARGS__);                                                   \
-}
+#define fprintf(_stream, _format, ...)                                         \
+    snprintf(c_last_log_entry, 256, _format, ## __VA_ARGS__)
 
 #ifndef _LCL_NO_IGNORE_WARNINGS
 #   ifdef __clang__

@@ -96,6 +96,7 @@
     // Use C headers.
 #   include <stdint.h>
 #   include <string.h>
+#   include <stdio.h>
 #else
     // Use Objective-C Foundation headers.
 #   import <Foundation/Foundation.h>
@@ -419,28 +420,9 @@ enum {
 
 
 // For simple configurations where 'lcl_config_logger.h' is empty or does not
-// exist, define a default NSLog()-based _lcl_logger here.
-#ifndef _lcl_logger
+// exist, define a default _lcl_logger here.
 
-// ARC/non-ARC autorelease pool
-#define _lcl_logger_autoreleasepool_arc 0
-#if defined(__has_feature)
-#   if __has_feature(objc_arc)
-#   undef  _lcl_logger_autoreleasepool_arc
-#   define _lcl_logger_autoreleasepool_arc 1
-#   endif
-#endif
-#if _lcl_logger_autoreleasepool_arc
-#   define _lcl_logger_autoreleasepool_begin                                   \
-        @autoreleasepool {
-#   define _lcl_logger_autoreleasepool_end                                     \
-        }
-#else
-#   define _lcl_logger_autoreleasepool_begin                                   \
-        NSAutoreleasePool *_lcl_logger_autoreleasepool = [[NSAutoreleasePool alloc] init];
-#   define _lcl_logger_autoreleasepool_end                                     \
-        [_lcl_logger_autoreleasepool release];
-#endif
+#ifndef _lcl_logger
 
 #ifndef _LCL_NO_IGNORE_WARNINGS
 #   ifdef __clang__
@@ -452,17 +434,60 @@ enum {
 #   endif
 #endif
 
-// A simple default logger, which redirects to NSLog().
-#define _lcl_logger(_component, _level, _format, ...) {                        \
-    _lcl_logger_autoreleasepool_begin                                          \
-    NSLog(@"%s %s:%s:%d " _format,                                             \
-          _lcl_level_header_1[_level],                                         \
-          _lcl_component_header[_component],                                   \
-          _lcl_filename,                                                       \
-          __LINE__,                                                            \
-          ## __VA_ARGS__);                                                     \
-    _lcl_logger_autoreleasepool_end                                            \
-}
+#ifdef __lcl_c_mode
+    // For C, write to stdout.
+
+#   ifndef _lcl_c_logger_printf
+#       define _lcl_c_logger_printf fprintf
+#   endif
+#   ifndef _lcl_c_logger_stream
+#       define _lcl_c_logger_stream stdout
+#   endif
+#   define _lcl_logger(_component, _level, _format, ...) {                     \
+        _lcl_c_logger_printf(_lcl_c_logger_stream, "%s %s:%s:%d " _format,     \
+                             _lcl_level_header_1[_level],                      \
+                             _lcl_component_header[_component],                \
+                             _lcl_filename,                                    \
+                             __LINE__,                                         \
+                             ## __VA_ARGS__);                                  \
+    }
+
+#else
+    // For Objective-C, use NSLog().
+
+    // ARC/non-ARC autorelease pool
+#   define _lcl_logger_autoreleasepool_arc 0
+#   if defined(__has_feature)
+#       if __has_feature(objc_arc)
+#       undef  _lcl_logger_autoreleasepool_arc
+#       define _lcl_logger_autoreleasepool_arc 1
+#       endif
+#   endif
+#   if _lcl_logger_autoreleasepool_arc
+#       define _lcl_logger_autoreleasepool_begin                               \
+            @autoreleasepool {
+#       define _lcl_logger_autoreleasepool_end                                 \
+            }
+#   else
+#       define _lcl_logger_autoreleasepool_begin                               \
+            NSAutoreleasePool *_lcl_logger_autoreleasepool = [[NSAutoreleasePool alloc] init];
+#       define _lcl_logger_autoreleasepool_end                                 \
+            [_lcl_logger_autoreleasepool release];
+#   endif
+
+    // A simple default logger, which redirects to NSLog().
+#   define _lcl_logger(_component, _level, _format, ...) {                     \
+        _lcl_logger_autoreleasepool_begin                                      \
+        NSLog(@"%s %s:%s:%d " _format,                                         \
+              _lcl_level_header_1[_level],                                     \
+              _lcl_component_header[_component],                               \
+              _lcl_filename,                                                   \
+              __LINE__,                                                        \
+              ## __VA_ARGS__);                                                 \
+        _lcl_logger_autoreleasepool_end                                        \
+    }
+
+#endif
 
 #ifndef _LCL_NO_IGNORE_WARNINGS
 #   ifdef __clang__
