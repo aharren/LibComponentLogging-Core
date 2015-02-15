@@ -3,7 +3,7 @@
 // lcl_config_logger.h
 //
 //
-// Copyright (c) 2008-2013 Arne Harren <ah@0xc0.de>
+// Copyright (c) 2008-2015 Arne Harren <ah@0xc0.de>
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -77,10 +77,10 @@
 // A very simple logger, which redirects to NSLog().
 #define _lcl_logger(_component, _level, _format, ...) {                        \
     _lcl_logger_autoreleasepool_begin                                          \
-    NSLog(@"%s %s:%@:%d:%s " _format,                                          \
+    NSLog(@"%s %s:%s:%d:%s " _format,                                          \
           _lcl_level_header_1[_level],                                         \
           _lcl_component_header[_component],                                   \
-          [@__FILE__ lastPathComponent],                                       \
+          _lcl_filename,                                                       \
           __LINE__,                                                            \
           __PRETTY_FUNCTION__,                                                 \
           ## __VA_ARGS__);                                                     \

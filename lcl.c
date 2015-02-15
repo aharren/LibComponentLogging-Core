@@ -1,6 +1,6 @@
 //
 //
-// lcl_config_extensions.h
+// lcl.c -- LibComponentLogging
 //
 //
 // Copyright (c) 2008-2015 Arne Harren <ah@0xc0.de>
@@ -23,13 +23,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-//
-// lcl_config_extensions.h template.
-//
 
-
-//
-// The lcl_config_extensions.h file can be used to #include, #import, or define
-// log extensions.
-//
+// C variant of lcl.m
+#include "lcl.m"
 

@@ -3,7 +3,7 @@
 // lcl.h -- LibComponentLogging
 //
 //
-// Copyright (c) 2008-2013 Arne Harren <ah@0xc0.de>
+// Copyright (c) 2008-2015 Arne Harren <ah@0xc0.de>
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -27,8 +27,8 @@
 #define __LCL_H__
 
 #define _LCL_VERSION_MAJOR  1
-#define _LCL_VERSION_MINOR  3
-#define _LCL_VERSION_BUILD  3
+#define _LCL_VERSION_MINOR  4
+#define _LCL_VERSION_BUILD  1
 #define _LCL_VERSION_SUFFIX ""
 
 //
@@ -84,14 +84,56 @@
 // Note: If the preprocessor symbol _LCL_NO_LOGGING is defined, the log macro
 // will be defined to an empty effect.
 //
+// Note: Define _LCL_C_MODE to force LibComponentLogging into plain C mode.
+//
 
 
-#import <Foundation/Foundation.h>
+#if (!defined(__OBJC__)) || defined(_LCL_C_MODE)
+#   define __lcl_c_mode
+#endif
+
+#ifdef __lcl_c_mode
+    // Use C headers.
+#   include <stdint.h>
+#   include <string.h>
+#   include <stdio.h>
+#else
+    // Use Objective-C Foundation headers.
+#   import <Foundation/Foundation.h>
+#endif
 
 
 // Use C linkage.
 #ifdef __cplusplus
 extern "C" {
+#endif
+
+
+//
+// Settings for configuration files.
+//
+
+
+#ifndef _LCL_NO_USE_CONFIG_INCLUDES
+    // By default, use all config includes.
+#   define __lcl_use_config_include_lcl_config_components_h
+#   define __lcl_use_config_include_lcl_config_logger_h
+#   define __lcl_use_config_include_lcl_config_extensions_h
+#endif
+
+#ifndef _LCL_NO_CHECK_HAS_CONFIG_INCLUDES
+#   if defined(__has_include)
+        // Skip non-existing includes and use defaults instead.
+#       if !(__has_include("lcl_config_components.h"))
+#           undef __lcl_use_config_include_lcl_config_components_h
+#       endif
+#       if !(__has_include("lcl_config_logger.h"))
+#           undef __lcl_use_config_include_lcl_config_logger_h
+#       endif
+#       if !(__has_include("lcl_config_extensions.h"))
+#           undef __lcl_use_config_include_lcl_config_extensions_h
+#       endif
+#   endif
 #endif
 
 
@@ -153,7 +195,11 @@ enum _lcl_enum_component_t {
 #   define  _lcl_component(_identifier, _header, _name)                        \
     lcl_c##_identifier,                                                        \
   __lcl_log_symbol_lcl_c##_identifier = lcl_c##_identifier,
+#ifdef __lcl_use_config_include_lcl_config_components_h
 #   include "lcl_config_components.h"
+#else
+    _lcl_component(Main, "main", "Main")
+#endif
 #   undef   _lcl_component
 
    _lcl_component_t_count,
@@ -205,8 +251,7 @@ typedef uint32_t _lcl_component_t;
 #else
 #   define lcl_log(_component, _level, _format, ...)                           \
         do {                                                                   \
-            if (((_lcl_component_level[(__lcl_log_symbol(_component))]) >=     \
-                  (__lcl_log_symbol(_level)))                                  \
+            if (_lcl_component_is_active_at_level(_component, _level)          \
                ) {                                                             \
                     _lcl_logger(_component,                                    \
                                 _level,                                        \
@@ -240,8 +285,7 @@ typedef uint32_t _lcl_component_t;
 #else
 #   define lcl_log_if(_component, _level, _predicate, _format, ...)            \
         do {                                                                   \
-            if (((_lcl_component_level[(__lcl_log_symbol(_component))]) >=     \
-                  (__lcl_log_symbol(_level)))                                  \
+            if (_lcl_component_is_active_at_level(_component, _level)          \
                 &&                                                             \
                 (_predicate)                                                   \
                ) {                                                             \
@@ -308,6 +352,14 @@ uint32_t lcl_configure_by_name(const char *name, _lcl_level_t level);
 // Active log levels, indexed by log component.
 extern _lcl_level_narrow_t _lcl_component_level[_lcl_component_t_count];
 
+// Checks whether the given log component is active at the given log level.
+#define _lcl_component_is_active_at_level(_component, _level)                  \
+    (                                                                          \
+        (_lcl_component_level[(__lcl_log_symbol(_component))])                 \
+        >=                                                                     \
+        (__lcl_log_symbol(_level))                                             \
+    )
+
 // Log component identifiers, indexed by log component.
 extern const char * const _lcl_component_identifier[_lcl_component_t_count];
 
@@ -349,33 +401,28 @@ enum {
 #endif
 
 
+// Macro for getting the filename; can be constant-folded by some compilers.
+#ifndef _lcl_filename
+#   define _lcl_filename                                                       \
+        (strrchr(__FILE__, '/') ? strrchr(__FILE__, '/') + 1 : __FILE__)
+#endif
+
+
 // Include logging back-end and definition of _lcl_logger.
-#import "lcl_config_logger.h"
-
-
-// For simple configurations where 'lcl_config_logger.h' is empty, define a
-// default NSLog()-based _lcl_logger here.
-#ifndef _lcl_logger
-
-// ARC/non-ARC autorelease pool
-#define _lcl_logger_autoreleasepool_arc 0
-#if defined(__has_feature)
-#   if __has_feature(objc_arc)
-#   undef  _lcl_logger_autoreleasepool_arc
-#   define _lcl_logger_autoreleasepool_arc 1
+#ifdef __lcl_use_config_include_lcl_config_logger_h
+#   ifdef __lcl_c_mode
+        // In C mode, _lcl_logger should not require Objective-C arguments.
+#       include "lcl_config_logger.h"
+#   else
+#       import "lcl_config_logger.h"
 #   endif
 #endif
-#if _lcl_logger_autoreleasepool_arc
-#   define _lcl_logger_autoreleasepool_begin                                   \
-        @autoreleasepool {
-#   define _lcl_logger_autoreleasepool_end                                     \
-        }
-#else
-#   define _lcl_logger_autoreleasepool_begin                                   \
-        NSAutoreleasePool *_lcl_logger_autoreleasepool = [[NSAutoreleasePool alloc] init];
-#   define _lcl_logger_autoreleasepool_end                                     \
-        [_lcl_logger_autoreleasepool release];
-#endif
+
+
+// For simple configurations where 'lcl_config_logger.h' is empty or does not
+// exist, define a default _lcl_logger here.
+
+#ifndef _lcl_logger
 
 #ifndef _LCL_NO_IGNORE_WARNINGS
 #   ifdef __clang__
@@ -387,17 +434,60 @@ enum {
 #   endif
 #endif
 
-// A simple default logger, which redirects to NSLog().
-#define _lcl_logger(_component, _level, _format, ...) {                        \
-    _lcl_logger_autoreleasepool_begin                                          \
-    NSLog(@"%s %s:%@:%d " _format,                                             \
-          _lcl_level_header_1[_level],                                         \
-          _lcl_component_header[_component],                                   \
-          [@__FILE__ lastPathComponent],                                       \
-          __LINE__,                                                            \
-          ## __VA_ARGS__);                                                     \
-    _lcl_logger_autoreleasepool_end                                            \
-}
+#ifdef __lcl_c_mode
+    // For C, write to stdout.
+
+#   ifndef _lcl_c_logger_printf
+#       define _lcl_c_logger_printf fprintf
+#   endif
+#   ifndef _lcl_c_logger_stream
+#       define _lcl_c_logger_stream stdout
+#   endif
+#   define _lcl_logger(_component, _level, _format, ...) {                     \
+        _lcl_c_logger_printf(_lcl_c_logger_stream, "%s %s:%s:%d " _format,     \
+                             _lcl_level_header_1[_level],                      \
+                             _lcl_component_header[_component],                \
+                             _lcl_filename,                                    \
+                             __LINE__,                                         \
+                             ## __VA_ARGS__);                                  \
+    }
+
+#else
+    // For Objective-C, use NSLog().
+
+    // ARC/non-ARC autorelease pool
+#   define _lcl_logger_autoreleasepool_arc 0
+#   if defined(__has_feature)
+#       if __has_feature(objc_arc)
+#       undef  _lcl_logger_autoreleasepool_arc
+#       define _lcl_logger_autoreleasepool_arc 1
+#       endif
+#   endif
+#   if _lcl_logger_autoreleasepool_arc
+#       define _lcl_logger_autoreleasepool_begin                               \
+            @autoreleasepool {
+#       define _lcl_logger_autoreleasepool_end                                 \
+            }
+#   else
+#       define _lcl_logger_autoreleasepool_begin                               \
+            NSAutoreleasePool *_lcl_logger_autoreleasepool = [[NSAutoreleasePool alloc] init];
+#       define _lcl_logger_autoreleasepool_end                                 \
+            [_lcl_logger_autoreleasepool release];
+#   endif
+
+    // A simple default logger, which redirects to NSLog().
+#   define _lcl_logger(_component, _level, _format, ...) {                     \
+        _lcl_logger_autoreleasepool_begin                                      \
+        NSLog(@"%s %s:%s:%d " _format,                                         \
+              _lcl_level_header_1[_level],                                     \
+              _lcl_component_header[_component],                               \
+              _lcl_filename,                                                   \
+              __LINE__,                                                        \
+              ## __VA_ARGS__);                                                 \
+        _lcl_logger_autoreleasepool_end                                        \
+    }
+
+#endif
 
 #ifndef _LCL_NO_IGNORE_WARNINGS
 #   ifdef __clang__
@@ -409,7 +499,13 @@ enum {
 
 
 // Include extensions.
-#import "lcl_config_extensions.h"
+#ifdef __lcl_use_config_include_lcl_config_extensions_h
+#   ifdef __lcl_c_mode
+#       include "lcl_config_extensions.h"
+#   else
+#       import "lcl_config_extensions.h"
+#   endif
+#endif
 
 
 #endif // __LCL_H__

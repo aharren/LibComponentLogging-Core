@@ -3,7 +3,7 @@
 // lcl.m -- LibComponentLogging
 //
 //
-// Copyright (c) 2008-2013 Arne Harren <ah@0xc0.de>
+// Copyright (c) 2008-2015 Arne Harren <ah@0xc0.de>
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -23,7 +23,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "lcl.h"
+#include "lcl.h"
 #include <string.h>
 
 
@@ -31,31 +31,43 @@
 _lcl_level_narrow_t _lcl_component_level[_lcl_component_t_count];
 
 // Log component identifiers, indexed by log component.
-const char * const _lcl_component_identifier[] = {
+const char * const _lcl_component_identifier[_lcl_component_t_count] = {
 #   define  _lcl_component(_identifier, _header, _name)                        \
     #_identifier,
+#ifdef __lcl_use_config_include_lcl_config_components_h
 #   include "lcl_config_components.h"
+#else
+    _lcl_component(Main, "main", "Main")
+#endif
 #   undef   _lcl_component
 };
 
 // Log component headers, indexed by log component.
-const char * const _lcl_component_header[] = {
+const char * const _lcl_component_header[_lcl_component_t_count] = {
 #   define  _lcl_component(_identifier, _header, _name)                        \
     _header,
+#ifdef __lcl_use_config_include_lcl_config_components_h
 #   include "lcl_config_components.h"
+#else
+    _lcl_component(Main, "main", "Main")
+#endif
 #   undef   _lcl_component
 };
 
 // Log component names, indexed by log component.
-const char * const _lcl_component_name[] = {
+const char * const _lcl_component_name[_lcl_component_t_count] = {
 #   define  _lcl_component(_identifier, _header, _name)                        \
     _name,
+#ifdef __lcl_use_config_include_lcl_config_components_h
 #   include "lcl_config_components.h"
+#else
+    _lcl_component(Main, "main", "Main")
+#endif
 #   undef   _lcl_component
 };
 
 // Log level headers, indexed by log level.
-const char * const _lcl_level_header[] = {
+const char * const _lcl_level_header[_lcl_level_t_count] = {
     "-",
     "CRITICAL",
     "ERROR",
@@ -64,7 +76,7 @@ const char * const _lcl_level_header[] = {
     "DEBUG",
     "TRACE"
 };
-const char * const _lcl_level_header_1[] = {
+const char * const _lcl_level_header_1[_lcl_level_t_count] = {
     "-",
     "C",
     "E",
@@ -73,7 +85,7 @@ const char * const _lcl_level_header_1[] = {
     "D",
     "T"
 };
-const char * const _lcl_level_header_3[] = {
+const char * const _lcl_level_header_3[_lcl_level_t_count] = {
     "---",
     "CRI",
     "ERR",
@@ -84,7 +96,7 @@ const char * const _lcl_level_header_3[] = {
 };
 
 // Log level names, indexed by log level.
-const char * const _lcl_level_name[] = {
+const char * const _lcl_level_name[_lcl_level_t_count] = {
     "Off",
     "Critical",
     "Error",
